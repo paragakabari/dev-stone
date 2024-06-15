@@ -10,9 +10,19 @@
         align-items: center;
         justify-content: space-between;
 
+        @include breakpoint("sm-max") {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         h1 {
             @include text32-bolder;
             color: $black-color2;
+
+            @include breakpoint("xl-max") {
+                font-size: 26px;
+                line-height: 32px;
+            }
         }
 
         .sortBySection {

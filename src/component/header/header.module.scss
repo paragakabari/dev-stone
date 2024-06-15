@@ -25,6 +25,9 @@
             @include breakpoint("md-max") {
                 width: 200px;
             }
+            @include breakpoint("sm-max") {
+                width: auto;
+            }
             img {
                 width: 14px;
                 height: 14px;
@@ -44,6 +47,9 @@
 
                 &:focus {
                     outline: none;
+                }
+                @include breakpoint("sm-max") {
+                    display: none;
                 }
             }
         }

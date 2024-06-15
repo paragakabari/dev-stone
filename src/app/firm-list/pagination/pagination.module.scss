@@ -1,0 +1,33 @@
+@import "../../../scss/index.scss";
+
+.paginationSection {
+    padding: 30px 0 0 0;
+    @include flex-center;
+    gap: 5px;
+    .paginationBOx {
+        padding: 8px 14px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+        p {
+            @include text16;
+            color: $black-color2;
+        }
+        &:hover {
+            transition: 0.4s ease-in-out;
+            border-radius: 5px;
+            background: #1D63DC;
+            p {
+                color: $white-color;
+            }
+        }
+
+        &.activePagination {
+            transition: 0.4s ease-in-out;
+            border-radius: 5px;
+            background: #1D63DC;
+            p {
+                color: $white-color;
+            }
+        }
+    }
+}

@@ -2,14 +2,17 @@
 
 
 import { useRouter } from "next/navigation"
-
-export default function Firm(){
+import styles from "./firm.module.scss";
+import FirmTop from "./firmTop/page";
+import KeyMetrics from "./KeyMetrics/page";
+export default function Firm() {
     const router = useRouter();
-    return(
-        <>
-     
-       Firm
+    return (
+        <div className={styles.firmSection}>
 
-        </>
+            <FirmTop />
+            <KeyMetrics />
+
+        </div>
     )
 }

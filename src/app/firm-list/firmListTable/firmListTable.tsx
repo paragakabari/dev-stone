@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./firmListTable.module.scss";
 import Image from 'next/image';
+import Pagination from '../pagination/page';
 const Logo = "/assets/images/logo1.png";
 const StarIcon = "/assets/icons/star-icon.svg";
 const TopBottomArrow = "/assets/icons/top-bottom-arrow.svg";
@@ -77,7 +78,9 @@ export default function FirmListTable() {
                         </tbody>
                     </table>
                 </div>
+                <Pagination />
             </div>
+
         </div>
     )
 }

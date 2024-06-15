@@ -9,7 +9,8 @@
         padding: 16px;
         .recentInvestmentHeading {
             @include flex-between;
-
+            flex-wrap: wrap;
+            gap: 10px;
             h2 {
                 @include text22-bolder;
                 color: $black-color4;

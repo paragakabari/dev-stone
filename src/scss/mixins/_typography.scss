@@ -79,6 +79,13 @@
     font-weight: 500;
     line-height: 10px;
 }
+
+@mixin text12 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 10px;
+}
+
 @mixin text16 {
     font-size: 16px;
     font-weight: 400;

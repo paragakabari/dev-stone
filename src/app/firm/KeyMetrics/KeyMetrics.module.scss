@@ -1,0 +1,111 @@
+@import "../../../scss/index.scss";
+
+.keyMetricsSection {
+    padding: 20px 0 0 0;
+
+    .keyMetricsBox {
+        box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+        background: $white-color;
+        border-radius: 16px;
+        padding: 30px;
+
+        h2 {
+            @include text24-bolder;
+            color: $black-color4;
+        }
+
+        .keyMetricsDetailsAlignment {
+            padding: 20px 0 0 0;
+            .keyMetricsDetailsGrid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+
+                .keyMetricsDetailsGridBox {
+                    border-radius: 20px;
+                    border: 1px solid $black-opcity3;
+                    padding: 20px;
+
+                    .keyMetricschildGrid {
+                        display: grid;
+                        grid-template-columns: 50px 1fr;
+                        gap: 16px;
+                        .iconAllignment {
+                            width: 50px;
+                            height: 50px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                object-fit: contain;
+                            }
+                        }
+
+                        .keyMetricsRightSide {
+                            p {
+                                @include text14;
+                                color: $black-color3;
+                                padding: 0 0 4px 0;
+                            }
+                            h4 {
+                                @include text32-bolder;
+                                color: #1d63dc;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .keyMetricschildGrid {
+                            .keyMetricsRightSide {
+                                h4 {
+                                    color: #1ccab8;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        .keyMetricschildGrid {
+                            .keyMetricsRightSide {
+                                h4 {
+                                    color: #f09643;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .keyMetricsBottomDetails {
+            padding: 50px 0 0 0;
+            
+
+            .keyMetricsChildDetails {
+                padding: 0 0 30px 0;
+                h6 {
+                    @include text24-bolder;
+                    color: $black-color4;
+                    padding: 0 0 20px 0;
+                }
+
+                .keyMetricsChilFlexAlignment {
+                    @include flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    .childBox {
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                        border: 1px solid $black-opcity-border-color;
+                        p {
+                            @include text12-meduim;
+                            line-height: 150%;
+                            letter-spacing: 0.24px;
+                            color: $black-color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
