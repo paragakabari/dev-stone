@@ -43,7 +43,7 @@ export default function RecentInvestments() {
                                 {[0, 1, 2, 3, 4, 5, 6, 7].map((key) => {
                                     return (
 
-                                        <tr>
+                                        <tr key={key}>
                                             <td >
                                                 <div className={styles.logoAlignment}>
                                                     <div className={styles.starIcon}>

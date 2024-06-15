@@ -10,7 +10,7 @@ const NotificationIcon = "/assets/icons/notification-icon.svg";
 const ProfileImg = "/assets/images/profile-img.png";
 export default function Header({ onToggleSidebar }) {
   const router = useRouter();
-  const [isModalOpen, setModalOpen] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
