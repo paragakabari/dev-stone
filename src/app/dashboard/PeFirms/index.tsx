@@ -8,6 +8,34 @@ const GridIcon = "/assets/icons/grid-icon.svg";
 const InvestmentIcon = "/assets/icons/investment-icon.svg";
 const SectoreIcon = "/assets/icons/sectore-icon.svg";
 const GeographicalIcon = "/assets/icons/Geographical-icon.svg";
+
+const SliderRIghtArrow = "/assets/icons/right-side-arrow.svg";
+const SliderLeftArrow = "/assets/icons/left-side-arrow.svg";
+
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={styles.nextArrowALignment}
+            onClick={onClick}
+        >
+            <Image unoptimized height={0} width={0} src={SliderRIghtArrow} alt="SliderRIghtArrow" />
+        </div>
+    );
+}
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+        className={styles.prevArrowALignment}
+            onClick={onClick}
+        >
+            <Image unoptimized height={0} width={0} src={SliderLeftArrow} alt="SliderLeftArrow" />
+        </div>
+    );
+}
 export default function PeFirms() {
     const settings = {
         dots: false,
@@ -15,6 +43,8 @@ export default function PeFirms() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
         responsive: [
             {
                 breakpoint: 1281,

@@ -76,18 +76,24 @@
                 padding: 0 0 8px 0;
             }
 
-            .dropdownBox {
-                width: 100%;
+            select {
+                width: 120px;
                 height: 28px;
-                @include flex-between;
-                padding: 0 10px;
                 border-radius: 4px;
                 border: 0.6px solid $border-color;
                 background: $dropdown-bg;
-                position: relative;
-                span {
-                    @include text12-bold;
-                    color: $black-color2;
+                @include flex-between;
+                padding: 0 8px;
+                @include text12-meduim;
+                color: rgba(40, 41, 41, 0.8);
+                cursor: pointer;
+                option {
+                    @include text12-meduim;
+                    color: rgba(40, 41, 41, 0.8);
+                    font-weight: 500;
+                    padding: 4px 0;
+                    cursor: pointer;
+                    line-height: 18px;
                 }
                 img {
                     width: 8px;
@@ -95,33 +101,13 @@
                     display: block;
                     cursor: pointer;
                 }
+                p {
+                    @include text12-bold;
+                    color: $black-color2;
+                }
 
-                .dropdownBoxAlignment {
-                    position: absolute;
-                    width: 100%;
-                    top: 32px;
-                    left: 0;
-                    border-radius: 4px;
-                    background: $dropdown-bg;
-                    z-index: 9999;
-                    &.hiddenDropdown {
-                        max-height: 0px;
-                        overflow-y: hidden;
-                        transition: 0.4s ease-in-out;
-                        border: 0.6px solid transparent;
-                    }
-                    &.openDropdown {
-                        border: 0.6px solid $border-color;
-                        max-height: 120px;
-                        overflow-y: auto;
-                        transition: 0.4s ease-in-out;
-                    }
-                    p {
-                        @include text12-bold;
-                        color: $black-color2;
-                        padding: 10px;
-                        cursor: pointer;
-                    }
+                svg {
+                    cursor: pointer;
                 }
             }
         }

@@ -5,9 +5,13 @@ import Image from 'next/image';
 const MailIcon = "/assets/icons/mail-icon.svg";
 const SendLinkIcon = "/assets/icons/send-link-icon.svg";
 const GoogleIcon = "/assets/icons/google-icon.svg";
+const Logo = "/assets/logo/logo.svg";
 export default function LoginForm() {
     return (
         <div className={styles.loginFormSection}>
+            <div className={styles.mobileViewLogo}>
+                <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
+            </div>
             <div className={styles.loginFormAlignment}>
                 <h1>Welcome Back!</h1>
                 <p>Glad to see you again.

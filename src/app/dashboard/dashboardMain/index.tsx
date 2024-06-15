@@ -13,7 +13,7 @@ export default function DashboardMain() {
           <div className={styles.investmentBox}>
             <div className={styles.investmentBoxHeading}>
               <h2>Investments</h2>
-              <div className={styles.dropdownAlignment}>
+              {/* <div className={styles.dropdownAlignment}>
                 <p>June 2024</p>
                 <Image
                   unoptimized
@@ -22,10 +22,16 @@ export default function DashboardMain() {
                   src={DropdownIcon}
                   alt="DropdownIcon"
                 />
-              </div>
+              </div> */}
+              <select>
+                <option>June 2024</option>
+                <option>June 2025</option>
+                <option>June 2026</option>
+                <option>June 2027</option>
+              </select>
             </div>
             <div>
-            <BarChart />
+              <BarChart />
             </div>
           </div>
         </div>

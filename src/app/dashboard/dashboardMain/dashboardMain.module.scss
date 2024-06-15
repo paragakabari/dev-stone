@@ -36,7 +36,7 @@
                         }
                     }
 
-                    .dropdownAlignment {
+                    select {
                         width: 120px;
                         height: 28px;
                         border-radius: 4px;
@@ -44,6 +44,17 @@
                         background: $dropdown-bg;
                         @include flex-between;
                         padding: 0 8px;
+                        @include text12-meduim;
+                        color: rgba(40, 41, 41, 0.8);
+                        cursor: pointer;
+                        option {
+                            @include text12-meduim;
+                            color: rgba(40, 41, 41, 0.8);
+                            font-weight: 500;
+                            padding: 4px 0;
+                            cursor: pointer;
+                            line-height: 18px;
+                        }
                         img {
                             width: 8px;
                             height: 8px;

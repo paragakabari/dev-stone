@@ -4,7 +4,7 @@
     padding: 30px;
     // height: calc(100vh - 80px);
     // overflow-y: auto;
-    @include breakpoint("xl-max") {
+    @include breakpoint("lg-max") {
         padding: 20px;
     }
     .dashboardHeading {

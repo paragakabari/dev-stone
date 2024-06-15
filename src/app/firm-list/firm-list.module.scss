@@ -1,0 +1,46 @@
+@import "../../scss/index.scss";
+
+.firmListSection {
+    padding: 30px;
+    @include breakpoint("lg-max") {
+        padding: 20px;
+    }
+    .firmListHeading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            @include text32-bolder;
+            color: $black-color2;
+        }
+
+        .sortBySection {
+            @include flex;
+            gap: 10px;
+
+            label {
+                @include text12-bold;
+                color: rgba(40, 41, 41, 0.8);
+            }
+
+            select {
+                padding: 9px 10px;
+                border-radius: 4px;
+                border: 0.6px solid $border-color;
+                background: $dropdown-bg;
+                @include text12-meduim;
+                color: rgba(40, 41, 41, 0.8);
+                cursor: pointer;
+                option {
+                    @include text12-meduim;
+                    color: rgba(40, 41, 41, 0.8);
+                    font-weight: 500;
+                    padding: 4px 0;
+                    cursor: pointer;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+}

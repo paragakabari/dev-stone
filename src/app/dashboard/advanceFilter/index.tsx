@@ -15,25 +15,21 @@ export default function AdvanceFilter() {
                             <label>Industry</label>
 
                             <div className={styles.dropdownBox}>
-                                <span>Select</span>
-                                <div onClick={() => setdropdownBox(!dropdownBox)}>
-                                    <Image unoptimized height={0} width={0} src={Dropdown} alt="Dropdown" />
-                                </div>
 
-                                <div className={classNames(styles.dropdownBoxAlignment, dropdownBox ? styles.openDropdown : styles.hiddenDropdown)}>
-                                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((key) => {
-                                        return (
-                                            <p>span 1</p>
-                                        )
-                                    })}
-                                </div>
+                                <select>
+                                    <option>Select 1</option>
+                                    <option>Select 2</option>
+                                    <option>Select 3</option>
+                                    <option>Select 4</option>
+                                    <option>Select 5</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div className={styles.dropdownALignment}>
                         <div className={styles.dropdown}>
                             <label>Industry</label>
-
+                            {/* 
                             <div className={styles.dropdownBox}>
                                 <span>Select</span>
                                 <div onClick={() => setdropdownBox(!dropdownBox)}>
@@ -47,7 +43,15 @@ export default function AdvanceFilter() {
                                         )
                                     })}
                                 </div>
-                            </div>
+                            </div> */}
+
+                            <select>
+                                <option>Select 1</option>
+                                <option>Select 2</option>
+                                <option>Select 3</option>
+                                <option>Select 4</option>
+                                <option>Select 5</option>
+                            </select>
                         </div>
                     </div>
 

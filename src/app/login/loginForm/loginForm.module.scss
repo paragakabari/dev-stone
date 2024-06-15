@@ -10,6 +10,8 @@
 
     @include breakpoint("md-max") {
         height: 100vh;
+        flex-direction: column;
+        gap: 40px;
     }
     &::before {
         content: "";
@@ -22,13 +24,24 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
-
+    .mobileViewLogo {
+        display: none;
+        @include breakpoint("md-max") {
+            display: block;
+            img {
+                width: 190px;
+                display: block;
+                height: 100%;
+            }
+        }
+    }
     .loginFormAlignment {
         width: 433px;
         margin: 0 auto;
         text-align: center;
         @include breakpoint("sm-max") {
             padding: 20px;
+            width: 100%;
         }
         h1 {
             @include text40-bolder;

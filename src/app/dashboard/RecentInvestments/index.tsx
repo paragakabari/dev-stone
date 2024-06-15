@@ -11,10 +11,17 @@ export default function RecentInvestments() {
                 <div className={styles.recentInvestmentHeading}>
                     <h2>Recent Investments</h2>
 
-                    <div className={styles.recentInvestmentDropdown}>
+                    {/* <div className={styles.recentInvestmentDropdown}>
                         <p>June 2024</p>
                         <Image unoptimized height={0} width={0} src={DropdownIcon} alt={DropdownIcon} />
-                    </div>
+                    </div> */}
+
+                    <select>
+                        <option>June 2024</option>
+                        <option>June 2024</option>
+                        <option>June 2024</option>
+                        <option>June 2024</option>
+                    </select>
                 </div>
 
                 <div className={styles.recentInvestmentDetailsAlignment}>
@@ -39,8 +46,10 @@ export default function RecentInvestments() {
                                         <tr>
                                             <td >
                                                 <div className={styles.logoAlignment}>
+                                                    <div className={styles.starIcon}>
 
-                                                    <Image unoptimized height={0} width={0} src={StarIcon} alt={StarIcon} />
+                                                        <Image unoptimized height={0} width={0} src={StarIcon} alt={StarIcon} />
+                                                    </div>
                                                     <div className={styles.logo}>
                                                         <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
                                                     </div>
