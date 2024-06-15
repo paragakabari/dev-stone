@@ -1,0 +1,210 @@
+@import "../../../scss/index.scss";
+
+.loginFormSection {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include flex-center;
+    padding: 32px 0 64px 0;
+    overflow-y: hidden;
+
+    @include breakpoint("lg-max") {
+        padding: 32px 0;
+    }
+
+    @include breakpoint("md-max") {
+        height: 100vh;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url("../../../../public/assets/images/side-vectore.png");
+        width: 196px;
+        height: 224px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .loginFormAlignment {
+        width: 433px;
+        margin: 0 auto;
+        text-align: center;
+        @include breakpoint("sm-max") {
+            padding: 20px;
+        }
+        h1 {
+            @include text40-bolder;
+            color: $black-color2;
+            @include breakpoint("lg-max") {
+                font-size: 36px;
+            }
+
+            @include breakpoint("sm-max") {
+                font-size: 32px;
+            }
+        }
+        p {
+            @include text18;
+            color: $black-color2;
+            padding: 20px 0 0 0;
+            max-width: 250px;
+            margin: 0 auto;
+            @include breakpoint("lg-max") {
+                padding: 10px 0 0 0;
+                font-size: 16px;
+            }
+            @include breakpoint("md-max") {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            @include breakpoint("sm-max") {
+                font-size: 14px;
+            }
+        }
+        .inputDetailsAlignment {
+            padding: 50px 0 0 0;
+            @include breakpoint("lg-max") {
+                padding: 30px 0 0 0;
+            }
+            @include breakpoint("md-max") {
+                padding: 30px 0 0 0;
+            }
+
+            .input {
+                width: 100%;
+                border-bottom: 1px solid #828282;
+                @include flex;
+                gap: 12px;
+                padding: 0 0 18px 0;
+                @include breakpoint("sm-max") {
+                    padding: 0 0 8px 0;
+                }
+                input {
+                    border: none;
+                    background: transparent;
+                    @include text20;
+                    width: 100%;
+                    height: 100%;
+                    color: $black-color2;
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: $black-color3;
+                    }
+                    @include breakpoint("lg-max") {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+
+        .dontAccountAlignment {
+            padding: 30px 0 0 0;
+            @include flex-center;
+            gap: 4px;
+
+            @include breakpoint("lg-max") {
+                padding: 10px 0 0 0;
+            }
+            a {
+                @include text20;
+                color: $black-color3;
+                text-decoration: none;
+                @include breakpoint("lg-max") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+            span {
+                @include text20;
+                font-weight: 700;
+                color: $blue-color;
+                cursor: pointer;
+                @include breakpoint("lg-max") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+        }
+
+        .buttonAlignment {
+            padding: 40px 0 0 0;
+            @include breakpoint("lg-max") {
+                padding: 30px 0 0 0;
+            }
+            .buttonDetails {
+                padding: 0 0 20px 0;
+                @include breakpoint("lg-max") {
+                    padding: 0 0 12px 0;
+                }
+
+                &:last-child {
+                    padding: 0;
+                }
+
+                button {
+                    width: 100%;
+                    @include flex-center;
+                    gap: 10px;
+                    background: $button-bg-bolor;
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    border: none;
+                    text-transform: uppercase;
+                    font-family: "Inter", sans-serif;
+                    @include text16-bolder;
+                    color: $white-color;
+                    cursor: pointer;
+
+                    @include breakpoint("lg-max") {
+                        height: 50px;
+                        padding: 0 30px;
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+
+                    &.outlineBtn {
+                        background: transparent;
+                        border: 1px solid $btn-border-color;
+                        color: $black-color2;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyRightALignment {
+        text-align: center;
+        position: absolute;
+        bottom: 32px;
+        width: 100%;
+        left: 0;
+
+        @include breakpoint("lg-max") {
+            bottom: 12px;
+        }
+        p {
+            @include text18;
+            color: $black-color2;
+
+            @include breakpoint("lg-max") {
+                font-size: 14px;
+                list-style: 21px;
+            }
+        }
+    }
+}

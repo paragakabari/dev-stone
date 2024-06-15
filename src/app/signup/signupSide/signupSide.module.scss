@@ -1,0 +1,90 @@
+@import "../../../scss/index.scss";
+
+.signupSidebarBannerSection {
+    background: $login-side-bg;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 35px 0;
+    overflow-y: auto;
+    @include breakpoint("lg-max") {
+        padding: 20px;
+    }
+    @include breakpoint("md-max") {
+        display: none;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("../../../../public/assets/images/bg-img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .signupSidebarBannerDetails {
+        position: relative;
+        z-index: 9;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .logo {
+            img {
+                max-width: 215px;
+            }
+        }
+        .signupSideBannerBottom {
+            @include flex-center;
+            flex-direction: column;
+            gap: 54px;
+            height: 100%;
+            .contentAlignment {
+                // padding: 165px 0 0 0;
+                // max-width: 460px;
+                margin: 0 auto;
+                padding: 60px 0 0 0;
+                max-width: 500px;
+                @include breakpoint("lg-max") {
+                    padding: 0;
+                    max-width: 100%;
+                }
+                @include breakpoint("md-max") {
+                    max-width: 400px;
+                }
+                h2 {
+                    @include text70-bold;
+                    color: $white-color;
+
+                    @include breakpoint("lg-max") {
+                        font-size: 40px;
+                        line-height: 48px;
+                    }
+                }
+                p {
+                    // padding: 30px 0 0 0;
+                    // @include text24;
+                    color: $white-color;
+                    padding: 10px 0 0 0;
+                    @include text18;
+                }
+            }
+            .loginVectoreImg {
+                display: flex;
+                justify-content: flex-end;
+                padding: 54px 158px 0 0;
+
+                @include breakpoint("xl-max") {
+                    padding: 0 90px 0 0;
+                    img {
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
