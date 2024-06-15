@@ -57,10 +57,10 @@ export default function KeyMetrics() {
                         <h6>Primary Sectors</h6>
 
                         <div className={styles.keyMetricsChilFlexAlignment}>
-                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((key) => {
                                 return (
 
-                                    <div className={styles.childBox}>
+                                    <div className={styles.childBox} key={key}>
                                         <p>Aerospace & Defense</p>
                                     </div>
                                 )
@@ -72,10 +72,10 @@ export default function KeyMetrics() {
                         <h6>Geographical Focus</h6>
 
                         <div className={styles.keyMetricsChilFlexAlignment}>
-                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((key) => {
                                 return (
 
-                                    <div className={styles.childBox}>
+                                    <div className={styles.childBox} key={key}>
                                         <p>Asia</p>
                                     </div>
                                 )

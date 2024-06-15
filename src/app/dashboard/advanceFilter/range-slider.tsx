@@ -11,7 +11,6 @@ const RangeSlider = ({ min, max, step }) => {
 
   return (
     <div className={styles.sliderContainer}>
-      <label htmlFor="rangeSlider" className={styles.label}>Investment Size</label>
       <Slider
         className={styles.slider}
         thumbClassName={styles.thumb}
