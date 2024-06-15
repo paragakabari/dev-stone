@@ -1,6 +1,6 @@
 @import "../../../scss/index.scss";
 
-.loginFormSection {
+.signUpFormSection {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -23,8 +23,8 @@
         background-size: contain;
     }
 
-    .loginFormAlignment {
-        width: 433px;
+    .signUpFormAlignment {
+        width: 432px;
         margin: 0 auto;
         text-align: center;
         @include breakpoint("sm-max") {
@@ -36,7 +36,6 @@
             @include breakpoint("lg-max") {
                 font-size: 36px;
             }
-
             @include breakpoint("sm-max") {
                 font-size: 32px;
             }
@@ -45,7 +44,7 @@
             @include text18;
             color: $black-color2;
             padding: 20px 0 0 0;
-            max-width: 250px;
+            max-width: 290px;
             margin: 0 auto;
             @include breakpoint("lg-max") {
                 padding: 10px 0 0 0;
@@ -61,55 +60,56 @@
             }
         }
         .inputDetailsAlignment {
-            padding: 50px 0 0 0;
-            @include breakpoint("lg-max") {
-                padding: 30px 0 0 0;
-            }
-            @include breakpoint("md-max") {
-                padding: 30px 0 0 0;
-            }
+            padding: 30px 0 0 0;
 
-            .input {
-                img {
-                    width: 24px;
-                    height: 24px;
-                    display: block;
+            .inputAlignment {
+                padding: 0 0 20px 0;
+
+                &:last-child {
+                    padding: 0;
                 }
-                width: 100%;
-                border-bottom: 1px solid #828282;
-                @include flex;
-                gap: 12px;
-                padding: 0 0 18px 0;
-                @include breakpoint("sm-max") {
-                    padding: 0 0 8px 0;
-                }
-                input {
-                    border: none;
-                    background: transparent;
-                    @include text20;
+
+                .input {
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        display: block;
+                    }
                     width: 100%;
-                    height: 100%;
-                    color: $black-color2;
-                    &:focus {
-                        outline: none;
+                    border-bottom: 1px solid #828282;
+                    @include flex;
+                    gap: 12px;
+                    padding: 0 0 18px 0;
+                    @include breakpoint("sm-max") {
+                        padding: 0 0 8px 0;
                     }
+                    input {
+                        border: none;
+                        background: transparent;
+                        @include text20;
+                        width: 100%;
+                        height: 100%;
+                        color: $black-color2;
+                        &:focus {
+                            outline: none;
+                        }
 
-                    &::placeholder {
-                        color: $black-color3;
-                    }
-                    @include breakpoint("lg-max") {
-                        font-size: 18px;
-                        line-height: 24px;
+                        &::placeholder {
+                            color: $black-color3;
+                        }
+                        @include breakpoint("lg-max") {
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
                     }
                 }
             }
         }
 
-        .dontAccountAlignment {
+        .alreadtAccountAlignment {
             padding: 15px 0 0 0;
             @include flex-center;
             gap: 4px;
-
             @include breakpoint("lg-max") {
                 padding: 10px 0 0 0;
             }
@@ -153,7 +153,6 @@
                 &:last-child {
                     padding: 0;
                 }
-
                 button {
                     width: 100%;
                     @include flex-center;
@@ -200,10 +199,9 @@
         p {
             @include text18;
             color: $black-color2;
-
             @include breakpoint("lg-max") {
                 font-size: 14px;
-                list-style: 21px;
+                line-height: 21px;
             }
         }
     }

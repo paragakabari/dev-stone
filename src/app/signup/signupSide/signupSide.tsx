@@ -21,7 +21,10 @@ export default function SignUpSide() {
                     </div>
 
                     <div className={styles.loginVectoreImg}>
-                        <Image unoptimized height={0} width={0} src={VectorImg} alt='VectorImg' />
+                        <div className={styles.signupVectore}>
+
+                            <Image unoptimized height={0} width={0} src={VectorImg} alt='VectorImg' />
+                        </div>
                     </div>
                 </div>
             </div>

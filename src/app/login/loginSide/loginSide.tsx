@@ -9,7 +9,7 @@ export default function LoginSide() {
             <div className={styles.loginSideBannerDetails}>
 
                 <div className={styles.logo}>
-                    <Image height={0} width={0} unoptimized alt="11" src={Logo}  />
+                    <Image height={0} width={0} unoptimized alt="11" src={Logo} />
                 </div>
                 <div className={styles.loginSideBannerBottom}>
                     <div className={styles.contentAlignment}>
@@ -21,7 +21,10 @@ export default function LoginSide() {
                     </div>
 
                     <div className={styles.loginVectoreImg}>
-                        <Image height={0} width={0} unoptimized  src={VectorImg} alt='img' />
+                        <div className={styles.loginVectore}>
+
+                            <Image height={0} width={0} unoptimized src={VectorImg} alt='img' />
+                        </div>
                     </div>
                 </div>
             </div>
