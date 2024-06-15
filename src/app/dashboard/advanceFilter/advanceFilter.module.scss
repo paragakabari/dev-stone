@@ -1,0 +1,129 @@
+@import "../../../scss/index.scss";
+
+.advanceFilterWrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: $modal-bg-wrapper-bg-color;
+    left: 0;
+    z-index: 999;
+    @include flex-center;
+    .advanceFilterBox {
+        width: 280px;
+        border-radius: 10px;
+        background: $white-color;
+        box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+        padding: 30px;
+        .dropdownALignment {
+            padding: 0 0 20px 0;
+            &:last-child {
+                padding: 0;
+            }
+        }
+
+        .investmentSize {
+            label {
+                @include text12-bold;
+                color: $black-color2;
+                opacity: 0.8;
+                display: block;
+                padding: 0 0 8px 0;
+            }
+
+            input[type="range"] {
+                width: 100%;
+                height: 5px;
+            }
+        }
+
+        .buttonAlignment {
+            padding: 30px 0 0 0;
+
+            button {
+                width: 100%;
+                @include flex-center;
+                gap: 10px;
+                background: $button-bg-bolor;
+                padding: 15px 30px;
+                border-radius: 50px;
+                border: none;
+                text-transform: uppercase;
+                font-family: "Inter", sans-serif;
+                @include text16-bolder;
+                color: $white-color;
+                cursor: pointer;
+
+                @include breakpoint("lg-max") {
+                    padding: 12px 30px;
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+                img {
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                }
+            }
+        }
+
+        .dropdown {
+            label {
+                @include text12-bold;
+                color: $black-color2;
+                opacity: 0.8;
+                display: block;
+                padding: 0 0 8px 0;
+            }
+
+            .dropdownBox {
+                width: 100%;
+                height: 28px;
+                @include flex-between;
+                padding: 0 10px;
+                border-radius: 4px;
+                border: 0.6px solid $border-color;
+                background: $dropdown-bg;
+                position: relative;
+                span {
+                    @include text12-bold;
+                    color: $black-color2;
+                }
+                img {
+                    width: 8px;
+                    height: 8px;
+                    display: block;
+                    cursor: pointer;
+                }
+
+                .dropdownBoxAlignment {
+                    position: absolute;
+                    width: 100%;
+                    top: 32px;
+                    left: 0;
+                    border-radius: 4px;
+                    background: $dropdown-bg;
+                    z-index: 9999;
+                    &.hiddenDropdown {
+                        max-height: 0px;
+                        overflow-y: hidden;
+                        transition: 0.4s ease-in-out;
+                        border: 0.6px solid transparent;
+                    }
+                    &.openDropdown {
+                        border: 0.6px solid $border-color;
+                        max-height: 120px;
+                        overflow-y: auto;
+                        transition: 0.4s ease-in-out;
+                    }
+                    p {
+                        @include text12-bold;
+                        color: $black-color2;
+                        padding: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

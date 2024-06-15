@@ -33,7 +33,7 @@ export default function RecentInvestments() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {[0, 1, 2, 3, 4, 5, 6, 7].map(() => {
+                                {[0, 1, 2, 3, 4, 5, 6, 7].map((key) => {
                                     return (
 
                                         <tr>

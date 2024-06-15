@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import DashboardMain from "./dashboardMain";
 import PeFirms from "./PeFirms";
 import RecentInvestments from "./RecentInvestments";
+import AdvanceFilter from "./advanceFilter";
 
 export default function Dashboard() {
     const router = useRouter();
@@ -20,8 +21,7 @@ export default function Dashboard() {
                 <DashboardMain />
                 <PeFirms />
                 <RecentInvestments />
-
-                {/* <AdvanceFilter /> */}
+                <AdvanceFilter />
             </div>
 
         </>

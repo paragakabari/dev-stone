@@ -11,6 +11,18 @@ export default function Header({ onToggleSidebar }) {
   return (
     <div className={styles.headerSection}>
       <div className={styles.headerLeft}>
+        <div
+          className={styles.toggleBtn}
+          onClick={onToggleSidebar}
+        >
+          <Image
+            unoptimized
+            height={0}
+            width={0}
+            src={TonggleIcon}
+            alt="TonggleIcon"
+          />
+        </div>
         <div className={styles.headerSearch}>
           <Image
             unoptimized
