@@ -19,7 +19,7 @@ export default function FirmListTable() {
                                         <label>
                                             PE Firm Name
                                         </label>
-                                        <img src={TopBottomArrow} alt="TopBottomArrow" />
+                                        <Image unoptimized height={0} width={0} src={TopBottomArrow} alt="TopBottomArrow" />
                                     </div>
                                 </th>
                                 <th>
@@ -27,11 +27,17 @@ export default function FirmListTable() {
                                         <label>
                                             Founded
                                         </label>
-                                        <img src={TopBottomArrow} alt="TopBottomArrow" />
+                                        <Image unoptimized height={0} width={0} src={TopBottomArrow} alt="TopBottomArrow" />
                                     </div>
                                 </th>
                                 <th>Portfolio</th>
-                                <th>Investments</th>
+                                <th>
+                                    <div className={styles.filterALignment}>
+                                        <label>
+                                            Investments
+                                        </label>
+                                        <Image unoptimized height={0} width={0} src={TopBottomArrow} alt="TopBottomArrow" />
+                                    </div> </th>
                                 <th>Sector</th>
                                 <th>Geographical Focus </th>
                                 <th></th>
