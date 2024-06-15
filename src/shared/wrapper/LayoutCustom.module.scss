@@ -6,19 +6,24 @@
     .layoutCustomLeft {
         width: 300px;
         transition: 0.4s ease-in-out;
-
     }
 
     .layoutCustomLefts {
-        display: none;
+        width: 0px;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
     }
 
     .layoutCustomRight {
         width: calc(100% - 300px);
+        height: 100vh;
+        overflow-y: auto;
+        transition: 0.4s ease-in-out;
     }
 
     .layoutCustomRights {
-        width: calc(100%);
+        width: 100%;
+        transition: 0.4s ease-in-out;
 
     }
 }

@@ -98,4 +98,8 @@
             }
         }
     }
+
+    :global(.slick-arrow) {
+        display: none !important;
+    }
 }

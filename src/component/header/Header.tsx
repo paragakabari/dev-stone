@@ -10,7 +10,6 @@ export default function Header({ onToggleSidebar }) {
   const router = useRouter();
   return (
     <div className={styles.headerSection}>
-      <button onClick={onToggleSidebar}>Toggle Sidebar</button>
       <div className={styles.headerLeft}>
         <div className={styles.headerSearch}>
           <Image
@@ -25,7 +24,7 @@ export default function Header({ onToggleSidebar }) {
 
         <div
           className={styles.toggleBtn}
-          // onClick={() => settoggleSidebar(!toggleSidebar)}
+          onClick={onToggleSidebar}
         >
           <Image
             unoptimized
