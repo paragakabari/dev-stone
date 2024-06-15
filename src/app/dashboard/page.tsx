@@ -21,7 +21,7 @@ export default function Dashboard() {
                 <DashboardMain />
                 <PeFirms />
                 <RecentInvestments />
-                <AdvanceFilter />
+                {/* <AdvanceFilter /> */}
             </div>
 
         </>
