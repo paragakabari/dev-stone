@@ -69,7 +69,7 @@ export default function PeFirms() {
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((key) => {
                             return (
 
-                                <div className={styles.peFirmDetailsSlider}>
+                                <div className={styles.peFirmDetailsSlider} key={key}>
                                     <div className={styles.peFirmDetailsBOx}>
                                         <div className={styles.peFirmDetailsLogo}>
                                             <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
