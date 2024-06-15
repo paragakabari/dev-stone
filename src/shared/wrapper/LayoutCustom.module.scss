@@ -1,0 +1,12 @@
+@import "../../scss/index.scss";
+.layoutCustomSection {
+    display: flex;
+
+    .layoutCustomLeft {
+        width: 300px;
+    }
+
+    .layoutCustomRight {
+        width: calc(100% - 300px);
+    }
+}

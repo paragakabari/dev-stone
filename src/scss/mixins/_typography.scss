@@ -74,6 +74,12 @@
     line-height: normal;
     letter-spacing: 0.8px;
 }
+@mixin text16-bold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
 
 @mixin text14-bolder {
     font-size: 14px;

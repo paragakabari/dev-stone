@@ -1,0 +1,107 @@
+@import "../../scss/index.scss";
+
+.headerSection {
+    width: 100%;
+    background: $white-color;
+    @include flex-between;
+    padding: 12px 30px;
+
+    .headerLeft {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        .headerSearch {
+            width: 348px;
+            @include flex;
+            gap: 14px;
+            background: $input-bg;
+            border-radius: 50px;
+            padding: 14px 20px;
+            @include breakpoint("md-max") {
+                width: 200px;
+            }
+            img {
+                width: 14px;
+                height: 14px;
+                display: block;
+            }
+            input {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background: transparent;
+                @include text16;
+                color: $black-color2;
+                &::placeholder {
+                    color: $black-color3;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .toggleBtn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid $toggleBorder;
+            @include flex-center;
+            cursor: pointer;
+            img {
+                width: 16px;
+                height: 16px;
+                display: block;
+            }
+        }
+    }
+
+    .headerRight {
+        @include flex-center;
+        gap: 20px;
+
+        .headerOption {
+            @include flex-center;
+            gap: 20px;
+            @include breakpoint("md-max") {
+                display: none;
+            }
+            img {
+                width: 20px;
+                height: 20px;
+                display: block;
+            }
+        }
+
+        .profieAlignment {
+            @include flex-center;
+            gap: 15px;
+            cursor: pointer;
+            .profileName {
+                p {
+                    @include text18;
+                    color: $black-color2;
+                }
+                @include breakpoint("md-max") {
+                    display: none;
+                }
+            }
+
+            .profileImg {
+                width: 54px;
+                min-width: 54px;
+                max-width: 54px;
+                height: 54px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

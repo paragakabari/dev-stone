@@ -4,6 +4,7 @@ import Header from "@/component/header/Header";
 import HomeHeader from "@/component/home-header/HomeHeader";
 import Sidebar from "@/component/sidebar/Sidebar";
 import { usePathname } from "next/navigation";
+import styles from "./LayoutCustom.module.scss";
 
 export const LayoutCustom = ({ children }) => {
   const path = usePathname();
@@ -19,11 +20,18 @@ export const LayoutCustom = ({ children }) => {
 
   return (
     <>
-      {isSidebarRoute && <Sidebar />}
-      {isHeaderOnlyRoute && <Header />}
-      {isHeaderHomeRoute && <HomeHeader />}
+      <div className={styles.layoutCustomSection}>
+        <div className={styles.layoutCustomLeft}>
+          {isSidebarRoute && <Sidebar />}
+        </div>
+        <div className={styles.layoutCustomRight}>
 
-      {children}
+          {isHeaderOnlyRoute && <Header />}
+          {isHeaderHomeRoute && <HomeHeader />}
+
+          {children}
+        </div>
+      </div>
     </>
   );
 };
