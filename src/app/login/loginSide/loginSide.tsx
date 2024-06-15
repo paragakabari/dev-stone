@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./loginSide.module.scss";
+import Image from 'next/image';
 const Logo = "/assets/logo/logo.svg";
 const VectorImg = "/assets/images/login-vectore.png";
 export default function LoginSide() {
@@ -8,7 +9,7 @@ export default function LoginSide() {
             <div className={styles.loginSideBannerDetails}>
 
                 <div className={styles.logo}>
-                    <img src={Logo} alt="Logo" />
+                    <Image height={0} width={0} unoptimized alt="11" src={Logo}  />
                 </div>
                 <div className={styles.loginSideBannerBottom}>
                     <div className={styles.contentAlignment}>
@@ -20,7 +21,7 @@ export default function LoginSide() {
                     </div>
 
                     <div className={styles.loginVectoreImg}>
-                        <img src={VectorImg} alt='VectorImg' />
+                        <Image height={0} width={0} unoptimized  src={VectorImg} alt='img' />
                     </div>
                 </div>
             </div>

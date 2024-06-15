@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./signupSide.module.scss";
+import Image from 'next/image';
 const Logo = "/assets/logo/logo.svg";
 const VectorImg = "/assets/images/signup-vectore.png";
 export default function SignUpSide() {
@@ -8,7 +9,7 @@ export default function SignUpSide() {
             <div className={styles.signupSidebarBannerDetails}>
 
                 <div className={styles.logo}>
-                    <img src={Logo} alt="Logo" />
+                    <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
                 </div>
                 <div className={styles.signupSideBannerBottom}>
                     <div className={styles.contentAlignment}>
@@ -20,7 +21,7 @@ export default function SignUpSide() {
                     </div>
 
                     <div className={styles.loginVectoreImg}>
-                        <img src={VectorImg} alt='VectorImg' />
+                        <Image unoptimized height={0} width={0} src={VectorImg} alt='VectorImg' />
                     </div>
                 </div>
             </div>
