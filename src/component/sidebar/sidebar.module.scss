@@ -10,19 +10,24 @@
     justify-content: space-between;
     overflow-y: auto;
     position: relative;
+
     .sidebarTop {
         position: relative;
         z-index: 9;
+
         .sidebarLogo {
             width: 180px;
+
             img {
                 width: 100%;
                 height: 100%;
                 display: block;
             }
         }
+
         .sidebarMenu {
             padding: 40px 0 0 0;
+
             .menuList {
                 margin: 0 0 8px 0;
                 transition: 0.4s ease-in-out;
@@ -67,6 +72,7 @@
         margin: 20px 0 0 0;
         position: relative;
         z-index: 9;
+
         p {
             @include text16;
             color: $white-color;
@@ -101,8 +107,37 @@
                 }
             }
         }
+
         .sidebarBottom {
             display: none;
         }
     }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
 }
