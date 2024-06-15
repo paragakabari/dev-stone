@@ -70,6 +70,11 @@
             }
 
             .input {
+                img {
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                }
                 width: 100%;
                 border-bottom: 1px solid #828282;
                 @include flex;
@@ -174,6 +179,11 @@
                         background: transparent;
                         border: 1px solid $btn-border-color;
                         color: $black-color2;
+                    }
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        display: block;
                     }
                 }
             }

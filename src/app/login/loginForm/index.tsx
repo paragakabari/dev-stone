@@ -30,7 +30,7 @@ export default function LoginForm() {
                 </div>
 
                 <div className={styles.dontAccountAlignment}>
-                    <a>Don ${"'"}t have an account?
+                    <a>Don{"'"}t have an account?
 
                     </a><Link href="/signup"> <span>Sign up</span>
                     </Link>

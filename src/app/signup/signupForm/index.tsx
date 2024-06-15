@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./signupForm.module.scss";
-
+import Image from 'next/image';
 import Link from 'next/link';
 const MailIcon = "/assets/icons/mail-icon.svg";
 const SendLinkIcon = "/assets/icons/send-link-icon.svg";
@@ -18,13 +18,13 @@ export default function SignupForm() {
                     <div className={styles.inputAlignment}>
 
                         <div className={styles.input}>
-                            <img src={UserIcon} alt="UserIcon" />
+                            <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />
                             <input type='text' placeholder='Your Name' />
                         </div>
                     </div>
                     <div className={styles.inputAlignment}>
                         <div className={styles.input}>
-                            <img src={MailIcon} alt="MailIcon" />
+                            <Image unoptimized height={0} width={0} src={MailIcon} alt="MailIcon" />
                             <input type='text' placeholder='Email Address' />
                         </div>
                     </div>
@@ -32,10 +32,10 @@ export default function SignupForm() {
 
                 <div className={styles.buttonAlignment}>
                     <div className={styles.buttonDetails}>
-                        <button><img src={SendLinkIcon} />Send Magic Link</button>
+                        <button><Image unoptimized height={0} width={0} src={SendLinkIcon} alt="send link icon" />Send Magic Link</button>
                     </div>
                     <div className={styles.buttonDetails}>
-                        <button className={styles.outlineBtn}><img src={GoogleIcon} />Sign in with Google</button>
+                        <button className={styles.outlineBtn}><Image unoptimized height={0} width={0} src={GoogleIcon} alt="google icon" />Sign in with Google</button>
                     </div>
                 </div>
 
