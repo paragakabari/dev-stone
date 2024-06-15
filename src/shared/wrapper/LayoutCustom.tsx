@@ -5,7 +5,7 @@ import HomeHeader from "@/component/home-header/HomeHeader";
 import Sidebar from "@/component/sidebar/Sidebar";
 import { usePathname } from "next/navigation";
 import styles from "./LayoutCustom.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const LayoutCustom = ({ children }) => {
   const path = usePathname();
@@ -21,7 +21,20 @@ export const LayoutCustom = ({ children }) => {
   const login = loginRoutes.includes(path);
 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSidebarOpen(false); // Open sidebar if screen width is 768px or less
+      } else {
+        setSidebarOpen(true);
+      }
+    };
 
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };

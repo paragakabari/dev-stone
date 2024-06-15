@@ -1,6 +1,8 @@
 import { useRouter } from "next/navigation";
 import styles from "./header.module.scss";
 import Image from "next/image";
+import { useState } from "react";
+import AdvanceFilter from "@/app/dashboard/advanceFilter";
 const SearchIcon = "/assets/icons/blue-search-icon.svg";
 const TonggleIcon = "/assets/icons/tonggle-icon.svg";
 const EmailIcon = "/assets/icons/email-icon.svg";
@@ -8,6 +10,11 @@ const NotificationIcon = "/assets/icons/notification-icon.svg";
 const ProfileImg = "/assets/images/profile-img.png";
 export default function Header({ onToggleSidebar }) {
   const router = useRouter();
+  const [isModalOpen, setModalOpen] = useState(true);
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
   return (
     <div className={styles.headerSection}>
       <div className={styles.headerLeft}>
@@ -36,7 +43,7 @@ export default function Header({ onToggleSidebar }) {
 
         <div
           className={styles.toggleBtn}
-          onClick={onToggleSidebar}
+          onClick={toggleModal}
         >
           <Image
             unoptimized
@@ -80,6 +87,7 @@ export default function Header({ onToggleSidebar }) {
           </div>
         </div>
       </div>
+      <AdvanceFilter isOpen={isModalOpen} onClose={toggleModal} />
     </div>
   );
 }
