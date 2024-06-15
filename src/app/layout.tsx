@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import "./globals.css";
+import { LayoutCustom } from "@/shared/wrapper/LayoutCustom";
 
 const inter = Red_Hat_Display({ subsets: ["latin"] });
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <LayoutCustom>
+
+        {children}
+        </LayoutCustom>
+        </body>
     </html>
   );
 }
