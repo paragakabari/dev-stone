@@ -24,8 +24,19 @@
     letter-spacing: 0.48px;
 }
 
+@mixin text22-bolder {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.48px;
+}
 @mixin text40-bolder {
     font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+}
+@mixin text32-bolder {
+    font-size: 32px;
     font-weight: 700;
     line-height: 120%;
 }

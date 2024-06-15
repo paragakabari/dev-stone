@@ -1,14 +1,27 @@
 "use client"
 
-
+import styles from "./dashboard.module.scss";
 import { useRouter } from "next/navigation"
+import DashboardMain from "./dashboardMain";
+import PeFirms from "./PeFirms";
 
-export default function Dashboard(){
+export default function Dashboard() {
     const router = useRouter();
-    return(
+    return (
         <>
-     
-       Dashboard
+
+            <div className={styles.dashboardSection}>
+                <div className={styles.dashboardHeading}>
+                    <h1>Dashboard</h1>
+                    <p>Hello Robert , Welcome to Stone-Goff Partners</p>
+                </div>
+
+                <DashboardMain />
+                <PeFirms />
+                {/* <RecentInvestments /> */}
+
+                {/* <AdvanceFilter /> */}
+            </div>
 
         </>
     )

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import { LayoutCustom } from "@/shared/wrapper/LayoutCustom";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const inter = Red_Hat_Display({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,9 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <LayoutCustom>
 
-        {children}
+          {children}
         </LayoutCustom>
-        </body>
+      </body>
     </html>
   );
 }

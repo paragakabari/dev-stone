@@ -1,0 +1,101 @@
+@import "../../../scss/index.scss";
+
+.peFirmsSection {
+    padding: 20px 0 0 0;
+    .peFirmsBox {
+        box-shadow: 6px 6px 54px #0000000d;
+        background: $white-color;
+        border-radius: 16px;
+
+        padding: 16px;
+        .peFirmsHeading {
+            @include flex-between;
+
+            h2 {
+                @include text22-bolder;
+                color: $black-color4;
+            }
+
+            .viewAllPeFIrms {
+                @include flex-center;
+                gap: 10px;
+                cursor: pointer;
+                padding: 0 96px 0 0;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                }
+                p {
+                    @include text14-bolder;
+                    color: $black-color4;
+                }
+            }
+        }
+    }
+
+    .peFirmDetailsAlignment {
+        padding: 20px 0 0 0;
+        .peFirmDetailsSlider {
+            padding: 0 5px;
+            .peFirmDetailsBOx {
+                border: 1px solid $black-opcity-border-color;
+                border-radius: 20px;
+                padding: 45px 30px 30px 30px;
+
+                .peFirmDetailsLogo {
+                    img {
+                        cursor: pointer;
+                    }
+                }
+
+                .peFirmDetailAllDetails {
+                    padding: 44px 0 0 0;
+                    .peFirmProfileDescription {
+                        padding: 0 0 30px 0;
+                        border-bottom: 1px solid $black-opcity-border-color2;
+                        h3 {
+                            @include text20-bold;
+                            color: $black-color2;
+                            padding: 0 0 20px 0;
+                        }
+                        p {
+                            @include text16;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .peFirmProfileBottomAlignment {
+                        padding: 30px 0 0 0;
+
+                        .peFirmListDetails {
+                            @include flex;
+                            gap: 10px;
+                            padding: 0 0 12px 0;
+                            &:last-child {
+                                padding: 0;
+                            }
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                display: block;
+                            }
+                            p {
+                                @include text14;
+                                color: $black-color2;
+
+                                span {
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
