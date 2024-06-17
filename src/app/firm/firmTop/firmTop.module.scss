@@ -5,12 +5,25 @@
     background: $white-color;
     border-radius: 16px;
     padding: 30px;
+
     @include flex-between;
     gap: 20px;
+    @include breakpoint("lg-max") {
+        padding: 20px;
+    }
+    @include breakpoint("sm-max") {
+        flex-wrap: wrap;
+    }
     .firmTopLeft {
         @include flex;
         gap: 26px;
-
+        @include breakpoint("lg-max") {
+            gap: 16px;
+        }
+        @include breakpoint("sm-max") {
+            flex-wrap: wrap;
+            gap: 12px;
+        }
         .firmTopLogo {
             width: 180px;
             height: 80px;
@@ -19,10 +32,17 @@
             border: 1px solid $black-opcity-border-color;
             cursor: pointer;
             @include flex-center;
+            @include breakpoint("lg-max") {
+                width: 120px;
+                height: 60px;
+            }
             img {
                 width: 120px;
                 height: auto;
                 display: block;
+                @include breakpoint("lg-max") {
+                    width: 80px;
+                }
             }
         }
 
@@ -31,20 +51,41 @@
                 @include flex;
                 gap: 15px;
                 padding: 0 0 15px 0;
+                @include breakpoint("lg-max") {
+                    gap: 10px;
+                    padding: 0 0 8px 0;
+                }
                 h1 {
                     @include text24-bolder;
                     color: $black-color2;
+                    @include breakpoint("lg-max") {
+                        font-size: 20px;
+                        line-height: 26px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
                 }
                 img {
                     width: 16px;
                     height: 16px;
                     display: block;
+                    @include breakpoint("lg-max") {
+                        width: 12px;
+                        height: 12px;
+                    }
                 }
             }
 
             p {
                 @include text14;
                 color: $black-color3;
+                @include breakpoint("lg-max") {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
             }
         }
     }
@@ -62,10 +103,18 @@
                     width: 20px;
                     height: 20px;
                     display: block;
+                    @include breakpoint("lg-max") {
+                        width: 16px;
+                        height: 16px;
+                    }
                 }
                 p {
                     @include text14;
                     color: $black-color2;
+                    @include breakpoint("lg-max") {
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
 
                     span {
                         font-weight: 700;

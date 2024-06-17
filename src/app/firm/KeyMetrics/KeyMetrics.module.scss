@@ -8,10 +8,16 @@
         background: $white-color;
         border-radius: 16px;
         padding: 30px;
-
+        @include breakpoint("lg-max") {
+            padding: 20px;
+        }
         h2 {
             @include text24-bolder;
             color: $black-color4;
+            @include breakpoint("sm-max") {
+                font-size: 20px;
+                line-height: 26px;
+            }
         }
 
         .keyMetricsDetailsAlignment {
@@ -20,7 +26,13 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
-
+                @include breakpoint("lg-max") {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+                @include breakpoint("sm-max") {
+                    grid-template-columns: repeat(1, 1fr);
+                }
                 .keyMetricsDetailsGridBox {
                     border-radius: 20px;
                     border: 1px solid $black-opcity3;
@@ -50,6 +62,14 @@
                             h4 {
                                 @include text32-bolder;
                                 color: #1d63dc;
+                                @include breakpoint("lg-max") {
+                                    font-size: 28px;
+                                    line-height: 32px;
+                                }
+                                @include breakpoint("sm-max") {
+                                    font-size: 24px;
+                                    line-height: 30 px;
+                                }
                             }
                         }
                     }
@@ -79,14 +99,21 @@
 
         .keyMetricsBottomDetails {
             padding: 50px 0 0 0;
-            
-
+            @include breakpoint("lg-max") {
+                padding: 30px 0 0 0;
+            }
             .keyMetricsChildDetails {
                 padding: 0 0 30px 0;
                 h6 {
                     @include text24-bolder;
                     color: $black-color4;
                     padding: 0 0 20px 0;
+
+                    @include breakpoint("sm-max") {
+                        font-size: 20px;
+                        line-height: 26px;
+                        padding: 0 0 10px 0;
+                    }
                 }
 
                 .keyMetricsChilFlexAlignment {

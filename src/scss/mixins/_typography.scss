@@ -47,6 +47,12 @@
     line-height: 150%; /* 27px */
     letter-spacing: 0.36px;
 }
+@mixin text18-bold {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.36px;
+}
 
 @mixin text20 {
     font-size: 20px;
