@@ -11,6 +11,7 @@ export default function Dashboard() {
     const router = useRouter();
     return (
         <>
+        
             <div className={styles.dashboardSection}>
                 <div className={styles.dashboardHeading}>
                     <h1>Dashboard</h1>
