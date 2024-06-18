@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./sidebar.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
@@ -11,6 +11,9 @@ const ProfileIcon = "/assets/icons/member-list.svg";
 const LogouIcon = "/assets/icons/sign-out-alt.svg";
 export default function Sidebar({ isOpen, onClose }) {
   const router = useRouter();
+  const path = usePathname().split("/")[1];
+  console.log('path',path);
+  
   return (
     // <div className={classNames(styles.sidebarSection, toggleSidebar ? styles.smallSidebar : "")}>
 
@@ -21,8 +24,8 @@ export default function Sidebar({ isOpen, onClose }) {
         </div>
 
         <div className={styles.sidebarMenu}>
-          <div className={classNames(styles.menuList, styles.activeMenu)}>
-            <a>
+          <div className={`${styles.menuList} ${path === 'dashboard' ? styles.activeMenu : ''}`}>
+            <a onClick={() => router.push("/dashboard")}>
               {" "}
               <Image
                 unoptimized
@@ -34,8 +37,8 @@ export default function Sidebar({ isOpen, onClose }) {
               <p>Dashboard</p>
             </a>
           </div>
-          <div className={styles.menuList}>
-            <a>
+          <div className={`${styles.menuList} ${path === 'firm-list' ? styles.activeMenu : ''}`}>
+            <a onClick={() => router.push("/firm-list")}>
               {" "}
               <Image
                 unoptimized

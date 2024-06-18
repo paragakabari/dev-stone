@@ -2,11 +2,13 @@ import React from 'react'
 import styles from "./firmListTable.module.scss";
 import Image from 'next/image';
 import Pagination from '../pagination/page';
+import { redirect, useRouter } from 'next/navigation';
 const Logo = "/assets/images/logo1.png";
 const StarIcon = "/assets/icons/star-icon.svg";
 const TopBottomArrow = "/assets/icons/top-bottom-arrow.svg";
 const UPRightArrow = "/assets/icons/up-right.svg";
 export default function FirmListTable() {
+    const redirect = useRouter();
     return (
         <div className={styles.firmListTableSection}>
             <div className={styles.firmListTableBox}>
@@ -67,7 +69,7 @@ export default function FirmListTable() {
                                         <td>7+</td>
                                         <td>Global</td>
                                         <td >
-                                            <div className={styles.upRightArrow}>
+                                            <div className={styles.upRightArrow} onClick={() => redirect.push("/firm")}>
 
                                                 <Image unoptimized height={0} width={0} src={UPRightArrow} alt={UPRightArrow} />
                                             </div>

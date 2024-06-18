@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./aboutFirm.module.scss";
 import classNames from 'classnames';
+import Image from 'next/image';
 const MarkerIcon = "/assets/icons/marker.svg";
 const PhoneIcon = "/assets/icons/phone-call.svg";
 const EmailIcon = "/assets/icons/email-icon-blue.svg";
@@ -17,20 +18,20 @@ export default function AboutFirm() {
                     <div className={styles.bottomRightAlignment}>
                         <div className={styles.bottomRightFlex}>
                             <div>
-                                <img src={MarkerIcon} alt='MarkerIcon' />
+                                <Image unoptimized height={0} width={0} src={MarkerIcon} alt='MarkerIcon' />
                             </div>
                             <p>1001 Pennsylvania Avenue NW,
                                 Washington, DC 20004-2505, USA</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
-                                <img src={PhoneIcon} alt="PhoneIcon" />
+                                <Image unoptimized height={0} width={0} src={PhoneIcon} alt="PhoneIcon" />
                             </div>
                             <p>+1 (202) 729-5626</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
-                                <img src={EmailIcon} alt="EmailIcon" />
+                                <Image unoptimized height={0} width={0} src={EmailIcon} alt="EmailIcon" />
                             </div>
                             <p>info@carlyle.com</p>
                         </div>
@@ -45,7 +46,7 @@ export default function AboutFirm() {
                         <div className={styles.teamDetailsGridItem}>
                             <div className={styles.teamDetailsBox}>
                                 <div className={styles.teamProfile}>
-                                    <img src={ProfileImg} alt="ProfileImg" />
+                                    <Image unoptimized height={0} width={0} src={ProfileImg} alt="ProfileImg" />
                                 </div>
 
                                 <div className={styles.teamNameAlignment}>
@@ -58,7 +59,7 @@ export default function AboutFirm() {
                         <div className={styles.teamDetailsGridItem}>
                             <div className={styles.teamDetailsBox}>
                                 <div className={styles.teamProfile}>
-                                    <img src={ProfileImg} alt="ProfileImg" />
+                                    <Image unoptimized height={0} width={0} src={ProfileImg} alt="ProfileImg" />
                                 </div>
 
                                 <div className={styles.teamNameAlignment}>
@@ -71,7 +72,7 @@ export default function AboutFirm() {
                         <div className={styles.teamDetailsGridItem}>
                             <div className={styles.teamDetailsBox}>
                                 <div className={styles.teamProfile}>
-                                    <img src={ProfileImg} alt="ProfileImg" />
+                                    <Image unoptimized height={0} width={0} src={ProfileImg} alt="ProfileImg" />
                                 </div>
 
                                 <div className={styles.teamNameAlignment}>

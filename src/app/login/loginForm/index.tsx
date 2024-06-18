@@ -2,11 +2,13 @@ import React from 'react'
 import styles from "./loginForm.module.scss";
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 const MailIcon = "/assets/icons/mail-icon.svg";
 const SendLinkIcon = "/assets/icons/send-link-icon.svg";
 const GoogleIcon = "/assets/icons/google-icon.svg";
 const Logo = "/assets/logo/logo.svg";
 export default function LoginForm() {
+    const redirect = useRouter();
     return (
         <div className={styles.loginFormSection}>
             <div className={styles.mobileViewLogo}>
@@ -25,16 +27,18 @@ export default function LoginForm() {
                 </div>
 
                 <div className={styles.buttonAlignment}>
-                    <div className={styles.buttonDetails}>
+                    <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
                         <button><Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
                     </div>
-                    <div className={styles.buttonDetails}>
+                    <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
                         <button className={styles.outlineBtn}><Image unoptimized height={0} width={0} src={GoogleIcon} alt='2' />Sign in with Google</button>
                     </div>
                 </div>
 
                 <div className={styles.dontAccountAlignment}>
-                    <a>Don{"'"}t have an account?
+                    <a
+                    
+                    >Don{"'"}t have an account?
 
                     </a><Link href="/signup"> <span>Sign up</span>
                     </Link>
