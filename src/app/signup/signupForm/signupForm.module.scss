@@ -10,6 +10,9 @@
 
     @include breakpoint("md-max") {
         height: 100vh;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: space-around;
     }
     &::before {
         content: "";
@@ -23,12 +26,28 @@
         background-size: contain;
     }
 
+    .mobileViewLogo {
+        display: none;
+        @include breakpoint("md-max") {
+            display: block;
+            img {
+                width: 190px;
+                display: block;
+                height: 100%;
+            }
+        }
+    }
+
     .signUpFormAlignment {
         width: 432px;
         margin: 0 auto;
         text-align: center;
+        @include breakpoint("md-max") {
+            height: calc(100vh - 200px);
+        }
         @include breakpoint("sm-max") {
             padding: 20px;
+            width: 100%;
         }
         h1 {
             @include text40-bolder;

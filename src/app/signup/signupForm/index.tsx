@@ -6,9 +6,13 @@ const MailIcon = "/assets/icons/mail-icon.svg";
 const SendLinkIcon = "/assets/icons/send-link-icon.svg";
 const GoogleIcon = "/assets/icons/google-icon.svg";
 const UserIcon = "/assets/icons/user-icon.svg";
+const Logo = "/assets/logo/logo.svg";
 export default function SignupForm() {
     return (
         <div className={styles.signUpFormSection}>
+            <div className={styles.mobileViewLogo}>
+                <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
+            </div>
             <div className={styles.signUpFormAlignment}>
                 <h1>Sign Up</h1>
                 <p>Enter your details below to create your account

@@ -105,6 +105,20 @@
     letter-spacing: 0.8px;
 }
 
+@mixin text16-meduim {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
+
+@mixin text16-bolder {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
+
 @mixin text14-bolder {
     font-size: 14px;
     font-weight: 700;

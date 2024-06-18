@@ -11,6 +11,7 @@ export default function SignUpSide() {
                 <div className={styles.logo}>
                     <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
                 </div>
+              
                 <div className={styles.signupSideBannerBottom}>
                     <div className={styles.contentAlignment}>
                         <h2>Stone-Goff

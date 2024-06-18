@@ -1,0 +1,44 @@
+@import "../../scss/index.scss";
+.headerSection {
+    .headerAlignment {
+        @include flex-between;
+        padding: 24px 0;
+        .headerLogo {
+            width: 223px;
+            height: 43px;
+            cursor: pointer;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+
+        .headerRightSide {
+            @include flex;
+            gap: 50px;
+
+            .headerMenu {
+                @include flex;
+                gap: 40px;
+                a {
+                    @include text16-meduim;
+                    color: $white-color;
+                    cursor: pointer;
+                }
+            }
+
+            .headerSearchAlignment {
+                .searchButtonAlignment {
+                    button {
+                        background: $button-bg-bolor;
+                        padding: 10px 30px;
+                        border-radius: 50px;
+                        @include text16-meduim;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
