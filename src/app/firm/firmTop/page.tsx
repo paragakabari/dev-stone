@@ -1,16 +1,20 @@
+"use client"
 import React from 'react'
 import styles from "./firmTop.module.scss";
 import Image from 'next/image';
+import { useRouter } from "next/navigation";
+
 const Logo = "/assets/images/logo2.png";
 const StarIcon = "/assets/icons/star-icon.svg";
 const InvestmentIcon = "/assets/icons/investment-icon.svg";
 const SectoreIcon = "/assets/icons/sectore-icon.svg";
 const GeographicalIcon = "/assets/icons/Geographical-icon.svg";
 export default function FirmTop() {
+    const router = useRouter();
     return (
         <div className={styles.firmTopSection}>
 
-            <div className={styles.breadCrumpAlignmet}>
+            <div className={styles.breadCrumpAlignmet} onClick={() => router.push("/firm-list")}>
                 <p>{"<"} Pe Firm</p>
             </div>
             <div className={styles.firmTopAlignment}>
