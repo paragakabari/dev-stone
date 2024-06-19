@@ -1,7 +1,9 @@
 import { useRouter } from "next/navigation";
 import styles from "./HomeHeader.module.scss";
+import Image from "next/image";
 const Logo = "/assets/logo/logo.svg";
 const SearchIcon = "/assets/icons/white-search.svg";
+const UserIcon = "/assets/icons/white-user-icon.svg"
 export default function HomeHeader() {
   const router = useRouter();
   return (
@@ -9,7 +11,7 @@ export default function HomeHeader() {
       <div className="container">
         <div className={styles.headerAlignment}>
           <div className={styles.headerLogo}>
-            <img src={Logo} alt="Logo" />
+          <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
           </div>
           <div className={styles.headerRightSide}>
             <div className={styles.headerMenu}>
@@ -22,11 +24,12 @@ export default function HomeHeader() {
               <a>Contact</a>
             </div>
             <div className={styles.headerSearchAlignment}>
-              <div>
-                <img src={SearchIcon} alt="SearchIcon" />
+              <div className={styles.searchIcon}>
+                <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
               </div>
               <div className={styles.searchButtonAlignment}>
-
+                <button>
+                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" /> Login</button>
               </div>
             </div>
           </div>

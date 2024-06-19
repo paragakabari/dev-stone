@@ -1,0 +1,60 @@
+@import "../../../scss/index.scss";
+
+.easyUsingSection {
+    padding: 70px 0 0 0;
+    .easyUsingBox {
+        width: 100%;
+        background: url("/assets/images/easy-bg-img.png");
+        background-color: #1d63dc;
+        border-radius: 40px;
+        padding: 0 120px;
+        display: grid;
+        grid-template-columns: 410px 1fr;
+        align-items: center;
+        gap: 80px;
+
+        .girlImgAlignment {
+            width: 100%;
+            height: auto;
+            margin: -70px 0 0 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+        }
+
+        .easyUsingLeftSide {
+            p {
+                padding: 0 0 20px 0;
+                @include text14-bolder;
+                text-transform: uppercase;
+                color: $white-color;
+            }
+            h2 {
+                @include text50;
+                color: $white-color;
+                span {
+                    color: $button-bg-bolor;
+                    @include text50;
+                    padding: 0;
+                }
+            }
+
+            .buttonAlignment {
+                padding: 40px 0 0 0;
+                button {
+                    padding: 15px 40px;
+                    background: $button-bg-bolor;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    @include text18-bold;
+                    color: $white-color;
+                    text-transform: uppercase;
+                    border: none;
+                }
+            }
+        }
+    }
+}

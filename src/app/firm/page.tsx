@@ -12,7 +12,6 @@ export default function Firm() {
     const router = useRouter();
     return (
         <div className={styles.firmSection}>
-
             <FirmTop />
             <KeyMetrics />
             <AboutFirm />

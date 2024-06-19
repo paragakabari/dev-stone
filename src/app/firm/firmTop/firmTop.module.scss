@@ -4,120 +4,131 @@
     box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
     background: $white-color;
     border-radius: 16px;
-    padding: 30px;
+    .breadCrumpAlignmet {
+        border-bottom: 1px solid rgba(29, 99, 220, 0.5);
+        padding: 10px 30px;
+        p {
+            @include text16-meduim;
+            color: $black-color2;
+            cursor: pointer;
+        }
+    }
+    .firmTopAlignment {
+        padding: 30px;
 
-    @include flex-between;
-    gap: 20px;
-    @include breakpoint("lg-max") {
-        padding: 20px;
-    }
-    @include breakpoint("sm-max") {
-        flex-wrap: wrap;
-    }
-    .firmTopLeft {
-        @include flex;
-        gap: 26px;
+        @include flex-between;
+        gap: 20px;
         @include breakpoint("lg-max") {
-            gap: 16px;
+            padding: 20px;
         }
         @include breakpoint("sm-max") {
             flex-wrap: wrap;
-            gap: 12px;
         }
-        .firmTopLogo {
-            width: 180px;
-            height: 80px;
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid $black-opcity-border-color;
-            cursor: pointer;
-            @include flex-center;
+        .firmTopLeft {
+            @include flex;
+            gap: 26px;
             @include breakpoint("lg-max") {
-                width: 120px;
-                height: 60px;
+                gap: 16px;
             }
-            img {
-                width: 120px;
-                height: auto;
-                display: block;
-                @include breakpoint("lg-max") {
-                    width: 80px;
-                }
+            @include breakpoint("sm-max") {
+                flex-wrap: wrap;
+                gap: 12px;
             }
-        }
-
-        .firmCompanyDetails {
-            .companyTop {
-                @include flex;
-                gap: 15px;
-                padding: 0 0 15px 0;
+            .firmTopLogo {
+                width: 180px;
+                height: 80px;
+                padding: 10px;
+                border-radius: 20px;
+                border: 1px solid $black-opcity-border-color;
+                cursor: pointer;
+                @include flex-center;
                 @include breakpoint("lg-max") {
-                    gap: 10px;
-                    padding: 0 0 8px 0;
-                }
-                h1 {
-                    @include text24-bolder;
-                    color: $black-color2;
-                    @include breakpoint("lg-max") {
-                        font-size: 20px;
-                        line-height: 26px;
-                    }
-
-                    @include breakpoint("sm-max") {
-                        font-size: 18px;
-                        line-height: 24px;
-                    }
+                    width: 120px;
+                    height: 60px;
                 }
                 img {
-                    width: 16px;
-                    height: 16px;
+                    width: 120px;
+                    height: auto;
                     display: block;
                     @include breakpoint("lg-max") {
-                        width: 12px;
-                        height: 12px;
+                        width: 80px;
                     }
                 }
             }
 
-            p {
-                @include text14;
-                color: $black-color3;
-                @include breakpoint("lg-max") {
-                    font-size: 12px;
-                    line-height: 18px;
-                }
-            }
-        }
-    }
-
-    .firmTopRight {
-        .peFirmProfileBottomAlignment {
-            .peFirmListDetails {
-                @include flex;
-                gap: 10px;
-                padding: 0 0 12px 0;
-                &:last-child {
-                    padding: 0;
-                }
-                img {
-                    width: 20px;
-                    height: 20px;
-                    display: block;
+            .firmCompanyDetails {
+                .companyTop {
+                    @include flex;
+                    gap: 15px;
+                    padding: 0 0 15px 0;
                     @include breakpoint("lg-max") {
+                        gap: 10px;
+                        padding: 0 0 8px 0;
+                    }
+                    h1 {
+                        @include text24-bolder;
+                        color: $black-color2;
+                        @include breakpoint("lg-max") {
+                            font-size: 20px;
+                            line-height: 26px;
+                        }
+
+                        @include breakpoint("sm-max") {
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
+                    }
+                    img {
                         width: 16px;
                         height: 16px;
+                        display: block;
+                        @include breakpoint("lg-max") {
+                            width: 12px;
+                            height: 12px;
+                        }
                     }
                 }
+
                 p {
                     @include text14;
-                    color: $black-color2;
+                    color: $black-color3;
                     @include breakpoint("lg-max") {
                         font-size: 12px;
                         line-height: 18px;
                     }
+                }
+            }
+        }
 
-                    span {
-                        font-weight: 700;
+        .firmTopRight {
+            .peFirmProfileBottomAlignment {
+                .peFirmListDetails {
+                    @include flex;
+                    gap: 10px;
+                    padding: 0 0 12px 0;
+                    &:last-child {
+                        padding: 0;
+                    }
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                        @include breakpoint("lg-max") {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                    p {
+                        @include text14;
+                        color: $black-color2;
+                        @include breakpoint("lg-max") {
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+
+                        span {
+                            font-weight: 700;
+                        }
                     }
                 }
             }

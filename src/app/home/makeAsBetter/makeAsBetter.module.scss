@@ -1,0 +1,56 @@
+@import "../../../scss/index.scss";
+
+.makeAsBetterSection {
+    padding: 120px 0 0 0;
+    .makeAsBetterAlignment {
+        padding: 0 20px;
+        text-align: center;
+        .makeAsBetterHeader {
+            h2 {
+                @include text50;
+                color: $black-color2;
+
+                span {
+                    color: #1d63dc;
+                }
+            }
+        }
+
+        .makeAsBetterDetails {
+            padding: 60px 0 0;
+
+            .makeAsBetterDetailsGrid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 64px;
+
+                .makeAsBetterDetailsGridItem {
+                    text-align: center;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    h6 {
+                        padding: 15px 0 0 0;
+                        @include text60-bolder;
+                        color: $button-bg-bolor;
+                    }
+
+                    p {
+                        padding: 16px 0 0 0;
+                        @include text24-bold;
+                    }
+
+                    span {
+                        @include text18;
+                        color: $black-color3;
+                        display: block;
+                        padding: 24px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+@import "../../../scss/index.scss";
+
+.recentNewsSection {
+    padding: 120px 0 0 0;
+
+    .recentNewsHeading {
+        @include flex-between;
+
+        h2 {
+            @include text50;
+            color: $black-color2;
+            span {
+                color: #1d63dc;
+            }
+        }
+
+        .findMoreButton {
+            button {
+                padding: 15px 40px;
+                border-radius: 50px;
+                border: 1px solid rgba(40, 41, 41, 0.8);
+                @include text18-bold;
+                color: $black-color2;
+                cursor: pointer;
+                text-transform: uppercase;
+                background: transparent;
+            }
+        }
+    }
+
+    .recentNewsDetailsAlignment {
+        padding: 60px 0 0 288px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 288px;
+            background: linear-gradient(270deg, #f1f6ff 0%, rgba(241, 246, 255, 0) 100%);
+
+            z-index: 99;
+        }
+
+        .sliderDetailsAlignment {
+            padding: 0 12px;
+
+            .recentNewsDetailsBox {
+                border-radius: 30px;
+                background: $white-color;
+                box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
+                margin: 0 0 120px 0 ;
+
+                .recentNewsDetailsImg {
+                    width: 100%;
+                    height: 330px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 30px;
+                    }
+                }
+
+                .recentNewsBottom {
+                    padding: 40px;
+                    position: relative;
+                    .topTImeDetails {
+                        @include flex;
+                        gap: 13px;
+                        h6 {
+                            @include text14-bolder;
+                            color: #1d63dc;
+
+                            &.trendSection {
+                                color: rgb(40, 41, 41, 0.5);
+                                text-transform: uppercase;
+                            }
+                        }
+                        p {
+                            width: 2px;
+                            height: 2px;
+                            border-radius: 50%;
+                            background: rgb(40, 41, 41, 0.5);
+                        }
+                    }
+
+                    .descriptionList {
+                        padding: 20px 0 0 0;
+                        span {
+                            @include text24;
+                            color: $black-color2;
+                        }
+                    }
+
+                    .linkBtm {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                        cursor: pointer;
+
+                        width: 60px;
+                        height: 60px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        :global(.slick-arrow) {
+            display: none !important;
+        }
+    }
+}
