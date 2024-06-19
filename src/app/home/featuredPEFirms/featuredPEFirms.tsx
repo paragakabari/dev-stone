@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./FeaturedPEFirms.module.scss";
 const Logo = "/assets/images/logo1.png";
 import Slider from "react-slick";
+import Image from 'next/image';
 export default function FeaturedPEFirms() {
     const settings = {
         dots: true,
@@ -25,15 +26,15 @@ export default function FeaturedPEFirms() {
 
             <div className={styles.featuredPEFirmsDetailsAlignment}>
                 <Slider {...settings}>
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => {
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => {
                         return (
 
-                            <div className={styles.sliderDetailsAlignment}>
+                            <div className={styles.sliderDetailsAlignment} key={key}>
 
                                 <div className={styles.featuredPEFirmsDetailsBox}>
                                     
                                     <div className={styles.featuredLogo}>
-                                        <img src={Logo} alt="Logo" />
+                                        <Image height={0} width={0} unoptimized src={Logo} alt="Logo" />
                                     </div>
                                     <div className={styles.peFirmsBoxListDetails}>
                                         <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>

@@ -23,10 +23,10 @@ export default function Testimonials() {
 
             <div className={styles.testimalDetailsAlignment}>
                 <Slider {...settings}>
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => {
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
                         return (
 
-                            <div className={styles.sliderDetailsAlignment}>
+                            <div className={styles.sliderDetailsAlignment} key={index}>
 
                                 <div className={styles.testimalDetailsBox}>
                                     <div>
@@ -34,7 +34,7 @@ export default function Testimonials() {
                                             <path d="M36.5672 0L24.7264 46H0L18.6318 0H36.5672ZM70 0L58.1592 46H33.4328L52.0647 0H70Z" fill="#1D63DC" />
                                         </svg>
                                         <h6>Streamlined decision-making</h6>
-                                        <p>“PE Aggregator has been a game-changer for our investment research. With its comprehensive data and intuitive interface, we are able to quickly grasp industry trends and identify promising opportunities. The platform's advanced scoring system helps us focus on high-potential sectors and streamline our decision-making process effectively.”</p>
+                                        <p>PE Aggregator has been a game-changer for our investment research. With its comprehensive data and intuitive interface, we are able to quickly grasp industry trends and identify promising opportunities. The platforms advanced scoring system helps us focus on high-potential sectors and streamline our decision-making process effectively.</p>
                                         <div className={styles.testimalProfile}>
                                             <div className={styles.testimalProfileImg}>
 

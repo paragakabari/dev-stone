@@ -48,7 +48,7 @@ export default function MakeAsBetter() {
                                 </div>
                                 <h6>3M+</h6>
                                 <p>Recent Transactions</p>
-                                <span>Recent transactions in the private equity world have included acquisitions, mergers, and investments in a wide range of industries. Some notable recent transactions include Blackstone's acquisition.</span>
+                                <span>Recent transactions in the private equity world have included acquisitions, mergers, and investments in a wide range of industries. Some notable recent transactions include Blackstones acquisition.</span>
                             </div>
                         </div>
                     </div>
