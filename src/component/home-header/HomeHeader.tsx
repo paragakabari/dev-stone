@@ -32,7 +32,8 @@ export default function HomeHeader() {
               <div className={styles.searchIcon}>
                 <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
               </div>
-              <div className={styles.searchButtonAlignment}>
+              <div className={styles.searchButtonAlignment} 
+              onClick={() => router.push("/login")}>
                 <button>
                   <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" /> Login</button>
               </div>

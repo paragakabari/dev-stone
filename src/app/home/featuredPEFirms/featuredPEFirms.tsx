@@ -61,7 +61,7 @@ export default function FeaturedPEFirms() {
                                     <div className={styles.featuredPEFirmsDetailsBox}>
 
                                         <div className={styles.featuredLogo}>
-                                            <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
+                                            <Image height={0} width={0} unoptimized src={Logo} alt="Logo" />
                                         </div>
                                         <div className={styles.peFirmsBoxListDetails}>
                                             <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>
@@ -72,15 +72,25 @@ export default function FeaturedPEFirms() {
                                                 <h6>1982
                                                 </h6>
                                             </div>
-                                            <div className={styles.bottomNameAllignment}>
-                                                <span>Portfolio</span>
-                                                <h6>313
-                                                </h6>
+                                            <div className={styles.peFirmsBoxListDetails}>
+                                                <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>
                                             </div>
-                                            <div className={styles.bottomNameAllignment}>
-                                                <span>Investment</span>
-                                                <h6>$88M+
-                                                </h6>
+                                            <div className={styles.peFirmsBottomDetails}>
+                                                <div className={styles.bottomNameAllignment}>
+                                                    <span>Founded</span>
+                                                    <h6>1982
+                                                    </h6>
+                                                </div>
+                                                <div className={styles.bottomNameAllignment}>
+                                                    <span>Portfolio</span>
+                                                    <h6>313
+                                                    </h6>
+                                                </div>
+                                                <div className={styles.bottomNameAllignment}>
+                                                    <span>Investment</span>
+                                                    <h6>$88M+
+                                                    </h6>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
