@@ -1,7 +1,7 @@
 @import "../../../scss/index.scss";
 
 .howItWorkSection {
-    padding: 196px 0 0 0;
+    padding: 120px 0 0 0;
 
     .howItWorkAlignment {
         width: 100%;
@@ -10,15 +10,22 @@
         background-blend-mode: overlay;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 100px 40px 120px 40px;
-
+        padding: 60px 40px 80px 40px;
+        @include breakpoint("md-max") {
+            padding: 40px;
+        }
         .howItWorkAllDetails {
             .howItWorkHeading {
                 text-align: center;
                 h2 {
-                    @include text50;
+                    @include text42;
                     color: $white-color;
-
+                    @include breakpoint("md-max") {
+                        font-size: 36px;
+                    }
+                    @include breakpoint("sm-max") {
+                        font-size: 24px;
+                    }
                     span {
                         color: $button-bg-bolor;
                     }
@@ -26,21 +33,56 @@
             }
             .howItWorkAllChildDetails {
                 padding: 60px 0 0 0;
+                @include breakpoint("md-max") {
+                    padding: 40px 0 0 0;
+                }
                 .howItWorkAllGrid {
                     display: grid;
                     grid-template-columns: 1fr 318px 1fr;
                     gap: 68px;
-
+                    @include breakpoint("md-max") {
+                        display: grid;
+                        grid-template-columns: 1fr 318px;
+                        padding: 0 0 40px 0;
+                    }
+                    @include breakpoint("sm-max") {
+                        grid-template-columns: 1fr;
+                        gap: 20px;
+                    }
                     .howItWorkAllGridItem {
+                        @include breakpoint("md-max") {
+                            &.tableteNoneAlignment {
+                                display: none !important;
+                            }
+                        }
+                        @include breakpoint("sm-max") {
+                            &:first-child {
+                                order: 2;
+                            }
+                            &:last-child {
+                                order: 1;
+                            }
+                        }
                         .stepDetails {
+                            @include breakpoint("sm-max") {
+                                text-align: center;
+                            }
                             h3 {
                                 @include text24-bolder;
                                 color: $white-color;
+                                @include breakpoint("sm-max") {
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                }
                             }
                             p {
                                 padding: 20px 0 0 0;
                                 @include text18;
                                 color: #ddd;
+                                @include breakpoint("sm-max") {
+                                    font-size: 16px;
+                                    line-height: 21px;
+                                }
                             }
                         }
                         .roundBoxAlignment {
@@ -50,12 +92,21 @@
                             border-radius: 50%;
                             @include flex-center;
                             position: relative;
+                            @include breakpoint("sm-max") {
+                                margin: 0 auto;
+                                width: 100px;
+                                height: 100px;
+                            }
                             .childRoundAlignment {
                                 width: 108px;
                                 height: 108px;
                                 border-radius: 50%;
                                 background: $button-bg-bolor;
                                 @include flex-center;
+                                @include breakpoint("sm-max") {
+                                    width: 80px;
+                                    height: 80px;
+                                }
                             }
                         }
                     }
@@ -67,12 +118,14 @@
                     }
                     &:nth-child(odd) {
                         .howItWorkAllGridItem {
-                         .stepDetails {
-                            text-align: right;
-                         }
+                            .stepDetails {
+                                text-align: right;
+                                @include breakpoint("sm-max") {
+                                    text-align: center;
+                                }
+                            }
                         }
                     }
-
 
                     &:nth-child(1) {
                         .howItWorkAllGridItem {
@@ -86,6 +139,9 @@
                                     width: 1.5px;
                                     transform: rotate(144deg);
                                     bottom: -38px;
+                                    @include breakpoint("md-max") {
+                                        display: none;
+                                    }
                                 }
                             }
                         }
@@ -102,6 +158,9 @@
                                     width: 1.5px;
                                     transform: rotate(221deg);
                                     bottom: -38px;
+                                    @include breakpoint("md-max") {
+                                        display: none;
+                                    }
                                 }
                             }
                         }
@@ -118,6 +177,9 @@
                                     width: 1.5px;
                                     transform: rotate(144deg);
                                     bottom: -38px;
+                                    @include breakpoint("md-max") {
+                                        display: none;
+                                    }
                                 }
                             }
                         }

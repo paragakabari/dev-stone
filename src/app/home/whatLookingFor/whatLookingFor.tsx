@@ -5,7 +5,7 @@ export default function WhatLookingFor() {
         <div className={styles.whatLookingForSection}>
             <label>What Are You Looking for?</label>
             <div className={styles.whatLookingForBox}>
-                <p>Search PE firms, portfolio companies, financial data...</p>
+                <input type='text' placeholder='Search PE firms, portfolio companies, financial data...' />
                 <div className={styles.searchNowButton}>
                     <button>Search Now</button>
                 </div>

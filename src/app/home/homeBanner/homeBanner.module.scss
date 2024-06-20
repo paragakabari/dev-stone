@@ -21,28 +21,61 @@
         height: 100vh;
         padding: 70px 0 0 0;
 
+        @include breakpoint("md-max") {
+            height: 640px;
+        }
+
+        @include breakpoint("sm-max") {
+            height: auto;
+            flex-wrap: wrap;
+        }
+
         .heroBannerLeftSide {
             position: relative;
             max-width: 545px;
             z-index: 9;
+            @include breakpoint("sm-max") {
+                max-width: 100%;
+                padding: 20px;
+            }
             h1 {
-                @include text70-bold;
+                @include text56-bold;
                 color: $white-color;
-                padding: 0 0 30px 0;
+                padding: 0 0 16px 0;
+                @include breakpoint("lg-max") {
+                    font-size: 46px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 26px;
+                    line-height: 32px;
+                    padding: 0 0 10px 0;
+                }
             }
             p {
-                @include text24;
+                @include text18;
                 color: $white-color;
-                padding: 0 0 30px 0;
+                padding: 0 0 12px 0;
+
+                @include breakpoint("sm-max") {
+                    font-size: 14px;
+                    line-height: 21px;
+                    padding: 0 0 6px 0;
+                }
             }
             button {
-                padding: 15px 40px;
+                padding: 12px 40px;
                 border-radius: 50px;
                 color: $white-color;
-                @include text18-bold;
+                @include text16-bold;
                 cursor: pointer;
                 color: $black-color2;
                 border: none;
+
+                @include breakpoint("sm-max") {
+                    font-size: 14px;
+                    line-height: 21px;
+                    padding: 10px 30px;
+                }
             }
         }
 

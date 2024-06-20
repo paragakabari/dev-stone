@@ -1,5 +1,5 @@
-@mixin text70-bold {
-    font-size: 70px;
+@mixin text56-bold {
+    font-size: 56px;
     line-height: 120%;
     font-weight: 700;
 }
@@ -148,6 +148,12 @@
 
 @mixin text50 {
     font-size: 50px;
+    font-weight: 700;
+    line-height: 150%; /* 21px */
+}
+
+@mixin text42 {
+    font-size: 42px;
     font-weight: 700;
     line-height: 150%; /* 21px */
 }

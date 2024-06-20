@@ -4,15 +4,7 @@
     box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
     background: $white-color;
     border-radius: 16px;
-    .breadCrumpAlignmet {
-        border-bottom: 1px solid rgba(29, 99, 220, 0.5);
-        padding: 10px 30px;
-        p {
-            @include text16-meduim;
-            color: $black-color2;
-            cursor: pointer;
-        }
-    }
+   
     .firmTopAlignment {
         padding: 30px;
 

@@ -1,8 +1,13 @@
 @import "../../../scss/index.scss";
 
 .testimonialsSection {
-    padding: 120px 0;
-
+    padding: 80px 0;
+    @include breakpoint("md-max") {
+        padding: 60px 0;
+    }
+    @include breakpoint("sm-max") {
+        padding: 40px 0;
+    }
     .testimonialsAlignment {
         .testimonialsHeading {
             text-align: center;
@@ -19,6 +24,13 @@
                     1px 1px 0 #1d63dc,
                     1px 1px 0 #1d63dc,
                     1px 1px 0 #1d63dc;
+
+                @include breakpoint("md-max") {
+                    font-size: 80px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 40px;
+                }
             }
         }
     }
@@ -26,6 +38,9 @@
     .testimalDetailsAlignment {
         padding: 62px 0 0 288px;
         position: relative;
+        @include breakpoint("md-max") {
+            padding: 20px 0 0 0;
+        }
 
         &::before {
             content: "";
@@ -37,32 +52,56 @@
             background: linear-gradient(270deg, #f1f6ff 0%, rgba(241, 246, 255, 0) 100%);
 
             z-index: 99;
+            @include breakpoint("sm-max") {
+                display: none;
+            }
         }
 
         .sliderDetailsAlignment {
             padding: 0 35px;
 
             .testimalDetailsBox {
-                text-align:center;
+                text-align: center;
+                svg {
+                    width: 32px;
+                    height: 32px;
+                }
                 h6 {
-                    padding: 40px 0 0 0;
-                    @include text30-bold;
+                    padding: 20px 0 0 0;
+                    @include text24-bold;
                     color: $black-color2;
+
+                    @include breakpoint("md-max") {
+                        font-size: 20px;
+                        padding: 12px 0 0 0;
+                    }
                 }
                 p {
-                    @include text20;
+                    @include text18;
                     color: $black-color3;
-                    padding: 30px 0 0 0;
+                    padding: 20px 0 0 0;
+                    @include breakpoint("md-max") {
+                        font-size: 16px;
+                        padding: 12px 0 0 0;
+                    }
                 }
 
                 .testimalProfile {
                     text-align: center;
                     padding: 40px 0 0 0;
                     text-align: center;
+
+                    @include breakpoint("md-max") {
+                        padding: 20px 0 0 0;
+                    }
                     .testimalProfileImg {
                         width: 96px;
                         height: 96px;
                         margin: 0 auto;
+                        @include breakpoint("md-max") {
+                            width: 80px;
+                            height: 80px;
+                        }
                         img {
                             width: 100%;
                             height: 100%;
@@ -74,6 +113,10 @@
                         padding: 20px 0 0 0;
                         @include text16-bolder;
                         color: $black-color2;
+                        @include breakpoint("md-max") {
+                            font-size: 14px;
+                            padding: 12px 0 0 0;
+                        }
                         span {
                             color: #1d63dc;
                         }
@@ -82,6 +125,10 @@
                         padding: 10px 0 0 0;
                         @include text14-bolder;
                         color: $black-opcity-border-color;
+                        @include breakpoint("md-max") {
+                            font-size: 12px;
+                            padding: 8px 0 0 0;
+                        }
                     }
                 }
             }

@@ -2,6 +2,9 @@
 
 .easyUsingSection {
     padding: 70px 0 0 0;
+    @include breakpoint("sm-max") {
+        padding: 20px 0 0 0;
+    }
     .easyUsingBox {
         width: 100%;
         background: url("/assets/images/easy-bg-img.png");
@@ -12,11 +15,18 @@
         grid-template-columns: 410px 1fr;
         align-items: center;
         gap: 80px;
-
+        @include breakpoint("md-max") {
+            grid-template-columns: 1fr;
+            padding: 40px;
+        }
         .girlImgAlignment {
             width: 100%;
             height: auto;
             margin: -70px 0 0 0;
+            @include breakpoint("md-max") {
+                display: none;
+                margin: 0;
+            }
             img {
                 width: 100%;
                 height: 100%;
@@ -35,10 +45,26 @@
             h2 {
                 @include text50;
                 color: $white-color;
+                @include breakpoint("md-max") {
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
                 span {
                     color: $button-bg-bolor;
                     @include text50;
                     padding: 0;
+                    @include breakpoint("md-max") {
+                        font-size: 40px;
+                        line-height: 48px;
+                    }
+                    @include breakpoint("sm-max") {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
                 }
             }
 
@@ -53,6 +79,14 @@
                     color: $white-color;
                     text-transform: uppercase;
                     border: none;
+                    @include breakpoint("sm-max") {
+                        padding: 10px 30px;
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                }
+                @include breakpoint("sm-max") {
+                    padding: 20px 0 0 0;
                 }
             }
         }

@@ -1,15 +1,29 @@
 @import "../../../scss/index.scss";
 
 .makeAsBetterSection {
-    padding: 120px 0 0 0;
+    padding: 90px 0 0 0;
+
+    @include breakpoint("md-max") {
+        padding: 60px 0 0 0;
+    }
+
+    @include breakpoint("sm-max") {
+        padding: 40px 0 0 0;
+    }
     .makeAsBetterAlignment {
         padding: 0 20px;
         text-align: center;
         .makeAsBetterHeader {
             h2 {
-                @include text50;
+                @include text42;
                 color: $black-color2;
-
+                @include breakpoint("md-max") {
+                    font-size: 34px;
+                }
+                @include breakpoint("sm-max") {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
                 span {
                     color: #1d63dc;
                 }
@@ -17,37 +31,62 @@
         }
 
         .makeAsBetterDetails {
-            padding: 60px 0 0;
-
+            padding: 50px 0 0;
+            @include breakpoint("sm-max") {
+                padding: 30px 0 0 0;
+            }
             .makeAsBetterDetailsGrid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 64px;
-
+                @include breakpoint("md-max") {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                @include breakpoint("sm-max") {
+                    gap: 30px;
+                }
                 .makeAsBetterDetailsGridItem {
                     text-align: center;
                     img {
-                        width: 40px;
-                        height: 40px;
+                        width: 32px;
+                        height: 32px;
                         display: block;
                         margin: 0 auto;
+                        @include breakpoint("sm-max") {
+                            width: 24px;
+                            height: 24px;
+                        }
                     }
                     h6 {
                         padding: 15px 0 0 0;
-                        @include text60-bolder;
+                        @include text50;
                         color: $button-bg-bolor;
+                        @include breakpoint("sm-max") {
+                            font-size: 36px;
+                            line-height: 42px;
+                            padding: 8px 0 0 0;
+                        }
                     }
 
                     p {
-                        padding: 16px 0 0 0;
-                        @include text24-bold;
+                        padding: 12px 0 0 0;
+                        @include text20-bold;
+                        @include breakpoint("sm-max") {
+                            font-size: 16px;
+                            padding: 4px 0 0 0;
+                        }
                     }
 
                     span {
-                        @include text18;
+                        @include text16;
                         color: $black-color3;
                         display: block;
-                        padding: 24px 0 0 0;
+                        padding: 20px 0 0 0;
+                        @include breakpoint("sm-max") {
+                            font-size: 12px;
+                            line-height: 18px;
+                            padding: 10px 0 0 0;
+                        }
                     }
                 }
             }

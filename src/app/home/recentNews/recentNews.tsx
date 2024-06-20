@@ -11,7 +11,33 @@ export default function RecentNews() {
         infinite: true,
         speed: 500,
         slidesToShow: 3.5,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
     return (
         <div className={styles.recentNewsSection}>
@@ -28,10 +54,10 @@ export default function RecentNews() {
 
             <div className={styles.recentNewsDetailsAlignment}>
                 <Slider {...settings}>
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => {
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((key) => {
                         return (
 
-                            <div className={styles.sliderDetailsAlignment}>
+                            <div className={styles.sliderDetailsAlignment} key={key}>
 
                                 <div className={styles.recentNewsDetailsBox}>
 

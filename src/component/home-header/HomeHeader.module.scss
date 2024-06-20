@@ -12,6 +12,16 @@
             width: 223px;
             height: 43px;
             cursor: pointer;
+
+            @include breakpoint("lg-max") {
+                width: 180px;
+                height: 32px;
+            }
+
+            @include breakpoint("sm-max") {
+                width: 118px;
+                height: 32px;
+            }
             img {
                 width: 100%;
                 height: 100%;
@@ -22,14 +32,26 @@
         .headerRightSide {
             @include flex;
             gap: 50px;
-
+            @include breakpoint("lg-max") {
+                gap: 24px;
+            }
             .headerMenu {
                 @include flex;
                 gap: 40px;
+                @include breakpoint("lg-max") {
+                    gap: 24px;
+                }
+                @include breakpoint("md-max") {
+                    display: none;
+                }
                 a {
                     @include text16-meduim;
                     color: $white-color;
                     cursor: pointer;
+
+                    @include breakpoint("lg-max") {
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -43,6 +65,9 @@
                     cursor: pointer;
                 }
                 .searchButtonAlignment {
+                    @include breakpoint("md-max") {
+                        display: none;
+                    }
                     button {
                         background: $button-bg-bolor;
                         padding: 10px 30px;
@@ -53,6 +78,111 @@
                         @include flex;
                         gap: 5px;
                     }
+                }
+            }
+
+            .moreIcon {
+                width: 32px;
+                height: 32px;
+                display: none;
+
+                @include breakpoint("md-max") {
+                    display: block;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .headerSidebarViewWrapper {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        left: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .headerSidebarViewBox {
+        width: 280px;
+        height: 100vh;
+        background: $white-color;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+
+        &.openMobileVIew {
+            transform: translateX(0%);
+            transition: 0.4s ease-in-out;
+        }
+        &.closeMobileView {
+            transform: translateX(100%);
+            transition: 0.4s ease-in-out;
+        }
+        .headerTopHeadingAlignment {
+            @include flex-between;
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+            background: $login-side-bg;
+            .mobileViewLogo {
+                width: 118px;
+                height: auto;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+
+            .mobileViewCloseIcon {
+                width: 24px;
+                height: 24px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+        }
+
+        .mobileViewMenuAlignment {
+            padding: 20px;
+            a {
+                @include text16-meduim;
+                color: $black-color2;
+                cursor: pointer;
+                display: block;
+                padding: 0 0 20px 0;
+            }
+
+            .mobileSearchButtonAlignment {
+                @include flex;
+                gap: 20px;
+                img {
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                    cursor: pointer;
+                }
+                button {
+                    background: $button-bg-bolor;
+                    padding: 10px 30px;
+                    border-radius: 50px;
+                    @include text16-meduim;
+                    color: $white-color;
+                    border: none;
+                    @include flex;
+                    gap: 5px;
+                    width: 100%;
+                    text-align: center;
+                    justify-content: center;
                 }
             }
         }

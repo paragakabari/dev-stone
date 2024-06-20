@@ -10,6 +10,7 @@ import HowItWork from "./howItWork/howItWork";
 import RecentNews from "./recentNews/recentNews";
 import EasyUsing from "./easyUsing/easyUsing";
 import Testimonials from "./testimonials/testimonials";
+import HomeFooter from "@/component/home-footer/HomeFooter";
 
 export default function HomePage() {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function HomePage() {
       <RecentNews />
       <EasyUsing />
       <Testimonials />
-      {/* <HomeFooter */}
+      <HomeFooter />
     </div>
   </>;
 }

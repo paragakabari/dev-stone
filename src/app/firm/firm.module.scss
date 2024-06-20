@@ -5,9 +5,28 @@
         padding: 20px;
     }
 
+    .breadCrumpAlignmet {
+        padding: 10px 30px;
+        box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+        background: $white-color;
+        border-radius: 16px;
+        margin: 0 0 20px 0;
+        @include flex;
+        gap: 10px;
+        img {
+            width: 16px;
+            height: 16px;
+            display: block;
+            cursor: pointer;
+        }
+        p {
+            @include text16-meduim;
+            color: $black-color2;
+            cursor: pointer;
+        }
+    }
     .backButtonAlignment {
         button {
-            
         }
     }
 }

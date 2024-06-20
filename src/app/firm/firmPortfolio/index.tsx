@@ -6,6 +6,98 @@ const UPRightArrow = "/assets/icons/up-right.svg";
 const TopBottomArrow = "/assets/icons/top-bottom-arrow.svg";
 const Logo = "/assets/images/logo1.png";
 const StarIcon = "/assets/icons/star-icon.svg";
+const data = [
+    {
+        logo: "/assets/images/pologo.png",
+        name: "BigScoots",
+        founded: 2010,
+        sector: "Business Services",
+        location: "Illinois",
+        firstInvestment: "Series B (2023)",
+        stage: "Series B"
+    },
+    {
+        logo: "/assets/images/pologo2.png",
+        name: "JSI",
+        founded: 1962,
+        sector: "Other",
+        location: "Maryland",
+        firstInvestment: "Post IPO (2007)",
+        stage: "Acquired"
+    },
+    {
+        logo: "/assets/images/pologo3.png",
+        name: "Centerline Communications",
+        founded: 2006,
+        sector: "Telecom",
+        location: "Massachusetts",
+        firstInvestment: "Series B (2020)",
+        stage: "Late Stage"
+    },
+    {
+        logo: "/assets/images/pologo4.png",
+        name: "Walker Sands",
+        founded: 2001,
+        sector: "Business Services",
+        location: "Illinois",
+        firstInvestment: "Unidentified",
+        stage: "Late Stage"
+    },
+    {
+        logo: "/assets/images/pologo5.png",
+        name: "Thymes",
+        founded: 1982,
+        sector: "Consumer Goods",
+        location: "Minnesota",
+        firstInvestment: "Unidentified",
+        stage: "Seed"
+    },
+    {
+        logo: "/assets/images/pologo6.png",
+        name: "SUEZ",
+        founded: 1869,
+        sector: "Environment",
+        location: "France",
+        firstInvestment: "Unidentified",
+        stage: "Acquired"
+    },
+    {
+        logo: "/assets/images/pologo7.png",
+        name: "Transurban",
+        founded: 1995,
+        sector: "Real Estate",
+        location: "Melbourne",
+        firstInvestment: "Unidentified",
+        stage: "Public"
+    },
+    {
+        logo: "/assets/images/pologo8.png",
+        name: "Naturgy",
+        founded: 1843,
+        sector: "Energy",
+        location: "Spain",
+        firstInvestment: "Series B (2020)",
+        stage: "Late Stage"
+    },
+    {
+        logo: "/assets/images/pologo9.png",
+        name: "Vantage Data Centers",
+        founded: 2010,
+        sector: "Business Services",
+        location: "California",
+        firstInvestment: "Conventional Debt (2023)",
+        stage: "Acquired"
+    },
+    {
+        logo: "/assets/images/pologo10.png",
+        name: "Vantage Towers",
+        founded: 2020,
+        sector: "Telecom",
+        location: "Germany",
+        firstInvestment: "Unidentified",
+        stage: "Public"
+    }
+]
 export default function FirmPortfolio() {
     return (
         <div className={styles.firmPortfolioSection}>
@@ -62,34 +154,30 @@ export default function FirmPortfolio() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {[0, 1, 2, 3, 4, 5, 6, 7].map((key) => {
-                                    return (
-
-                                        <tr key={key}>
-                                            <td >
-                                                <div className={styles.logoAlignment}>
-                                                    <div className={styles.starIcon}>
-
-                                                        <Image unoptimized height={0} width={0} src={StarIcon} alt={StarIcon} />
-                                                    </div>
-                                                    <div className={styles.logo}>
-                                                        <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
-                                                    </div>
+                                {data.map((item, key) => (
+                                    <tr key={key}>
+                                        <td >
+                                            <div className={styles.logoAlignment}>
+                                                <div className={styles.starIcon}>
+                                                    <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
                                                 </div>
-                                            </td>
-                                            <td>BigScoots</td>
-                                            <td>2010</td>
-                                            <td>Business Services</td>
-                                            <td>Illinois</td>
-                                            <td>Series B (2023)</td>
-                                            <td>
-                                                <div className={styles.stageDetails}>
-                                                    <p>Acquired</p>
+                                                <div className={styles.logo}>
+                                                    <Image unoptimized height={0} width={0} src={item.logo} alt={item.name} />
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    )
-                                })}
+                                            </div>
+                                        </td>
+                                        <td>{item.name}</td>
+                                        <td>{item.founded}</td>
+                                        <td>{item.sector}</td>
+                                        <td>{item.location}</td>
+                                        <td>{item.firstInvestment}</td>
+                                        <td>
+                                            <div className={styles.stageDetails}>
+                                                <p>{item.stage}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

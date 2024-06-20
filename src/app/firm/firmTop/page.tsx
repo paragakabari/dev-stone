@@ -10,9 +10,7 @@ export default function FirmTop() {
     return (
         <div className={styles.firmTopSection}>
 
-            <div className={styles.breadCrumpAlignmet}>
-                <p>{"<"} Pe Firm</p>
-            </div>
+      
             <div className={styles.firmTopAlignment}>
                 <div className={styles.firmTopLeft}>
                     <div className={styles.firmTopLogo}>

@@ -104,6 +104,7 @@
                                 @include text14;
                                 color: $black-color2;
                                 border-bottom: 1px solid rgba(151, 151, 151, 0.2);
+                                white-space: nowrap ;
                                 .logoAlignment {
                                     @include flex;
                                     gap: 14px;

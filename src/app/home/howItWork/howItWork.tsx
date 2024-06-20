@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./howItWork.module.scss";
+import classNames from 'classnames';
 
 export default function HowItWork() {
     return (
@@ -37,7 +38,7 @@ export default function HowItWork() {
                                 </div>
                             </div>
                             <div className={styles.howItWorkAllGrid}>
-                                <div className={styles.howItWorkAllGridItem}>
+                                <div className={classNames(styles.howItWorkAllGridItem, styles.tableteNoneAlignment)}>
 
                                 </div>
 
@@ -83,7 +84,7 @@ export default function HowItWork() {
                                 </div>
                             </div>
                             <div className={styles.howItWorkAllGrid}>
-                                <div className={styles.howItWorkAllGridItem}>
+                                <div className={classNames(styles.howItWorkAllGridItem, styles.tableteNoneAlignment)}>
 
                                 </div>
 
