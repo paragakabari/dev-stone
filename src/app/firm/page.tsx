@@ -14,7 +14,7 @@ export default function Firm() {
     const router = useRouter();
     return (
         <div className={styles.firmSection}>
-            <div className={styles.breadCrumpAlignmet}>
+            <div className={styles.breadCrumpAlignmet} onClick={() => router.push("/firm-list")}>
                 <Image unoptimized height={0} width={0} src={LeftArrow} alt="LeftArrow" />
                 <p> Pe Firm</p>
             </div>
