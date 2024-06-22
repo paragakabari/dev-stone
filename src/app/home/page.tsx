@@ -18,13 +18,13 @@ export default function HomePage() {
     <div>
       <HomeBanner />
       <WhatLookingFor />
-      <MakeAsBetter />
-      <InvestingDetails />
+      {/* <MakeAsBetter />
+      <InvestingDetails /> */}
       <FeaturedPEFirms />
       <HowItWork />
       <RecentNews />
       <EasyUsing />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <HomeFooter />
     </div>
   </>;

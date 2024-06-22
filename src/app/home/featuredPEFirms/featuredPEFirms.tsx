@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import Image from 'next/image';
 export default function FeaturedPEFirms() {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -17,7 +17,7 @@ export default function FeaturedPEFirms() {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -67,30 +67,21 @@ export default function FeaturedPEFirms() {
                                             <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>
                                         </div>
                                         <div className={styles.peFirmsBottomDetails}>
+
                                             <div className={styles.bottomNameAllignment}>
                                                 <span>Founded</span>
                                                 <h6>1982
                                                 </h6>
                                             </div>
-                                            <div className={styles.peFirmsBoxListDetails}>
-                                                <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>
+                                            <div className={styles.bottomNameAllignment}>
+                                                <span>Portfolio</span>
+                                                <h6>313
+                                                </h6>
                                             </div>
-                                            <div className={styles.peFirmsBottomDetails}>
-                                                <div className={styles.bottomNameAllignment}>
-                                                    <span>Founded</span>
-                                                    <h6>1982
-                                                    </h6>
-                                                </div>
-                                                <div className={styles.bottomNameAllignment}>
-                                                    <span>Portfolio</span>
-                                                    <h6>313
-                                                    </h6>
-                                                </div>
-                                                <div className={styles.bottomNameAllignment}>
-                                                    <span>Investment</span>
-                                                    <h6>$88M+
-                                                    </h6>
-                                                </div>
+                                            <div className={styles.bottomNameAllignment}>
+                                                <span>Investment</span>
+                                                <h6>$88M+
+                                                </h6>
                                             </div>
                                         </div>
                                     </div>

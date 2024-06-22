@@ -55,11 +55,19 @@
             padding: 0;
         }
         .featuredPEFirmsDetailsAlignment {
-            padding: 60px 0 0 20px;
-            max-width: 1660px;
+            padding: 60px 0 0 250px;
+            // max-width: 1660px;
             position: relative;
+            width: 100%;
+            @media (max-width: 1600px) {
+                padding: 60px 0 0 96px;
+            }
+            @media (max-width: 1500px) {
+                padding: 60px 0 0 20px;
+            }
             @include breakpoint("lg-max") {
                 max-width: 100%;
+                padding: 60px 0 0 0;
             }
             @include breakpoint("md-max") {
                 padding: 40px 0 0 0;
@@ -86,7 +94,7 @@
                     width: 100%;
                     border-radius: 20px;
                     border: 1px solid rgba(40, 41, 41, 0.5);
-                    padding: 60px 50px 50px 50px;
+                    padding: 40px;
                     @include breakpoint("md-max") {
                         padding: 20px;
                     }
@@ -112,7 +120,7 @@
                             color: $black-color3;
                             @include breakpoint("sm-max") {
                                 font-size: 16px;
-                                line-height: 24px
+                                line-height: 24px;
                             }
                         }
                     }
@@ -130,7 +138,7 @@
                                 letter-spacing: 0.32px;
                                 @include breakpoint("md-max") {
                                     font-size: 14px;
-                                    line-height: 21px
+                                    line-height: 21px;
                                 }
                             }
                             h6 {

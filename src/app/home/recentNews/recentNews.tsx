@@ -10,9 +10,18 @@ export default function RecentNews() {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3.5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [
+            {
+                breakpoint: 1281,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
             {
                 breakpoint: 1024,
                 settings: {

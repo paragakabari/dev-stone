@@ -49,6 +49,16 @@
     .recentNewsDetailsAlignment {
         padding: 60px 0 0 288px;
         position: relative;
+        @media (max-width: 1600px) {
+            padding: 60px 0 0 96px;
+        }
+        @media (max-width: 1500px) {
+            padding: 60px 0 0 20px;
+        }
+        @include breakpoint("lg-max") {
+            max-width: 100%;
+            padding: 60px 0 0 0;
+        }
         @include breakpoint("md-max") {
             padding: 40px 0 0 0;
         }
@@ -76,7 +86,7 @@
                 box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.1);
                 margin: 0 0 120px 0;
                 @include breakpoint("md-max") {
-                    margin: 0 0 60px 0;
+                    margin: 0 0 30px 0;
                 }
                 .recentNewsDetailsImg {
                     width: 100%;
