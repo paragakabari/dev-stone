@@ -28,7 +28,8 @@ export default function LoginForm() {
 
                 <div className={styles.buttonAlignment}>
                     <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
-                        <button><Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
+                        <button>
+                            <Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
                     </div>
                     <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
                         <button className={styles.outlineBtn}><Image unoptimized height={0} width={0} src={GoogleIcon} alt='2' />Sign in with Google</button>
