@@ -13,7 +13,7 @@ export const LayoutCustom = ({ children }) => {
   const sidebarRoutes = ["/dashboard",'/firm','/firm-list'];
   const headerRoutes = ["/dashboard",'/firm','/firm-list'];
   const headerHomeRoutes = ["/"];
-  const loginRoutes = ["/login", "/signup"];
+  const loginRoutes = ["/login", "/signup",'/magic'];
 
   const isSidebarRoute = sidebarRoutes.includes(path);
   const isHeaderOnlyRoute = headerRoutes.includes(path);

@@ -27,7 +27,7 @@ export default function LoginForm() {
                 </div>
 
                 <div className={styles.buttonAlignment}>
-                    <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
+                    <div className={styles.buttonDetails} onClick={() => redirect.push('/magic')}>
                         <button>
                             <Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
                     </div>

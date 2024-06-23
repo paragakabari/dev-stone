@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import styles from "./magic.module.scss";
+import styles from "./login.module.scss";
 import LoginSide from "./loginSide/loginSide";
 import LoginForm from "./loginForm";
 import Image from "next/image";
@@ -11,39 +11,12 @@ export default function Login() {
     const router = useRouter();
     return (
         <>
-            {/* <div className={styles.loginSection}>
+            <div className={styles.loginSection}>
                 <LoginSide />
                 <LoginForm />
-            </div> */}
-
-            <div className={styles.magicSection}>
-                <div className={styles.magicLeftSide}>
-                    <div className={styles.magicSideBannerDetails}>
-
-                        <div className={styles.logo}>
-                            <Image height={0} width={0} unoptimized alt="11" src={Logo} />
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.magicRightSide}>
-                    <div className={styles.mobileViewLogo}>
-                        <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
-                    </div>
-                    <div className={styles.magicFormAlignment}>
-
-                        <div className={styles.magicLinkDetailsAlignment}>
-                            <Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />
-                        </div>
-                        <h2>Magic Link Sent</h2>
-                        <p>We have just emailed a confirmation link at the email address you just provided. Click to complete your sign up
-                            process!</p>
-
-                        <div className={styles.signUpButton}>
-                            <button>Sign Up</button>
-                        </div>
-                    </div>
-                </div>
             </div>
+
+          
         </>
     )
 }
