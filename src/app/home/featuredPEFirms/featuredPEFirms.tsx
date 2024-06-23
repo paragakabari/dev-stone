@@ -3,6 +3,7 @@ import styles from "./FeaturedPEFirms.module.scss";
 const Logo = "/assets/images/logo1.png";
 import Slider from "react-slick";
 import Image from 'next/image';
+import AnimatedSection from '@/component/Animation/AnimatedSection';
 export default function FeaturedPEFirms() {
     const settings = {
         dots: false,
@@ -10,6 +11,9 @@ export default function FeaturedPEFirms() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -42,11 +46,14 @@ export default function FeaturedPEFirms() {
             <div className="container">
 
                 <div className={styles.featuredPEFirmsHeading}>
-                    <h2>Featured PE <span>Firms</span></h2>
-
-                    <div className={styles.findMoreButton}>
-                        <button>Find Out MOre</button>
-                    </div>
+                    <AnimatedSection animationType="fade-right" duration={600} delay={400} once={""}>
+                        <h2>Featured PE <span>Firms</span></h2>
+                    </AnimatedSection>
+                    <AnimatedSection animationType="fade-left" duration={600} delay={400} once={""}>
+                        <div className={styles.findMoreButton}>
+                            <button>Find Out MOre</button>
+                        </div>
+                    </AnimatedSection>
                 </div>
             </div>
             <div className={styles.siderMainFlexAlignment}>

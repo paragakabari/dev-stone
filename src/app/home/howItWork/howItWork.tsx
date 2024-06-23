@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./howItWork.module.scss";
 import classNames from 'classnames';
+import AnimatedSection from '@/component/Animation/AnimatedSection';
 
 export default function HowItWork() {
     return (
@@ -8,11 +9,19 @@ export default function HowItWork() {
             <div className={styles.howItWorkAlignment}>
                 <div className="container">
                     <div className={styles.howItWorkAllDetails}>
-                        <div className={styles.howItWorkHeading}>
-                            <h2>How It <span>Works</span></h2>
-                        </div>
+                        <AnimatedSection
+                            animationType="fade-down"
+                            duration={600}
+                            delay={300}
+                            once={""}
+                        >
+                            <div className={styles.howItWorkHeading}>
+                                <h2>How It <span>Works</span></h2>
+                            </div>
+                        </AnimatedSection>
                         <div className={styles.howItWorkAllChildDetails}>
                             <div className={styles.howItWorkAllGrid}>
+
                                 <div className={styles.howItWorkAllGridItem}>
                                     <div className={styles.stepDetails}>
                                         <h3>1. Search for PE Firms</h3>
@@ -41,7 +50,6 @@ export default function HowItWork() {
                                 <div className={classNames(styles.howItWorkAllGridItem, styles.tableteNoneAlignment)}>
 
                                 </div>
-
                                 <div className={styles.howItWorkAllGridItem}>
                                     <div className={styles.roundBoxAlignment}>
                                         <div className={styles.childRoundAlignment}>
@@ -65,7 +73,6 @@ export default function HowItWork() {
                                         <p>Develop and execute strategies to increase investments in selected PE firms, ensuring alignment with goals.</p>
                                     </div>
                                 </div>
-
                                 <div className={styles.howItWorkAllGridItem}>
                                     <div className={styles.roundBoxAlignment}>
                                         <div className={styles.childRoundAlignment}>
@@ -87,7 +94,6 @@ export default function HowItWork() {
                                 <div className={classNames(styles.howItWorkAllGridItem, styles.tableteNoneAlignment)}>
 
                                 </div>
-
                                 <div className={styles.howItWorkAllGridItem}>
                                     <div className={styles.roundBoxAlignment}>
                                         <div className={styles.childRoundAlignment}>

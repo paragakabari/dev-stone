@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from "./signupForm.module.scss";
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 const MailIcon = "/assets/icons/mail-icon.svg";
 const SendLinkIcon = "/assets/icons/send-link-icon.svg";
 const GoogleIcon = "/assets/icons/google-icon.svg";
 const UserIcon = "/assets/icons/user-icon.svg";
 const Logo = "/assets/logo/logo.svg";
 export default function SignupForm() {
+    const redirect = useRouter();   
     return (
         <div className={styles.signUpFormSection}>
             <div className={styles.mobileViewLogo}>
@@ -35,7 +37,7 @@ export default function SignupForm() {
                 </div>
 
                 <div className={styles.buttonAlignment}>
-                    <div className={styles.buttonDetails}>
+                    <div className={styles.buttonDetails} onClick={() => redirect.push('/dashboard')}>
                         <button><Image unoptimized height={0} width={0} src={SendLinkIcon} alt="send link icon" />Send Magic Link</button>
                     </div>
                     <div className={styles.buttonDetails}>

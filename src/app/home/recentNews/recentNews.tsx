@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./recentNews.module.scss";
 import Slider from "react-slick";
 import Image from 'next/image';
+import AnimatedSection from '@/component/Animation/AnimatedSection';
 const NewsImg = "/assets/images/news-img.png";
 const LinkBtn = "/assets/icons/link-btn.svg";
 
@@ -12,6 +13,9 @@ export default function RecentNews() {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1281,
@@ -53,11 +57,15 @@ export default function RecentNews() {
             <div className="container">
 
                 <div className={styles.recentNewsHeading}>
-                    <h2>Recent  <span>News</span></h2>
+                    <AnimatedSection animationType="fade-right" duration={600} delay={400} once={""}>
+                        <h2>Recent  <span>News</span></h2>
 
-                    <div className={styles.findMoreButton}>
-                        <button>Find Out MOre</button>
-                    </div>
+                    </AnimatedSection>
+                    <AnimatedSection animationType="fade-left" duration={600} delay={400} once={""}>
+                        <div className={styles.findMoreButton}>
+                            <button>Find Out MOre</button>
+                        </div>
+                    </AnimatedSection>
                 </div>
             </div>
 

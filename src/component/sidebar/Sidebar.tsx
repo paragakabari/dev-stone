@@ -9,18 +9,24 @@ const PEFirmIcon = "/assets/icons/calculatore-icon.svg";
 const ReportIcon = "/assets/icons/chart-icon.svg";
 const ProfileIcon = "/assets/icons/member-list.svg";
 const LogouIcon = "/assets/icons/sign-out-alt.svg";
+const CoseIcon = "/assets/icons/close.png";
 export default function Sidebar({ isOpen, onClose }) {
   const router = useRouter();
   const path = usePathname().split("/")[1];
-  console.log('path',path);
-  
+  console.log('path', path);
+
   return (
     // <div className={classNames(styles.sidebarSection, toggleSidebar ? styles.smallSidebar : "")}>
 
     <div className={styles.sidebarSection}>
       <div className={styles.sidebarTop}>
-        <div className={styles.sidebarLogo}>
-          <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
+        <div className={styles.sidebarFlexAlignment}>
+          <div className={styles.sidebarLogo}>
+            <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
+          </div>
+          <div className={styles.closeIcon} >
+            <Image src={CoseIcon} alt="CoseIcon" unoptimized height={0} width={0} />
+          </div>
         </div>
 
         <div className={styles.sidebarMenu}>

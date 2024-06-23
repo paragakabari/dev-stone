@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <div
-        className={styles.prevArrowALignment}
+            className={styles.prevArrowALignment}
             onClick={onClick}
         >
             <Image unoptimized height={0} width={0} src={SliderLeftArrow} alt="SliderLeftArrow" />
@@ -45,6 +45,9 @@ export default function PeFirms() {
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1281,
