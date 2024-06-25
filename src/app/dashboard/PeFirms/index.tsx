@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import styles from "./PeFirms.module.scss";
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Logo = "/assets/images/logo1.png";
 const GridIcon = "/assets/icons/grid-icon.svg";
@@ -15,6 +16,7 @@ const SliderLeftArrow = "/assets/icons/left-side-arrow.svg";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
+   
     return (
         <div
             className={styles.nextArrowALignment}
@@ -37,6 +39,7 @@ function SamplePrevArrow(props) {
     );
 }
 export default function PeFirms() {
+    const router = useRouter()
     const settings = {
         dots: false,
         infinite: true,
@@ -91,7 +94,7 @@ export default function PeFirms() {
 
                     <h2>PE Firms</h2>
 
-                    <div className={styles.viewAllPeFIrms}>
+                    <div className={styles.viewAllPeFIrms}  onClick={()=>router.push('/firm-list')}>
                         <Image unoptimized height={0} width={0} src={GridIcon} alt='GridIcon' />
                         <p>View All PE Firms</p>
                     </div>
@@ -102,7 +105,7 @@ export default function PeFirms() {
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((key) => {
                             return (
 
-                                <div className={styles.peFirmDetailsSlider} key={key}>
+                                <div className={styles.peFirmDetailsSlider} key={key} onClick={()=>router.push('/firm-list')}>
                                     <div className={styles.peFirmDetailsBOx}>
                                         <div className={styles.peFirmDetailsLogo}>
                                             <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />

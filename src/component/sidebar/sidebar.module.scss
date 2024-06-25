@@ -19,6 +19,7 @@
             @include flex-between;
         }
         .sidebarLogo {
+            cursor: pointer;
             width: 180px;
             @include breakpoint("md-max") {
                 width: 140px;
