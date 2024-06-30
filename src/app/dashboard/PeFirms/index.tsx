@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Slider from "react-slick";
 import styles from "./PeFirms.module.scss";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { get } from '@/api/base';
+import { errorCheckAPIResponse } from '@/utils/helpers';
+import { MainContent } from '@/utils/context';
 
 const Logo = "/assets/images/logo1.png";
 const GridIcon = "/assets/icons/grid-icon.svg";
@@ -16,7 +19,7 @@ const SliderLeftArrow = "/assets/icons/left-side-arrow.svg";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
-   
+
     return (
         <div
             className={styles.nextArrowALignment}
@@ -87,6 +90,23 @@ export default function PeFirms() {
             }
         ]
     };
+    const { setCompanyName } = useContext(MainContent);
+
+    const [PEFirmData, setPEFirmData] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    useEffect(() => {
+        setIsLoading(true)
+        get(`/dashboard/api/companies`).then((res) => {
+            const response = res?.data?.results
+            setPEFirmData(response)
+            setIsLoading(false)
+        }).catch((error) => {
+            errorCheckAPIResponse(error)
+            setIsLoading(false)
+        })
+    }, [])
+    console.log('PEFirmDataPEFirmDataPEFirmDataPEFirmData',PEFirmData);
+    
     return (
         <div className={styles.peFirmsSection}>
             <div className={styles.peFirmsBox}>
@@ -94,7 +114,7 @@ export default function PeFirms() {
 
                     <h2>PE Firms</h2>
 
-                    <div className={styles.viewAllPeFIrms}  onClick={()=>router.push('/firm-list')}>
+                    <div className={styles.viewAllPeFIrms} onClick={() => router.push('/firm-list')}>
                         <Image unoptimized height={0} width={0} src={GridIcon} alt='GridIcon' />
                         <p>View All PE Firms</p>
                     </div>
@@ -102,10 +122,12 @@ export default function PeFirms() {
 
                 <div className={styles.peFirmDetailsAlignment}>
                     <Slider {...settings}>
-                        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((key) => {
+                        {PEFirmData.map((firm, key) => {
                             return (
-
-                                <div className={styles.peFirmDetailsSlider} key={key} onClick={()=>router.push('/firm-list')}>
+                                <div className={styles.peFirmDetailsSlider} key={key} onClick={() => {
+                                    setCompanyName(firm?.company_type)
+                                    router.push('/firm')
+                                }}>
                                     <div className={styles.peFirmDetailsBOx}>
                                         <div className={styles.peFirmDetailsLogo}>
                                             <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />

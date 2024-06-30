@@ -7,8 +7,10 @@ import { usePathname, useRouter } from "next/navigation";
 import styles from "./LayoutCustom.module.scss";
 import { useEffect, useState } from "react";
 import { authenticate, unProtectedRoute } from "@/utils/auth.util";
+import { MainContent } from "@/utils/context";
 
 export const LayoutCustom = ({ children }) => {
+  const [companyName, setCompanyName] = useState('')
   const path = usePathname();
   const router = useRouter();
   const sidebarRoutes = ["/dashboard", '/firm', '/firm-list'];
@@ -52,7 +54,7 @@ export const LayoutCustom = ({ children }) => {
     }
   }, [])
   return (
-    <>
+    <MainContent.Provider value={{ companyName, setCompanyName }}>
       {isSidebarRoute && (
         <div className={styles.layoutCustomSection}>
           <div
@@ -81,6 +83,6 @@ export const LayoutCustom = ({ children }) => {
         </>
       )}
       {login && <>{children}</>}
-    </>
+    </MainContent.Provider>
   );
 };

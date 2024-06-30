@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./dashboardMain.module.scss";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
+import { get } from "@/api/base";
+import { errorCheckAPIResponse } from "@/utils/helpers";
 const BarChart = dynamic(() => import('../dashboardMain/Bar'), { ssr: false });
 const DoughnutChart = dynamic(() => import('../dashboardMain/DoughnutChart '), { ssr: false });
 const DropdownIcon = "/assets/icons/dropdown-icon.svg";
 export default function DashboardMain() {
+  const [graphData, setGraphData] = useState([])
+  useEffect(() => {
+    get(`/dashboard/api/investments/by-sector`).then((res) => {
+      setGraphData((pre)=>{
+        return{...pre,sector:res.data.results}
+      })
+    }).catch((error) => {
+      errorCheckAPIResponse(error)
+    })
+    get(`/dashboard/api/investments/over-time`).then((res) => {
+      setGraphData((pre)=>{
+        return{...pre,overTime:res.data.results}
+      })    }).catch((error) => {
+      errorCheckAPIResponse(error)
+    })
+  }, [])
   return (
     <div className={styles.dashboardMainSection}>
       <div className={styles.dashboardMainGrid}>
@@ -31,7 +49,7 @@ export default function DashboardMain() {
               </select>
             </div>
             <div>
-              <BarChart />
+              <BarChart graphData={graphData}/>
             </div>
           </div>
         </div>

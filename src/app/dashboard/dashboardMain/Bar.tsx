@@ -18,7 +18,9 @@ import {
     Tooltip,
     Legend
   );
-const BarChart = () => {
+const BarChart = ({graphData}) => {
+  console.log("graphDatagraphDatagraphDatagraphData",graphData);
+  
   const data = {
     labels: ['Telecom', 'Business Services', 'Consumer Goods', 'EdTech', 'Food and Agriculture', 'Enterprise Applications'],
     datasets: [
