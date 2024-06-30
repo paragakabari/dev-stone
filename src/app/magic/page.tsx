@@ -35,7 +35,7 @@ export default function Magic() {
 
                         <div className={styles.signUpButton} 
                             onClick={()=>router.push('/signup')}>
-                            <button>Sign Up</button>
+                            <button>Sign Up1</button>
                         </div>
                     </div> 
                 </div>
