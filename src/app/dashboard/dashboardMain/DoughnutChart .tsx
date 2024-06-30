@@ -22,13 +22,14 @@ import {
   );
 
 
-const DoughnutChart = () => {
+const DoughnutChart = ({overTime}) => {
+  
     const data = {
-      labels: ['Telecom', 'Business Services', 'Consumer Goods', 'EdTech', 'Food and Agriculture', 'Enterprise Applications'],
+      labels: Object.keys(overTime),
       datasets: [
         {
           label: 'Percentage',
-          data: [20, 35, 15, 10, 5, 15], // Example data
+          data:  Object.values(overTime), // Example data
           backgroundColor: [
             '#0063ff',
             '#00b5ad',

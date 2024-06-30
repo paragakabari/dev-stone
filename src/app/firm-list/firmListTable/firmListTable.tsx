@@ -12,7 +12,6 @@ const UPRightArrow = "/assets/icons/up-right.svg";
 
 export default function FirmListTable(props) {
     const { PEFirmData, isLoading } = props;
-    console.log('PEFirmDataPEFirmDataPEFirmDataPEFirmData', PEFirmData);
     const { setCompanyName } = useContext(MainContent);
 
     const redirect = useRouter();
@@ -22,7 +21,7 @@ export default function FirmListTable(props) {
             title: 'Logo'
         },
         {
-            key: '',
+            key: 'organization_name',
             title: 'PE Firm Name',
             isSorting: true
         }, {
@@ -35,12 +34,13 @@ export default function FirmListTable(props) {
             title: 'Portfolio'
         },
         {
-            key: '',
+            key: 'total_equity_funding_amount_(in_usd)',
             title: 'Investments',
-            isSorting: true
+            isSorting: true,
+            isFormate: 'USD'
         },
         {
-            key: '',
+            key: 'industries',
             title: 'Sector'
         },
         {
@@ -98,13 +98,19 @@ export default function FirmListTable(props) {
                                                     </div>
                                                 ) : tItem?.isRedirect ?
                                                     <div className={styles.upRightArrow} onClick={() => {
-                                                        setCompanyName(firm?.company_type)
+                                                        setCompanyName(firm?.organization_name)
                                                         redirect.push("/firm")
                                                     }}>
                                                         <Image unoptimized height={0} width={0} src={UPRightArrow} alt="UPRightArrow" />
                                                     </div>
                                                     :
-                                                    (firm[tItem.key] || '-')
+                                                    tItem.key === 'industries' ?
+                                                        (firm[tItem.key]?.split(',').length || '-')
+                                                        :
+                                                     tItem?.isFormate==='USD'?
+                                                     firm[tItem.key] ? `$${firm[tItem.key]?.toLocaleString('en-US')}` : '-'
+                                                        :
+                                                        (firm[tItem.key] || '-')
                                                 }
                                             </td>
                                         )

@@ -69,18 +69,18 @@ export default function RecentInvestments() {
             title: 'Logo'
         },
         {
-            key: '',
+            key: 'organization_name',
             title: 'Company Name',
         }, {
             key: 'founded_year',
             title: 'Founded',
         },
         {
-            key: '',
+            key: 'organization_industries',
             title: 'Sector'
         },
         {
-            key: '',
+            key: 'organization_location',
             title: 'Location'
         },
         {
@@ -171,6 +171,9 @@ export default function RecentInvestments() {
                                                         :
                                                         tItem?.isFormate === "USD" ?
                                                             investment[tItem.key] ? `$${investment[tItem.key]?.toLocaleString('en-US')}` : '-'
+                                                            :
+                                                            (tItem.key === 'organization_industries'||tItem?.key==='organization_location') ?
+                                                            (investment[tItem.key]?.split(',').length || '-')
                                                             :
                                                             tItem?.isFormate === "date_time" ?
                                                                 investment[tItem.key] ? moment(investment[tItem.key]).format('DD/MM/YYYY - HH:mm a') : '-' :

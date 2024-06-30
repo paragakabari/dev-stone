@@ -8,7 +8,7 @@ const BarChart = dynamic(() => import('../dashboardMain/Bar'), { ssr: false });
 const DoughnutChart = dynamic(() => import('../dashboardMain/DoughnutChart '), { ssr: false });
 const DropdownIcon = "/assets/icons/dropdown-icon.svg";
 export default function DashboardMain() {
-  const [graphData, setGraphData] = useState([])
+  const [graphData, setGraphData] = useState({sector:{},overTime:{}})
   useEffect(() => {
     get(`/dashboard/api/investments/by-sector`).then((res) => {
       setGraphData((pre)=>{
@@ -49,7 +49,7 @@ export default function DashboardMain() {
               </select>
             </div>
             <div>
-              <BarChart graphData={graphData}/>
+              <BarChart sector={graphData.sector}/>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function DashboardMain() {
             <div className={styles.investmentBoxHeading}>
               <h2>Overview</h2>
             </div>
-            <DoughnutChart />
+            <DoughnutChart overTime={graphData.overTime}/>
           </div>
         </div>
       </div>

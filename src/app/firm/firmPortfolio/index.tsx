@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./firmPortfolio.module.scss";
 import Image from 'next/image';
 import Pagination from '@/app/firm-list/pagination/page';
+import moment from 'moment';
 const UPRightArrow = "/assets/icons/up-right.svg";
 const TopBottomArrow = "/assets/icons/top-bottom-arrow.svg";
 const Logo = "/assets/images/logo1.png";
@@ -98,7 +99,37 @@ const data = [
         stage: "Public"
     }
 ]
-export default function FirmPortfolio() {
+export default function FirmPortfolio({ investments }) {
+    const titleData = [
+        {
+            key: '',
+            title: 'Logo'
+        },
+        {
+            key: 'investor_names',
+            title: 'Investor Name',
+        }, {
+            key: 'announced_date',
+            title: 'Date & Time',
+            isFormate: 'date_time'
+        },
+        {
+            key: 'money_raised_(in_usd)',
+            title: 'Money raised in usd',
+            isFormate:'USD'
+        },
+        {
+            key: 'number_of_funding_rounds',
+            title: 'Number of funding rounds'
+        },
+
+        {
+            key: 'funding_type',
+            title: 'funding type',
+
+        }
+    ]
+
     return (
         <div className={styles.firmPortfolioSection}>
             <div className={styles.firmPortfolioBox}>
@@ -118,64 +149,43 @@ export default function FirmPortfolio() {
                         <table cellPadding={0} cellSpacing={0}>
                             <thead>
                                 <tr>
-                                    <th>Logo</th>
-                                    <th>
-                                        <div className={styles.filterALignment}>
-                                            <label>
-                                                Company Name
-                                            </label>
-                                            <Image unoptimized height={0} width={0} src={TopBottomArrow} alt="TopBottomArrow" />
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div className={styles.filterALignment}>
-                                            <label>
-                                                Founded
-                                            </label>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div className={styles.filterALignment}>
-                                            <label>
-                                                Sector
-                                            </label>
-                                            <Image unoptimized height={0} width={0} src={TopBottomArrow} alt="TopBottomArrow" />
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div className={styles.filterALignment}>
-                                            <label>
-                                                Location
-                                            </label>
-                                        </div>
-                                    </th>
-                                    <th>First Investment</th>
-                                    <th>Stage </th>
+                                    {titleData?.map((item, index) => {
+                                        return (
+                                            <th key={index}>
+                                                {item?.title}
+                                            </th>
+                                        )
+                                    })}
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, key) => (
-                                    <tr key={key}>
-                                        <td >
-                                            <div className={styles.logoAlignment}>
-                                                <div className={styles.starIcon}>
-                                                    <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
-                                                </div>
-                                                <div className={styles.logo}>
-                                                    <Image unoptimized height={0} width={0} src={item.logo} alt={item.name} />
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>{item.name}</td>
-                                        <td>{item.founded}</td>
-                                        <td>{item.sector}</td>
-                                        <td>{item.location}</td>
-                                        <td>{item.firstInvestment}</td>
-                                        <td>
-                                            <div className={styles.stageDetails}>
-                                                <p>{item.stage}</p>
-                                            </div>
-                                        </td>
+                                {investments && investments?.map((investment, index) => (
+                                    <tr key={index}>
+                                        {titleData?.map((tItem, index) => {
+                                            return (
+                                                <td key={index}>
+
+                                                    {tItem.title === "Logo" ? (
+                                                        <div className={styles.logoAlignment}>
+                                                            <div className={styles.starIcon}>
+                                                                <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
+                                                            </div>
+                                                            <div className={styles.logo}>
+                                                                <Image unoptimized height={0} width={0} src={'assets/images/rlogo1.png'} alt='Logo' />
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                        :
+                                                        tItem?.isFormate === "USD" ?
+                                                            investment[tItem.key] ? `$${investment[tItem.key]?.toLocaleString('en-US')}` : '-'
+                                                            :
+                                                                tItem?.isFormate === "date_time" ?
+                                                                    investment[tItem.key] ? moment(investment[tItem.key]).format('DD/MM/YYYY') : '-' :
+                                                                    (investment[tItem.key] || '-')
+                                                    }
+                                                </td>
+                                            )
+                                        })}
                                     </tr>
                                 ))}
                             </tbody>

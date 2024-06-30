@@ -105,8 +105,7 @@ export default function PeFirms() {
             setIsLoading(false)
         })
     }, [])
-    console.log('PEFirmDataPEFirmDataPEFirmDataPEFirmData',PEFirmData);
-    
+
     return (
         <div className={styles.peFirmsSection}>
             <div className={styles.peFirmsBox}>
@@ -125,7 +124,7 @@ export default function PeFirms() {
                         {PEFirmData.map((firm, key) => {
                             return (
                                 <div className={styles.peFirmDetailsSlider} key={key} onClick={() => {
-                                    setCompanyName(firm?.company_type)
+                                    setCompanyName(firm?.organization_name)
                                     router.push('/firm')
                                 }}>
                                     <div className={styles.peFirmDetailsBOx}>
@@ -136,18 +135,18 @@ export default function PeFirms() {
                                         <div className={styles.peFirmDetailAllDetails}>
                                             <div className={styles.peFirmProfileDescription}>
 
-                                                <h3>HarbourVest Partners </h3>
-                                                <p>HarbourVest Partners is a private equity fund of funds and one of the largest private equity investment managers globally. </p>
+                                                <h3>{firm?.organization_name}</h3>
+                                                <p>{firm?.full_description} </p>
                                             </div>
 
                                             <div className={styles.peFirmProfileBottomAlignment}>
                                                 <div className={styles.peFirmListDetails}>
                                                     <Image unoptimized height={0} width={0} src={InvestmentIcon} alt='InvestmentIcon' />
-                                                    <p>Total Investments - <span>$88M+</span> </p>
+                                                    <p>Total Investments - <span>{firm['last_equity_funding_amount_(in_usd)'] ? `${firm['last_equity_funding_amount_(in_usd)']?.toLocaleString('en-US')}` : 0}</span> </p>
                                                 </div>
                                                 <div className={styles.peFirmListDetails}>
                                                     <Image unoptimized height={0} width={0} src={SectoreIcon} alt='SectoreIcon' />
-                                                    <p>Sectors - <span>7+</span> </p>
+                                                    <p>Sectors - <span>{firm?.industries?.split(',').length}</span> </p>
                                                 </div>
                                                 <div className={styles.peFirmListDetails}>
                                                     <Image unoptimized height={0} width={0} src={GeographicalIcon} alt='GeographicalIcon' />

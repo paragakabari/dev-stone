@@ -6,7 +6,7 @@ const MarkerIcon = "/assets/icons/marker.svg";
 const PhoneIcon = "/assets/icons/phone-call.svg";
 const EmailIcon = "/assets/icons/email-icon-blue.svg";
 const ProfileImg = "/assets/images/demo-profile-img.png";
-export default function AboutFirm({firmData}) {
+export default function AboutFirm({ firmData }) {
     return (
         <div className={styles.aboutFirmSection}>
             <div className={styles.aboutFirmBox}>
@@ -22,14 +22,13 @@ export default function AboutFirm({firmData}) {
                             <div>
                                 <Image unoptimized height={0} width={0} src={MarkerIcon} alt='MarkerIcon' />
                             </div>
-                            <p>1001 Pennsylvania Avenue NW,
-                                Washington, DC 20004-2505, USA</p>
+                            <p>{firmData?.headquarters_location},{firmData?.postal_code}</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
                                 <Image unoptimized height={0} width={0} src={PhoneIcon} alt="PhoneIcon" />
                             </div>
-                            <p>+1 (202) 729-5626</p>
+                            <p>{firmData?.phone_number}</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
