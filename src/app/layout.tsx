@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import { LayoutCustom } from "@/shared/wrapper/LayoutCustom";
+import { Providers } from "../component/provider/provider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ToastContainer } from "react-toastify";
 const inter = Red_Hat_Display({ subsets: ["latin"] });
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,10 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LayoutCustom>
+        <Providers>
+          <ToastContainer />
+          <LayoutCustom>
 
-          {children}
-        </LayoutCustom>
+            {children}
+          </LayoutCustom>
+        </Providers>
       </body>
     </html>
   );
