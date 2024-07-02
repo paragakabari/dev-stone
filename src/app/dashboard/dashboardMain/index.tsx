@@ -49,7 +49,7 @@ export default function DashboardMain() {
               </select>
             </div>
             <div>
-              <BarChart sector={graphData.sector}/>
+              <BarChart sector={graphData.overTime}/>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function DashboardMain() {
             <div className={styles.investmentBoxHeading}>
               <h2>Overview</h2>
             </div>
-            <DoughnutChart overTime={graphData.overTime}/>
+            <DoughnutChart overTime={graphData.sector}/>
           </div>
         </div>
       </div>
