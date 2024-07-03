@@ -6,7 +6,7 @@ const MarkerIcon = "/assets/icons/marker.svg";
 const PhoneIcon = "/assets/icons/phone-call.svg";
 const EmailIcon = "/assets/icons/email-icon-blue.svg";
 const ProfileImg = "/assets/images/demo-profile-img.png";
-export default function AboutFirm() {
+export default function AboutFirm({ firmData }) {
     return (
         <div className={styles.aboutFirmSection}>
             <div className={styles.aboutFirmBox}>
@@ -14,26 +14,27 @@ export default function AboutFirm() {
                     <h2>About the Firm</h2>
                 </div>
                 <div className={styles.aboutFirmBoxBottomAlignment}>
-                    <p>The Carlyle Group is a global investment firm with deep industry expertise that deploys private capital across four business segments: Corporate Private Equity, Real Assets, Global Credit, and Investment Solutions. Founded in 1987, Carlyle manages a diverse portfolio that includes companies across various sectors worldwide.</p>
+                    <p>
+                        {firmData?.full_description}
+                    </p>
                     <div className={styles.bottomRightAlignment}>
                         <div className={styles.bottomRightFlex}>
                             <div>
                                 <Image unoptimized height={0} width={0} src={MarkerIcon} alt='MarkerIcon' />
                             </div>
-                            <p>1001 Pennsylvania Avenue NW,
-                                Washington, DC 20004-2505, USA</p>
+                            <p>{firmData?.headquarters_location},{firmData?.postal_code}</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
                                 <Image unoptimized height={0} width={0} src={PhoneIcon} alt="PhoneIcon" />
                             </div>
-                            <p>+1 (202) 729-5626</p>
+                            <p>{firmData?.phone_number}</p>
                         </div>
                         <div className={styles.bottomRightFlex}>
                             <div>
                                 <Image unoptimized height={0} width={0} src={EmailIcon} alt="EmailIcon" />
                             </div>
-                            <p>info@carlyle.com</p>
+                            <p>{firmData?.contact_email}</p>
                         </div>
                     </div>
                 </div>

@@ -102,17 +102,29 @@
             }
 
             .profileImg {
-                width: 54px;
-                min-width: 54px;
-                max-width: 54px;
-                height: 54px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    object-fit: cover;
+                // width: 54px;
+                // min-width: 54px;
+                // max-width: 54px;
+                // height: 54px;
+                // img {
+                //     width: 100%;
+                //     height: 100%;
+                //     display: block;
+                //     object-fit: cover;
+                //     border-radius: 50%;
+                // }
+                // .avatar {
+                    width: 54px;
+                    height: 54px;
+                    background-color: #ccc;
                     border-radius: 50%;
-                }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #fff;
+                //   }
             }
         }
     }

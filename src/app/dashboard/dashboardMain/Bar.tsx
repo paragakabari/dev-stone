@@ -18,26 +18,19 @@ import {
     Tooltip,
     Legend
   );
-const BarChart = () => {
+const BarChart = ({sector}) => {
+  
   const data = {
-    labels: ['Telecom', 'Business Services', 'Consumer Goods', 'EdTech', 'Food and Agriculture', 'Enterprise Applications'],
+    labels: Object.keys(sector),
     datasets: [
       {
         label: 'Investment',
-        data: [60, 80, 90, 50, 85, 70], // Example data
+        data: Object.values(sector), // Example data
         backgroundColor: '#f09643',
         borderRadius: 20, // Rounded corners
        
         borderWidth: 1,
-      },
-      {
-        label: 'Returns',
-        data: [70, 110, 120, 70, 110, 85], // Example data
-        backgroundColor: '#1d63dc',
-        borderRadius: 20, // Rounded corners
-        
-        borderWidth: 1,
-      },
+      }
     ],
   };
 

@@ -9,25 +9,27 @@ const StarIcon = "/assets/icons/star-icon.svg";
 const InvestmentIcon = "/assets/icons/investment-icon.svg";
 const SectoreIcon = "/assets/icons/sectore-icon.svg";
 const GeographicalIcon = "/assets/icons/Geographical-icon.svg";
-export default function FirmTop() {
+export default function FirmTop(props) {
+    const { firmData } = props;
+
     const router = useRouter();
     return (
         <div className={styles.firmTopSection}>
             <div className={styles.firmTopAlignment}>
                 <div className={styles.firmTopLeft}>
                     <div className={styles.firmTopLogo}>
-                        <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
+                        <Image unoptimized height={0} width={0} src={firmData?.logo_url} alt="Logo" />
                     </div>
 
                     <div className={styles.firmCompanyDetails}>
                         <div className={styles.companyTop}>
-                            <h1>The Carlyle Group</h1>
+                            <h1>{firmData?.organization_name}</h1>
                             <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
                         </div>
-                        <p>Deploys private capital across four business segments</p>
+                        <p>{firmData?.full_description}</p>
                     </div>
                 </div>
-                <div className={styles.firmTopRight}>
+                {/* <div className={styles.firmTopRight}>
                     <div className={styles.peFirmProfileBottomAlignment}>
                         <div className={styles.peFirmListDetails}>
                             <Image unoptimized height={0} width={0} src={InvestmentIcon} alt='InvestmentIcon' />
@@ -42,7 +44,7 @@ export default function FirmTop() {
                             <p>Geographical Focus - <span>Global</span> </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
