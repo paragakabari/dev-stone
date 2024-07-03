@@ -13,8 +13,6 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET_KEY,
-      // clientId:'706371313443-jl9cjdcm7bbd606jj11qfhjb6j7s78rr.apps.googleusercontent.com',
-      // clientSecret: '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',
       redirect_uri: "http://localhost:3000/api/auth/callback/google",
     }),
     Credentials({
