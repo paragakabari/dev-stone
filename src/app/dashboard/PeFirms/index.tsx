@@ -129,7 +129,9 @@ export default function PeFirms() {
                                 }}>
                                     <div className={styles.peFirmDetailsBOx}>
                                         <div className={styles.peFirmDetailsLogo}>
-                                            <Image unoptimized height={0} width={0} src={firm?.logo_url} alt="Logo" />
+                                        {/* <h3>{firm?.logo_url}</h3> */}
+
+                                            <Image unoptimized height={60} width={60} src={firm?.logo_url} alt="Logo" />
                                         </div>
 
                                         <div className={styles.peFirmDetailAllDetails}>
