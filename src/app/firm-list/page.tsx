@@ -28,14 +28,14 @@ export default function FirmList() {
                 <div className={styles.firmListHeading}>
                     <h1>PE Firms</h1>
                     <div className={styles.sortBySection}>
-                        <label>Sort by</label>
+                        {/* <label>Sort by</label>
 
                         <select>
                             <option>Investment High to Low</option>
                             <option>Investment High to Low</option>
                             <option>Investment High to Low</option>
                             <option>Investment High to Low</option>
-                        </select>
+                        </select> */}
                     </div>
                 </div>
 

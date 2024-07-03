@@ -17,7 +17,7 @@ export default function FirmListTable(props) {
     const redirect = useRouter();
     const titleData = [
         {
-            key: '',
+            key: 'logo_url',
             title: 'Logo'
         },
         {
@@ -93,7 +93,7 @@ export default function FirmListTable(props) {
                                                             <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
                                                         </div>
                                                         <div className={styles.logo}>
-                                                            <Image unoptimized height={0} width={0} src={'/assets/images/logo1.png'} alt={firm.name} />
+                                                            <Image unoptimized height={0} width={0} src={firm[tItem.key]} alt={firm.name} />
                                                         </div>
                                                     </div>
                                                 ) : tItem?.isRedirect ?

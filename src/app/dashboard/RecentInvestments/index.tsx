@@ -65,16 +65,17 @@ export default function RecentInvestments() {
     const [isLoading, setIsLoading] = useState(false)
     const titleData = [
         {
-            key: '',
+            key: 'logo_url',
             title: 'Logo'
         },
         {
             key: 'organization_name',
             title: 'Company Name',
-        }, {
-            key: 'founded_year',
-            title: 'Founded',
-        },
+        }, 
+        // {
+        //     key: 'founded_year',
+        //     title: 'Founded',
+        // },
         {
             key: 'organization_industries',
             title: 'Sector'
@@ -123,12 +124,12 @@ export default function RecentInvestments() {
                     <Image unoptimized height={0} width={0} src={DropdownIcon} alt={DropdownIcon} />
                 </div> */}
 
-                    <select>
+                    {/* <select>
                         <option>June 2024</option>
                         <option>June 2024</option>
                         <option>June 2024</option>
                         <option>June 2024</option>
-                    </select>
+                    </select> */}
                 </div>
 
                 <div className={styles.recentInvestmentDetailsAlignment}>
@@ -153,15 +154,17 @@ export default function RecentInvestments() {
                                     <tr key={index}>
                                         {titleData?.map((tItem, index) => {
                                             return (
+                                                
                                                 <td key={index}>
-
+                                                    
                                                     {tItem.title === "Logo" ? (
+                                                        
                                                         <div className={styles.logoAlignment}>
                                                             <div className={styles.starIcon}>
                                                                 <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
                                                             </div>
                                                             <div className={styles.logo}>
-                                                                <Image unoptimized height={0} width={0} src={'assets/images/rlogo1.png'} alt='Logo' />
+                                                                <Image unoptimized height={0} width={0} src={investment[tItem.key]} alt='Logo' />
                                                             </div>
                                                         </div>
                                                     ) : tItem?.isButton ?
@@ -172,7 +175,7 @@ export default function RecentInvestments() {
                                                         tItem?.isFormate === "USD" ?
                                                             investment[tItem.key] ? `$${investment[tItem.key]?.toLocaleString('en-US')}` : '-'
                                                             :
-                                                            (tItem.key === 'organization_industries'||tItem?.key==='organization_location') ?
+                                                            (tItem.key === 'organization_industries') ?
                                                             (investment[tItem.key]?.split(',').length || '-')
                                                             :
                                                             tItem?.isFormate === "date_time" ?

@@ -16,7 +16,7 @@ export default function FirmTop({firmData}) {
             <div className={styles.firmTopAlignment}>
                 <div className={styles.firmTopLeft}>
                     <div className={styles.firmTopLogo}>
-                        <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
+                        <Image unoptimized height={0} width={0} src={firmData?.logo_url} alt="Logo" />
                     </div>
 
                     <div className={styles.firmCompanyDetails}>
