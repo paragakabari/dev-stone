@@ -9,9 +9,10 @@ const StarIcon = "/assets/icons/star-icon.svg";
 const InvestmentIcon = "/assets/icons/investment-icon.svg";
 const SectoreIcon = "/assets/icons/sectore-icon.svg";
 const GeographicalIcon = "/assets/icons/Geographical-icon.svg";
-export default function FirmTop({firmData}) {
+export default function FirmTop(props) {
+    const { firmData } = props;
+
     const router = useRouter();
-    console.log("firmdata",firmData);
     return (
         <div className={styles.firmTopSection}>
             <div className={styles.firmTopAlignment}>

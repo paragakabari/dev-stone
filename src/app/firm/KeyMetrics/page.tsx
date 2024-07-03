@@ -4,7 +4,8 @@ import Image from 'next/image';
 const Icon1 = "/assets/icons/Companies-icon.svg"
 const Icon2 = "/assets/icons/investments-icon.svg"
 const Icon3 = "/assets/icons/Investment-size-icon.svg"
-export default function KeyMetrics({ firmData }) {
+export default function KeyMetrics(props) {
+    const { firmData } = props;
     return (
         <div className={styles.keyMetricsSection}>
             <div className={styles.keyMetricsBox}>
@@ -33,7 +34,7 @@ export default function KeyMetrics({ firmData }) {
                                 </div>
                                 <div className={styles.keyMetricsRightSide}>
                                     <p>Total Investments Amount </p>
-                                    <h4>{firmData['last_equity_funding_amount_(in_usd)'] ? `${firmData['last_equity_funding_amount_(in_usd)']?.toLocaleString('en-US')}` : 0}</h4>
+                                    <h4>{firmData && firmData['last_equity_funding_amount_(in_usd)'] ? `${firmData['last_equity_funding_amount_(in_usd)']?.toLocaleString('en-US')}` : 0}</h4>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +46,7 @@ export default function KeyMetrics({ firmData }) {
                                 </div>
                                 <div className={styles.keyMetricsRightSide}>
                                     <p>Total Equity Funding Amount</p>
-                                    <h4>{firmData['total_equity_funding_amount_(in_usd'] ? `${firmData['total_equity_funding_amount_(in_usd']?.toLocaleString('en-US')}` : 0}</h4>
+                                    <h4>{firmData && firmData['total_equity_funding_amount_(in_usd'] ? `${firmData['total_equity_funding_amount_(in_usd']?.toLocaleString('en-US')}` : 0}</h4>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +58,7 @@ export default function KeyMetrics({ firmData }) {
                         <h6>Primary Sectors</h6>
 
                         <div className={styles.keyMetricsChilFlexAlignment}>
-                            {firmData?.industries?.split(',')?.map((item, key) => {
+                            {firmData && firmData?.industries?.split(',')?.map((item, key) => {
                                 return (
 
                                     <div className={styles.childBox} key={key}>
@@ -72,7 +73,7 @@ export default function KeyMetrics({ firmData }) {
                         <h6>Industry Groups</h6>
 
                         <div className={styles.keyMetricsChilFlexAlignment}>
-                            {firmData?.industry_groups?.split(',')?.map((item, key) => {
+                            {firmData && firmData?.industry_groups?.split(',')?.map((item, key) => {
                                 return (
 
                                     <div className={styles.childBox} key={key}>
