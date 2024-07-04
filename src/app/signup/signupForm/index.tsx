@@ -62,7 +62,9 @@ export default function SignupForm() {
     const handlegoogleSignup = async () => {
         signIn("google");
     };
-
+    const handleClickSendMegiclink = () => {
+        formik.handleSubmit()
+    }
     useEffect(() => {
         if (session) {
             setIsLoading(true)
@@ -87,83 +89,82 @@ export default function SignupForm() {
         }
     }, [session]);
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <div className={styles.signUpFormSection}>
-                {isLoading && (
-                    <Loader />
-                )}
-                <div className={styles.mobileViewLogo}>
-                    <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
-                </div>
-                <div className={styles.signUpFormAlignment}>
-                    <h1>Sign Up</h1>
-                    <p>Enter your details below to create your account
-                        and get started</p>
+        <div className={styles.signUpFormSection}>
+            {isLoading && (
+                <Loader />
+            )}
+            <div className={styles.mobileViewLogo} onClick={() => {
+                router.push(`/`);
+            }}>
+                <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
+            </div>
+            <div className={styles.signUpFormAlignment}>
+                <h1>Sign Up</h1>
+                <p>Enter your details below to create your account
+                    and get started</p>
 
-                    <div className={styles.inputDetailsAlignment}>
-                        <div className={styles.inputAlignment}>
+                <div className={styles.inputDetailsAlignment}>
+                    <div className={styles.inputAlignment}>
 
-                            <div className={styles.input}>
-                                <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />
-                                <input
-                                    type='text'
-                                    placeholder='First Name'
-                                    name='first_name'
-                                    onChange={formik.handleChange}
-                                    value={formik.values.first_name}
-                                    onBlur={formik.handleBlur} />
-                            </div>
-                            {formik?.errors.first_name && formik?.touched.first_name ? <div className={styles.errorMsg}>{formik?.errors.first_name}</div> : null}
+                        <div className={styles.input}>
+                            <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />
+                            <input
+                                type='text'
+                                placeholder='First Name'
+                                name='first_name'
+                                onChange={formik.handleChange}
+                                value={formik.values.first_name}
+                                onBlur={formik.handleBlur} />
                         </div>
-                        <div className={styles.inputAlignment}>
-
-                            <div className={styles.input}>
-                                <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />
-                                <input
-                                    type='text'
-                                    placeholder='Last Name'
-                                    name='last_name'
-                                    onChange={formik.handleChange}
-                                    value={formik.values.last_name}
-                                    onBlur={formik.handleBlur} />
-                            </div>
-                            {formik?.errors.last_name && formik?.touched.last_name ? <div className={styles.errorMsg}>{formik?.errors.last_name}</div> : null}
-                        </div>
-                        <div className={styles.inputAlignment}>
-                            <div className={styles.input}>
-                                <Image unoptimized height={0} width={0} src={MailIcon} alt="MailIcon" />
-                                <input
-                                    type='text'
-                                    name="email"
-                                    placeholder='Email Address'
-                                    onChange={formik.handleChange}
-                                    value={formik.values.email}
-                                    onBlur={formik.handleBlur}
-                                />
-                            </div>
-                            {formik?.errors.email && formik?.touched.email ? <div className={styles.errorMsg}>{formik?.errors.email}</div> : null}
-                        </div>
+                        {formik?.errors.first_name && formik?.touched.first_name ? <div className={styles.errorMsg}>{formik?.errors.first_name}</div> : null}
                     </div>
+                    <div className={styles.inputAlignment}>
 
-                    <div className={styles.buttonAlignment}>
-                        <div className={styles.buttonDetails}>
-                            <button type='submit'><Image unoptimized height={0} width={0} src={SendLinkIcon} alt="send link icon" />Send Magic Link</button>
+                        <div className={styles.input}>
+                            <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />
+                            <input
+                                type='text'
+                                placeholder='Last Name'
+                                name='last_name'
+                                onChange={formik.handleChange}
+                                value={formik.values.last_name}
+                                onBlur={formik.handleBlur} />
                         </div>
-                        <div className={styles.buttonDetails}>
-                            <button className={styles.outlineBtn} onClick={handlegoogleSignup}><Image unoptimized height={0} width={0} src={GoogleIcon} alt="google icon" />Sign in with Google</button>
-                        </div>
+                        {formik?.errors.last_name && formik?.touched.last_name ? <div className={styles.errorMsg}>{formik?.errors.last_name}</div> : null}
                     </div>
-
-                    <div className={styles.alreadtAccountAlignment}>
-                        <a>Already have an account?   </a><Link href="/login"> <span>Login</span>
-                        </Link>
+                    <div className={styles.inputAlignment}>
+                        <div className={styles.input}>
+                            <Image unoptimized height={0} width={0} src={MailIcon} alt="MailIcon" />
+                            <input
+                                type='text'
+                                name="email"
+                                placeholder='Email Address'
+                                onChange={formik.handleChange}
+                                value={formik.values.email}
+                                onBlur={formik.handleBlur}
+                            />
+                        </div>
+                        {formik?.errors.email && formik?.touched.email ? <div className={styles.errorMsg}>{formik?.errors.email}</div> : null}
                     </div>
                 </div>
-                <div className={styles.copyRightALignment}>
-                    <p>© 2024 Stone-Goff Partners. All Rights Reserved.</p>
+
+                <div className={styles.buttonAlignment}>
+                    <div className={styles.buttonDetails}>
+                        <button type='submit' onClick={handleClickSendMegiclink}><Image unoptimized height={0} width={0} src={SendLinkIcon} alt="send link icon" />Send Magic Link</button>
+                    </div>
+                    <div className={styles.buttonDetails}>
+                        <button className={styles.outlineBtn} onClick={handlegoogleSignup}><Image unoptimized height={0} width={0} src={GoogleIcon} alt="google icon" />Sign in with Google</button>
+                    </div>
+                </div>
+
+                <div className={styles.alreadtAccountAlignment}>
+                    <a>Already have an account?   </a><Link href="/login"> <span>Login</span>
+                    </Link>
                 </div>
             </div>
-        </form>
-
+            <div className={styles.copyRightALignment}>
+                <p>© 2024 Stone-Goff Partners. All Rights Reserved.</p>
+            </div>
+        </div>
     )
 }

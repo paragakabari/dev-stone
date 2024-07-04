@@ -39,7 +39,7 @@ export default function HomeHeader() {
             <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
           </div>
           <div className={styles.headerRightSide}>
-            <div className={styles.headerMenu}>
+            {/* <div className={styles.headerMenu}>
               <a>Investment</a>
               <a>Focus Areas</a>
               <a>Team</a>
@@ -47,7 +47,7 @@ export default function HomeHeader() {
               <a>About</a>
               <a>News</a>
               <a>Contact</a>
-            </div>
+            </div> */}
             <div className={styles.headerSearchAlignment}>
               <div className={styles.searchIcon}>
                 <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
@@ -80,13 +80,13 @@ export default function HomeHeader() {
             </div>
           </div>
           <div className={styles.mobileViewMenuAlignment}>
-            <a>Investment</a>
+            {/* <a>Investment</a>
             <a>Focus Areas</a>
             <a>Team</a>
             <a>Portfolio</a>
             <a>About</a>
             <a>News</a>
-            <a>Contact</a>
+            <a>Contact</a> */}
             <div className={styles.mobileSearchButtonAlignment} onClick={() => router.push("/login")}>
               <button>
                 <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" /> Login

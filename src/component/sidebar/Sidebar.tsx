@@ -2,6 +2,8 @@ import { usePathname, useRouter } from "next/navigation";
 import styles from "./sidebar.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import { signOut } from "next-auth/react";
+import { setToken } from "@/utils/auth.util";
 
 const Logo = "/assets/logo/logo.svg";
 const DashboradIcon = "/assets/icons/dashbord-icon.svg";
@@ -15,13 +17,18 @@ export default function Sidebar({ isOpen, onClose }) {
   const path = usePathname().split("/")[1];
   console.log('path', path);
 
+  const handleClickLogout = () => {
+    setToken("")
+    signOut({ callbackUrl: "/login" })
+
+  }
   return (
     // <div className={classNames(styles.sidebarSection, toggleSidebar ? styles.smallSidebar : "")}>
 
     <div className={styles.sidebarSection}>
       <div className={styles.sidebarTop}>
         <div className={styles.sidebarFlexAlignment}>
-          <div className={styles.sidebarLogo} onClick={()=>router.push('/')}>
+          <div className={styles.sidebarLogo} onClick={() => router.push('/')}>
             <Image unoptimized height={0} width={0} src={Logo} alt="Logo" />
           </div>
           <div className={styles.closeIcon} >
@@ -82,7 +89,7 @@ export default function Sidebar({ isOpen, onClose }) {
               <p>Profile </p>{" "}
             </a>
           </div>
-          <div className={styles.menuList}>
+          <div className={styles.menuList} onClick={() => { handleClickLogout() }}>
             <a>
               <Image
                 unoptimized

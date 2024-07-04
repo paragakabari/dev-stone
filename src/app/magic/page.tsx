@@ -9,8 +9,6 @@ export default function Magic() {
     const router = useRouter();
     return (
         <>
-         
-
             <div className={styles.magicSection}>
                 <div className={styles.magicLeftSide}>
                     <div className={styles.magicSideBannerDetails}>

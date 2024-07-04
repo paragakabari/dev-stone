@@ -43,7 +43,7 @@ export const LayoutCustom = ({ children }) => {
   };
   const closeSidebar = () => {
     setSidebarOpen(false);
-  };
+  };  
   useEffect(() => {
     if (authenticate()) {
       if ([...unProtectedRoute].includes(path)) {

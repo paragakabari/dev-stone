@@ -71,54 +71,59 @@ export default function LoginForm() {
     const handleGoogleSignIn = async () => {
         signIn("google");
     };
+    const handleClickSendMegiclink = () => {
+        formik.handleSubmit()
+    }
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <div className={styles.loginFormSection}>
-                {isLoading && (
-                    <Loader />
-                )}
-                <div className={styles.mobileViewLogo}>
-                    <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
+        <div className={styles.loginFormSection}>
+            {isLoading && (
+                <Loader />
+            )}
+            <div className={styles.mobileViewLogo}
+                onClick={() => {
+                    router.push(`/`);
+                }}
+            >
+                <Image unoptimized height={0} width={0} src={Logo} alt='Logo' />
+            </div>
+            <div className={styles.loginFormAlignment}>
+                <h1>Welcome Back!</h1>
+                <p>Glad to see you again.
+                    Login to your account below</p>
+
+                <div className={styles.inputDetailsAlignment}>
+                    <div className={styles.input}>
+                        <Image unoptimized height={0} width={0} src={MailIcon} alt="MailIcon" />
+                        <input type='text' name="email" placeholder='Email Address'
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                            onBlur={formik.handleBlur}
+                        />
+                    </div>
+                    {formik?.errors.email && formik?.touched.email ? <div className={styles.errorMsg}>{formik?.errors.email}</div> : null}
                 </div>
-                <div className={styles.loginFormAlignment}>
-                    <h1>Welcome Back!</h1>
-                    <p>Glad to see you again.
-                        Login to your account below</p>
 
-                    <div className={styles.inputDetailsAlignment}>
-                        <div className={styles.input}>
-                            <Image unoptimized height={0} width={0} src={MailIcon} alt="MailIcon" />
-                            <input type='text' name="email" placeholder='Email Address'
-                                onChange={formik.handleChange}
-                                value={formik.values.email}
-                                onBlur={formik.handleBlur}
-                            />
-                        </div>
-                        {formik?.errors.email && formik?.touched.email ? <div className={styles.errorMsg}>{formik?.errors.email}</div> : null}
+                <div className={styles.buttonAlignment}>
+                    <div className={styles.buttonDetails}>
+                        <button type="submit" onClick={handleClickSendMegiclink}><Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
                     </div>
-
-                    <div className={styles.buttonAlignment}>
-                        <div className={styles.buttonDetails}>
-                            <button type="submit"><Image unoptimized height={0} width={0} src={SendLinkIcon} alt='a' />Send Magic Link</button>
-                        </div>
-                        <div className={styles.buttonDetails} onClick={() => handleGoogleSignIn()}>
-                            <button className={styles.outlineBtn}><Image unoptimized height={0} width={0} src={GoogleIcon} alt='2' />Sign in with Google</button>
-                        </div>
-                    </div>
-
-                    <div className={styles.dontAccountAlignment}>
-                        <a
-
-                        >Don{"'"}t have an account?
-
-                        </a><Link href="/signup"> <span>Sign up</span>
-                        </Link>
+                    <div className={styles.buttonDetails} onClick={() => handleGoogleSignIn()}>
+                        <button className={styles.outlineBtn}><Image unoptimized height={0} width={0} src={GoogleIcon} alt='2' />Sign in with Google</button>
                     </div>
                 </div>
-                <div className={styles.copyRightALignment}>
-                    <p>© 2024 Stone-Goff Partners. All Rights Reserved.</p>
+
+                <div className={styles.dontAccountAlignment}>
+                    <a
+
+                    >Don{"'"}t have an account?
+
+                    </a><Link href="/signup"> <span>Sign up</span>
+                    </Link>
                 </div>
             </div>
-        </form>
+            <div className={styles.copyRightALignment}>
+                <p>© 2024 Stone-Goff Partners. All Rights Reserved.</p>
+            </div>
+        </div>
     )
 }
