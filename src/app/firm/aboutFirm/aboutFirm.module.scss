@@ -270,6 +270,15 @@
                         height: 16px;
                     }
                 }
+               .doughnutChart{
+                display: flex;
+                justify-content: center;
+                margin: 20px auto;
+                height: 230px;
+                width: 99%;
+                // max-width: 200px;
+
+               }
             }
         }
     }
