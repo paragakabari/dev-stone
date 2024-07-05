@@ -14,6 +14,7 @@ import { MainContent } from "@/utils/context";
 import { get } from "@/api/base";
 import Loader from "@/component/loader";
 import { errorCheckAPIResponse } from "@/utils/helpers";
+import ChannelCompany from "./channelCompany";
 const LeftArrow = "/assets/icons/left-arrow.png";
 export default function Firm() {
     
@@ -55,6 +56,7 @@ export default function Firm() {
             <FirmTop firmData={firmData?.company_info} />
             <KeyMetrics firmData={firmData?.company_info} />
             <AboutFirm firmData={firmData?.company_info} />
+            <ChannelCompany />
             <FirmOtherOption />
             <FirmPortfolio investments={firmData?.investments} />
         </div>
