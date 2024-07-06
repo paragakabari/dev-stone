@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from "./firmListTable.module.scss";
 import Image from 'next/image';
 import Pagination from '../pagination/page';
@@ -12,7 +12,6 @@ const UPRightArrow = "/assets/icons/up-right.svg";
 
 export default function FirmListTable(props) {
     const { PEFirmData, isLoading } = props;
-    const { setCompanyName } = useContext(MainContent);
 
     const redirect = useRouter();
     const titleData = [
@@ -83,8 +82,7 @@ export default function FirmListTable(props) {
                             )}
                             {PEFirmData.map((firm, key) => (
                                 <tr key={key} onClick={() => {
-                                    setCompanyName(firm?.organization_name)
-                                    redirect.push("/firm")
+                                    redirect.push(`/firm/${firm?.organization_name}`)
                                 }}>
                                     {titleData?.map((tItem, index) => {
                                         return (
@@ -98,14 +96,15 @@ export default function FirmListTable(props) {
                                                             <Image unoptimized height={0} width={0} src={firm[tItem.key]} alt={firm.name} />
                                                         </div>
                                                     </div>
-                                                ) : tItem?.isRedirect ?
-                                                    <div className={styles.upRightArrow} onClick={() => {
-                                                        setCompanyName(firm?.organization_name)
-                                                        redirect.push("/firm")
-                                                    }}>
-                                                        <Image unoptimized height={0} width={0} src={UPRightArrow} alt="UPRightArrow" />
-                                                    </div>
-                                                    :
+                                                ) :
+                                                    //  tItem?.isRedirect ?
+                                                    //     <div className={styles.upRightArrow} onClick={() => {
+                                                    //       redirect.push(`/firm/${firm?.organization_name}`)
+
+                                                    //     }}>
+                                                    //         <Image unoptimized height={0} width={0} src={UPRightArrow} alt="UPRightArrow" />
+                                                    //     </div>
+                                                    //     :
                                                     tItem.key === 'industries' ?
                                                         (firm[tItem.key]?.split(',').length || '-')
                                                         :
