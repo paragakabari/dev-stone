@@ -20,7 +20,7 @@ export default function HomePage() {
       <WhatLookingFor />
       {/* <MakeAsBetter />
       <InvestingDetails /> */}
-      <FeaturedPEFirms />
+      {/* <FeaturedPEFirms /> */}
       <HowItWork />
       <RecentNews />
       <EasyUsing />
