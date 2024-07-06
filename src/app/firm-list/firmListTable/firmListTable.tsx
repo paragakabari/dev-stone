@@ -43,15 +43,15 @@ export default function FirmListTable(props) {
             key: 'industries',
             title: 'Sector'
         },
-        {
-            key: '',
-            title: 'Geographical Focus'
-        },
-        {
-            key: '',
-            title: '',
-            isRedirect: true
-        },
+        // {
+        //     key: '',
+        //     title: 'Geographical Focus'
+        // },
+        // {
+        //     key: '',
+        //     title: '',
+        //     isRedirect: true
+        // },
     ]
 
     return (
@@ -82,16 +82,18 @@ export default function FirmListTable(props) {
                                 <Loader />
                             )}
                             {PEFirmData.map((firm, key) => (
-                                <tr key={key}>
+                                <tr key={key} onClick={() => {
+                                    setCompanyName(firm?.organization_name)
+                                    redirect.push("/firm")
+                                }}>
                                     {titleData?.map((tItem, index) => {
                                         return (
-                                            <td key={index}>
-
+                                            <td key={index} >
                                                 {tItem.title === "Logo" ? (
                                                     <div className={styles.logoAlignment}>
-                                                        <div className={styles.starIcon}>
+                                                        {/* <div className={styles.starIcon}>
                                                             <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
-                                                        </div>
+                                                        </div> */}
                                                         <div className={styles.logo}>
                                                             <Image unoptimized height={0} width={0} src={firm[tItem.key]} alt={firm.name} />
                                                         </div>
@@ -107,10 +109,10 @@ export default function FirmListTable(props) {
                                                     tItem.key === 'industries' ?
                                                         (firm[tItem.key]?.split(',').length || '-')
                                                         :
-                                                     tItem?.isFormate==='USD'?
-                                                     firm[tItem.key] ? `$${firm[tItem.key]?.toLocaleString('en-US')}` : '-'
-                                                        :
-                                                        (firm[tItem.key] || '-')
+                                                        tItem?.isFormate === 'USD' ?
+                                                            firm[tItem.key] ? `$${firm[tItem.key]?.toLocaleString('en-US')}` : '-'
+                                                            :
+                                                            (firm[tItem.key] || '-')
                                                 }
                                             </td>
                                         )
