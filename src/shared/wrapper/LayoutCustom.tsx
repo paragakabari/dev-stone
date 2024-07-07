@@ -10,15 +10,21 @@ import { authenticate, unProtectedRoute } from "@/utils/auth.util";
 import { MainContent } from "@/utils/context";
 
 export const LayoutCustom = ({ children }) => {
-  const [companyName, setCompanyName] = useState('')
   const path = usePathname();
   const router = useRouter();
-  const sidebarRoutes = ["/dashboard", '/firm', '/firm-list'];
-  const headerRoutes = ["/dashboard", '/firm', '/firm-list'];
+  const isEmptyValue = (value) => {
+    if (value === '' || value === null || value === undefined) {
+      return true
+    } else {
+      return false
+    }
+  }
+  const sidebarRoutes = ["/dashboard", '/firm-list'];
+  const headerRoutes = ["/dashboard", '/firm-list'];
   const headerHomeRoutes = ["/"];
   const loginRoutes = ["/login", "/signup", '/magic', '/magic-link'];
-
-  const isSidebarRoute = sidebarRoutes.includes(path);
+  const isFirmRoute = path.split('/').includes('firm') && !isEmptyValue(path.split('/')[2])
+  const isSidebarRoute = isFirmRoute ? isFirmRoute : sidebarRoutes.includes(path);
   const isHeaderOnlyRoute = headerRoutes.includes(path);
   const isHeaderHomeRoute = headerHomeRoutes.includes(path);
   const login = loginRoutes.includes(path);
@@ -43,7 +49,7 @@ export const LayoutCustom = ({ children }) => {
   };
   const closeSidebar = () => {
     setSidebarOpen(false);
-  };  
+  };
   useEffect(() => {
     if (authenticate()) {
       if ([...unProtectedRoute].includes(path)) {
@@ -54,7 +60,8 @@ export const LayoutCustom = ({ children }) => {
     }
   }, [])
   return (
-    <MainContent.Provider value={{ companyName, setCompanyName }}>
+    // <MainContent.Provider>
+    <>
       {isSidebarRoute && (
         <div className={styles.layoutCustomSection}>
           <div
@@ -83,6 +90,7 @@ export const LayoutCustom = ({ children }) => {
         </>
       )}
       {login && <>{children}</>}
-    </MainContent.Provider>
+    </>
+    // </MainContent.Provider>
   );
 };

@@ -2,39 +2,30 @@
 
 
 import { useRouter } from "next/navigation"
-import styles from "./firm.module.scss";
-import FirmTop from "./firmTop/page";
-import KeyMetrics from "./KeyMetrics/page";
-import AboutFirm from "./aboutFirm/aboutFirm";
-import FirmOtherOption from "./firmOtherOption";
-import FirmPortfolio from "./firmPortfolio";
+import styles from "../firm.module.scss";
+import FirmTop from "../firmTop/page";
+import KeyMetrics from "../KeyMetrics/page";
+import AboutFirm from "../aboutFirm/aboutFirm";
+import FirmOtherOption from "../firmOtherOption";
+import FirmPortfolio from "../firmPortfolio";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
-import { MainContent } from "@/utils/context";
+import { useEffect, useState } from "react";
 import { get } from "@/api/base";
 import Loader from "@/component/loader";
 import { errorCheckAPIResponse } from "@/utils/helpers";
-import ChannelCompany from "./channelCompany";
+import ChannelCompany from "../channelCompany";
 const LeftArrow = "/assets/icons/left-arrow.png";
-export default function Firm() {
-    
+export default function Firm({ params }) {
     const router = useRouter();
-    const { companyName } = useContext(MainContent);
-    useEffect(() => {
-        if (companyName) {
-
-        }
-
-    }, [companyName])
 
     const [firmData, setfirmData] = useState({ company_info: '', investments: '' })
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        if (companyName) {
+        if (params.slug) {
             setIsLoading(true)
 
-            get(`/dashboard/api/company/${companyName}`).then((res) => {
+            get(`/dashboard/api/company/${params.slug}`).then((res) => {
                 const response = res?.data?.results;
                 setfirmData(response)
                 setIsLoading(false)
@@ -43,7 +34,7 @@ export default function Firm() {
                 setIsLoading(false)
             })
         }
-    }, [companyName])
+    }, [params.slug])
     return (
         <div className={styles.firmSection}>
             {isLoading && (

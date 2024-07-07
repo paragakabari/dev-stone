@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import Slider from "react-slick";
 import styles from "./PeFirms.module.scss";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { get } from '@/api/base';
 import { errorCheckAPIResponse } from '@/utils/helpers';
-import { MainContent } from '@/utils/context';
 
 const Logo = "/assets/images/logo1.png";
 const GridIcon = "/assets/icons/grid-icon.svg";
@@ -90,7 +89,6 @@ export default function PeFirms() {
             }
         ]
     };
-    const { setCompanyName } = useContext(MainContent);
 
     const [PEFirmData, setPEFirmData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -124,12 +122,11 @@ export default function PeFirms() {
                         {PEFirmData.map((firm, key) => {
                             return (
                                 <div className={styles.peFirmDetailsSlider} key={key} onClick={() => {
-                                    setCompanyName(firm?.organization_name)
-                                    router.push('/firm')
+                                    router.push(`/firm/${firm?.organization_name}`)
                                 }}>
                                     <div className={styles.peFirmDetailsBOx}>
                                         <div className={styles.peFirmDetailsLogo}>
-                                        {/* <h3>{firm?.logo_url}</h3> */}
+                                            {/* <h3>{firm?.logo_url}</h3> */}
 
                                             <Image unoptimized height={60} width={60} src={firm?.logo_url} alt="Logo" />
                                         </div>

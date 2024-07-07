@@ -116,7 +116,7 @@ export default function FirmPortfolio({ investments }) {
         {
             key: 'money_raised_(in_usd)',
             title: 'Money raised in usd',
-            isFormate:'USD'
+            isFormate: 'USD'
         },
         {
             key: 'number_of_funding_rounds',
@@ -134,14 +134,14 @@ export default function FirmPortfolio({ investments }) {
         <div className={styles.firmPortfolioSection}>
             <div className={styles.firmPortfolioBox}>
                 <div className={styles.firmPortfolioBoxHeading}>
-                    <h4>Portfolio (5)</h4>
-                    <select>
+                    <h4>Investment ({investments?.length || '0'})</h4>
+                    {/* <select>
                         <option>June 2024</option>
                         <option>June 2023</option>
                         <option>June 2022</option>
                         <option>June 2021</option>
                         <option>June 2020</option>
-                    </select>
+                    </select> */}
                 </div>
 
                 <div className={styles.firmPortfolioBoxDetails}>
@@ -167,9 +167,9 @@ export default function FirmPortfolio({ investments }) {
 
                                                     {tItem.title === "Logo" ? (
                                                         <div className={styles.logoAlignment}>
-                                                            <div className={styles.starIcon}>
+                                                            {/* <div className={styles.starIcon}>
                                                                 <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
-                                                            </div>
+                                                            </div> */}
                                                             <div className={styles.logo}>
                                                                 <Image unoptimized height={0} width={0} src={'assets/images/rlogo1.png'} alt='Logo' />
                                                             </div>
@@ -179,9 +179,9 @@ export default function FirmPortfolio({ investments }) {
                                                         tItem?.isFormate === "USD" ?
                                                             investment[tItem.key] ? `$${investment[tItem.key]?.toLocaleString('en-US')}` : '-'
                                                             :
-                                                                tItem?.isFormate === "date_time" ?
-                                                                    investment[tItem.key] ? moment(investment[tItem.key]).format('DD/MM/YYYY') : '-' :
-                                                                    (investment[tItem.key] || '-')
+                                                            tItem?.isFormate === "date_time" ?
+                                                                investment[tItem.key] ? moment(investment[tItem.key]).format('DD/MM/YYYY') : '-' :
+                                                                (investment[tItem.key] || '-')
                                                     }
                                                 </td>
                                             )
@@ -193,7 +193,7 @@ export default function FirmPortfolio({ investments }) {
                     </div>
                 </div>
 
-                <Pagination />
+                {/* <Pagination /> */}
             </div>
         </div>
     )

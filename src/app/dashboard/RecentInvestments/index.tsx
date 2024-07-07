@@ -160,9 +160,9 @@ export default function RecentInvestments() {
                                                     {tItem.title === "Logo" ? (
                                                         
                                                         <div className={styles.logoAlignment}>
-                                                            <div className={styles.starIcon}>
+                                                            {/* <div className={styles.starIcon}>
                                                                 <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
-                                                            </div>
+                                                            </div> */}
                                                             <div className={styles.logo}>
                                                                 <Image unoptimized height={0} width={0} src={investment[tItem.key]} alt='Logo' />
                                                             </div>

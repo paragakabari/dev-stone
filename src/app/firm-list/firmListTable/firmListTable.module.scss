@@ -29,6 +29,7 @@
                     border-radius: 12px;
 
                     tr {
+
                         th {
                             @include text14-bolder;
                             white-space: nowrap;
@@ -68,6 +69,8 @@
 
                 tbody {
                     tr {
+                        cursor: pointer;
+
                         td {
                             white-space: nowrap;
                             padding: 15px 10px;

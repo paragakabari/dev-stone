@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from "./firmListTable.module.scss";
 import Image from 'next/image';
 import Pagination from '../pagination/page';
@@ -12,7 +12,6 @@ const UPRightArrow = "/assets/icons/up-right.svg";
 
 export default function FirmListTable(props) {
     const { PEFirmData, isLoading } = props;
-    const { setCompanyName } = useContext(MainContent);
 
     const redirect = useRouter();
     const titleData = [
@@ -43,15 +42,15 @@ export default function FirmListTable(props) {
             key: 'industries',
             title: 'Sector'
         },
-        {
-            key: '',
-            title: 'Geographical Focus'
-        },
-        {
-            key: '',
-            title: '',
-            isRedirect: true
-        },
+        // {
+        //     key: '',
+        //     title: 'Geographical Focus'
+        // },
+        // {
+        //     key: '',
+        //     title: '',
+        //     isRedirect: true
+        // },
     ]
 
     return (
@@ -82,35 +81,37 @@ export default function FirmListTable(props) {
                                 <Loader />
                             )}
                             {PEFirmData.map((firm, key) => (
-                                <tr key={key}>
+                                <tr key={key} onClick={() => {
+                                    redirect.push(`/firm/${firm?.organization_name}`)
+                                }}>
                                     {titleData?.map((tItem, index) => {
                                         return (
-                                            <td key={index}>
-
+                                            <td key={index} >
                                                 {tItem.title === "Logo" ? (
                                                     <div className={styles.logoAlignment}>
-                                                        <div className={styles.starIcon}>
+                                                        {/* <div className={styles.starIcon}>
                                                             <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
-                                                        </div>
+                                                        </div> */}
                                                         <div className={styles.logo}>
                                                             <Image unoptimized height={0} width={0} src={firm[tItem.key]} alt={firm.name} />
                                                         </div>
                                                     </div>
-                                                ) : tItem?.isRedirect ?
-                                                    <div className={styles.upRightArrow} onClick={() => {
-                                                        setCompanyName(firm?.organization_name)
-                                                        redirect.push("/firm")
-                                                    }}>
-                                                        <Image unoptimized height={0} width={0} src={UPRightArrow} alt="UPRightArrow" />
-                                                    </div>
-                                                    :
+                                                ) :
+                                                    //  tItem?.isRedirect ?
+                                                    //     <div className={styles.upRightArrow} onClick={() => {
+                                                    //       redirect.push(`/firm/${firm?.organization_name}`)
+
+                                                    //     }}>
+                                                    //         <Image unoptimized height={0} width={0} src={UPRightArrow} alt="UPRightArrow" />
+                                                    //     </div>
+                                                    //     :
                                                     tItem.key === 'industries' ?
                                                         (firm[tItem.key]?.split(',').length || '-')
                                                         :
-                                                     tItem?.isFormate==='USD'?
-                                                     firm[tItem.key] ? `$${firm[tItem.key]?.toLocaleString('en-US')}` : '-'
-                                                        :
-                                                        (firm[tItem.key] || '-')
+                                                        tItem?.isFormate === 'USD' ?
+                                                            firm[tItem.key] ? `$${firm[tItem.key]?.toLocaleString('en-US')}` : '-'
+                                                            :
+                                                            (firm[tItem.key] || '-')
                                                 }
                                             </td>
                                         )
