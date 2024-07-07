@@ -18,6 +18,7 @@ import {
   Legend,
   ArcElement,
 } from "chart.js";
+import moment from "moment";
 
 ChartJS.register(
   CategoryScale,
@@ -30,6 +31,9 @@ ChartJS.register(
 );
 
 export default function AboutFirm({ firmData }) {
+  console.log('firmDatafirmDatafirmDatafirmDatteeeeeeeeeeeeeeeeeea', firmData);
+
+  const { company_info, tracxn_detail } = firmData;
   const fundingData = {
     labels: ["The Inde..", "Merkle", "CAA", "Prophet", "Croud", "The Chan.."],
     datasets: [
@@ -86,7 +90,75 @@ export default function AboutFirm({ firmData }) {
       },
     ],
   };
-
+  const foundingTitle = [
+    {
+      key: 'funding_date',
+      title: 'Funding Date',
+      isFormate: 'date_time'
+    },
+    {
+      key: 'round_name',
+      title: 'Round Name',
+    }, {
+      key: 'institutional_investors',
+      title: 'Institutional Investors',
+    },
+    {
+      key: 'facilitators',
+      title: 'Facilitators'
+    },
+    {
+      key: 'funding_amount_(usd)',
+      title: 'Funding Amount (USD) ',
+      isFormate: 'USD'
+    },
+    {
+      key: 'total_funding_(usd)',
+      title: 'Total Funding Amount (USD)',
+      isFormate: 'USD'
+    },
+    {
+      key: 'round_post-money_valuation_(usd)',
+      title: 'Post Money Valuation (USD)',
+      isFormate: 'USD'
+    },
+  ]
+  const pepoleTitle = [
+    {
+      key: 'founder_name',
+      title: 'Name',
+    },
+    {
+      key: 'title',
+      title: 'Designation',
+    }, {
+      key: 'description',
+      title: 'Description',
+    }
+  ]
+  const acquisitionTitle = [
+    {
+      key: 'acquired_company_name_unnamed:_3_level_1',
+      title: 'Acquired Company Name'
+    },
+    {
+      key: 'acquisition_date_unnamed:_1_level_1',
+      title: 'Acquisition Date',
+      isFormate: 'date_time'
+    }, {
+      key: 'acquisition_type_unnamed:_2_level_1',
+      title: 'Acquistion Type',
+    },
+    {
+      key: 'sellers_unnamed:_6_level_1',
+      title: 'Seller(s)'
+    },
+    {
+      key: 'acquired_company_details_total_funding_(usd)',
+      title: 'Total Funding (USD)',
+      isFormate: 'USD'
+    }
+  ]
   return (
     <div className={styles.aboutFirmSection}>
       <div className={styles.aboutFirmBox}>
@@ -94,7 +166,7 @@ export default function AboutFirm({ firmData }) {
           <h2>About the Firm</h2>
         </div>
         <div className={styles.aboutFirmBoxBottomAlignment}>
-          <p>{firmData?.full_description}</p>
+          <p>{company_info?.full_description}</p>
           <div className={styles.bottomRightAlignment}>
             <div className={styles.bottomRightFlex}>
               <div>
@@ -107,7 +179,7 @@ export default function AboutFirm({ firmData }) {
                 />
               </div>
               <p>
-                {firmData?.headquarters_location},{firmData?.postal_code}
+                {company_info?.headquarters_location},{company_info?.postal_code}
               </p>
             </div>
             <div className={styles.bottomRightFlex}>
@@ -120,7 +192,7 @@ export default function AboutFirm({ firmData }) {
                   alt="PhoneIcon"
                 />
               </div>
-              <p>{firmData?.phone_number}</p>
+              <p>{company_info?.phone_number}</p>
             </div>
             <div className={styles.bottomRightFlex}>
               <div>
@@ -132,7 +204,7 @@ export default function AboutFirm({ firmData }) {
                   alt="EmailIcon"
                 />
               </div>
-              <p>{firmData?.contact_email}</p>
+              <p>{company_info?.contact_email}</p>
             </div>
           </div>
         </div>
@@ -204,7 +276,7 @@ export default function AboutFirm({ firmData }) {
 
       <div className={styles.aboutFirmBox}>
         <div className={styles.aboutFirmBoxHeading}>
-          <h2>Exits of The Channel Company</h2>
+          <h2>Exits of {company_info?.organization_name}</h2>
         </div>
         <div className={styles.aboutChildHeading}>
           <h3>Acquisition Info</h3>
@@ -213,25 +285,62 @@ export default function AboutFirm({ firmData }) {
           <table cellPadding={0} cellSpacing={0}>
             <thead>
               <tr>
-                <th>Acquisition Date</th>
-                <th>Acquirer(s) </th>
+                <th>Date</th>
+                <th>Acquirers </th>
                 <th>Stake Acquired</th>
-                <th>Acquisition Amount</th>
-                <th>Seller(s)</th>
-                <th>Facilitator(s)</th>
+                <th>Acquired Amount</th>
+                <th>Acquisition Type</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Nov 09, 2021</td>
-                <td>Eagle Tree Capital</td>
-                <td>-</td>
-                <td>-</td>
-                <td>Stone-Goff Partners</td>
                 <td>
-                  JEGI CLARITY, Fredrikson & Byron <a>+3 more</a>
+                  {company_info?.announced_date ? moment(company_info?.announced_date).format('MMM DD, YYYY') : '-'}
                 </td>
+                <td>{company_info?.acquired_by || '-'}</td>
+                <td>{company_info?.acquisition_status || '-'}</td>
+                <td>{tracxn_detail?.company_detail[0][`acquired_amount_(usd)`] ? tracxn_detail?.company_detail[0][`acquired_amount_(usd)`].toLocaleString('en-US') : '-'}</td>
+                <td>{tracxn_detail?.company_detail[0]?.acquisition_type || '-'}</td>
               </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className={styles.aboutFirmBox}>
+        <div className={styles.aboutChildHeading}>
+          <h3>Acquisition List</h3>
+        </div>
+        <div className={styles.tableDetailsAlignment}>
+          <table cellPadding={0} cellSpacing={0}>
+            <thead>
+              <tr>
+                {acquisitionTitle?.map((item, index) => {
+                  return (
+                    <th className={styles.textLeft} key={index}>{item?.title}</th>
+                  )
+                })}
+              </tr>
+            </thead>
+            <tbody>
+              {tracxn_detail?.acquisitions?.map((founding) => {
+                return (
+                  <tr>
+                    {acquisitionTitle?.map((tItem, index) => {
+                      return (
+                        <td key={index}>
+
+                          {tItem?.isFormate === "USD" ?
+                            founding[tItem.key] === "Undisclosed" ? '-' : `${founding[tItem.key]}` ? `$${founding[tItem.key]?.toLocaleString('en-US')}` : '-'
+                            :
+                            tItem?.isFormate === "date_time" ?
+                              founding[tItem.key] ? moment(founding[tItem.key]).format('MMM DD,YYYY') : '-' :
+                              (founding[tItem.key] || '-')}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -239,7 +348,7 @@ export default function AboutFirm({ firmData }) {
 
       <div className={styles.aboutFirmBox}>
         <div className={styles.aboutFirmBoxHeading}>
-          <h2>People in The Channel Company</h2>
+          <h2>People in {company_info?.organization_name}</h2>
         </div>
         <div className={styles.aboutChildHeading}>
           <h3>Founders & Key People</h3>
@@ -248,42 +357,49 @@ export default function AboutFirm({ firmData }) {
           <table cellPadding={0} cellSpacing={0}>
             <thead>
               <tr>
-                <th className={styles.textLeft}>Name</th>
-                <th className={styles.textLeft}>Designation</th>
-                <th className={styles.textLeft}>Description</th>
+                {pepoleTitle?.map((item, index) => {
+                  return (
+                    <th className={styles.textLeft} key={index}>{item?.title}</th>
+                  )
+                })}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <span>1 .</span> Matthew Yorke in
-                </td>
-                <td>CEO</td>
-                <td>
-                  Ex-Foundry, Northstar Travel Group, SourceMedia, IDG
-                  Enterprise, IDG Global Solutions.
-                </td>
-              </tr>
+              {tracxn_detail?.people?.map((founding) => {
+                return (
+                  <tr>
+                    {pepoleTitle?.map((tItem, index) => {
+                      return (
+                        <td key={index}>
+
+                          {
+                            (founding[tItem.key] || '-')}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
       </div>
       <div className={styles.aboutFirmBox}>
         <div className={styles.aboutFirmBoxHeading}>
-          <h2>Funding & Investors of The Channel Company</h2>
+          <h2>Funding & Investors of {company_info?.organization_name}</h2>
         </div>
 
         <div className={styles.aboutDetailsBoxAlignment}>
           <div className={styles.aboutGridAlignment}>
             <div className={styles.aboutGridItem}>
-              <h4>2</h4>
+              <h4>{tracxn_detail?.funding_rounds.length || '0'}</h4>
               <h5>Funding Rounds</h5>
-              <p>2 Early-Stage</p>
+              {/* <p>2 Early-Stage</p> */}
             </div>
             <div className={styles.aboutGridItem}>
-              <h4>$10.5M</h4>
+              <h4>{company_info[`total_funding_amount_(in_usd`] ? `$${company_info[`total_funding_amount_(in_usd`]?.toLocaleString('en-US')}` : '-'}</h4>
               <h5>Total Equity Funding</h5>
-              <p>$10.5M Largest Round</p>
+              {/* <p>$10.5M Largest Round</p> */}
             </div>
             <div className={styles.aboutGridItem}>
               <h4>4</h4>
@@ -312,30 +428,33 @@ export default function AboutFirm({ firmData }) {
           <table cellPadding={0} cellSpacing={0}>
             <thead>
               <tr>
-                <th className={styles.textLeft}>Date</th>
-                <th className={styles.textLeft}>Round Name </th>
-                <th className={styles.textLeft}>Amount</th>
-                <th className={styles.textLeft}>Investors & Facilitators</th>
+                {foundingTitle?.map((item, index) => {
+                  return (
+                    <th className={styles.textLeft} key={index}>{item?.title}</th>
+                  )
+                })}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Dec 07, 2016</td>
-                <td>Series A</td>
-                <td>Undisclosed</td>
-                <td>
-                  <p>Institutional: Stone-Goff Partners</p>
-                  <p>Facilitator: Bowstring Advisors</p>
-                </td>
-              </tr>
-              <tr>
-                <td>-</td>
-                <td>Series A</td>
-                <td>$ 10.5M</td>
-                <td>
-                  <p>Institutional: Northstar Capital</p>
-                </td>
-              </tr>
+              {tracxn_detail?.funding_rounds?.map((founding) => {
+                return (
+                  <tr>
+                    {foundingTitle?.map((tItem, index) => {
+                      return (
+                        <td key={index}>
+
+                          {tItem?.isFormate === "USD" ?
+                            founding[tItem.key] === "Undisclosed" ? '-' : `${founding[tItem.key]}` ? `$${founding[tItem.key]?.toLocaleString('en-US')}` : '-'
+                            :
+                            tItem?.isFormate === "date_time" ?
+                              founding[tItem.key] ? moment(founding[tItem.key]).format('MMM DD,YYYY') : '-' :
+                              (founding[tItem.key] || '-')}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -455,7 +574,7 @@ export default function AboutFirm({ firmData }) {
                 alt="InfoIcon"
               />
             </h6>
-            <div  className={styles.doughnutChart}>
+            <div className={styles.doughnutChart}>
               <Pie
                 data={marketShareData}
                 options={{
