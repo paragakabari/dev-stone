@@ -102,7 +102,7 @@ const data = [
 export default function FirmPortfolio({ investments }) {
     const titleData = [
         {
-            key: '',
+            key: 'logo_url',
             title: 'Logo'
         },
         {
@@ -134,14 +134,14 @@ export default function FirmPortfolio({ investments }) {
         <div className={styles.firmPortfolioSection}>
             <div className={styles.firmPortfolioBox}>
                 <div className={styles.firmPortfolioBoxHeading}>
-                    <h4>Portfolio (5)</h4>
-                    <select>
+                    <h4>Investment</h4>
+                    {/* <select>
                         <option>June 2024</option>
                         <option>June 2023</option>
                         <option>June 2022</option>
                         <option>June 2021</option>
                         <option>June 2020</option>
-                    </select>
+                    </select> */}
                 </div>
 
                 <div className={styles.firmPortfolioBoxDetails}>
@@ -171,7 +171,7 @@ export default function FirmPortfolio({ investments }) {
                                                                 <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
                                                             </div>
                                                             <div className={styles.logo}>
-                                                                <Image unoptimized height={0} width={0} src={'assets/images/rlogo1.png'} alt='Logo' />
+                                                                <Image unoptimized height={100} width={100} src={investment[tItem.key]} alt='Logo' />
                                                             </div>
                                                         </div>
                                                     )
