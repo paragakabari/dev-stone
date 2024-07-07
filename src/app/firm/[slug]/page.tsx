@@ -50,8 +50,8 @@ export default function Firm({ params }) {
             <KeyMetrics firmData={firmData?.company_info} />
             <AboutFirm firmData={firmData} />
             <ChannelCompany />
-            {/* <FirmOtherOption /> */}
             <FirmPortfolio investments={firmData?.investments} />
+            {/* <FirmOtherOption /> */}
         </div>
     )
 }

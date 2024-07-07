@@ -295,9 +295,9 @@ export default function AboutFirm({ firmData }) {
             <tbody>
               <tr>
                 <td>
-                  {company_info?.announced_date ? moment(company_info?.announced_date).format('MMM DD, YYYY') : '-'}
+                  {tracxn_detail?.company_detail[0].acquired_date ? moment(tracxn_detail?.company_detail[0].acquired_date).format('MMM DD, YYYY') : '-'}
                 </td>
-                <td>{company_info?.acquired_by || '-'}</td>
+                <td>{tracxn_detail?.company_detail[0].acquired_by || '-'}</td>
                 <td>{company_info?.acquisition_status || '-'}</td>
                 <td>{tracxn_detail?.company_detail[0][`acquired_amount_(usd)`] ? tracxn_detail?.company_detail[0][`acquired_amount_(usd)`].toLocaleString('en-US') : '-'}</td>
                 <td>{tracxn_detail?.company_detail[0]?.acquisition_type || '-'}</td>
@@ -462,7 +462,7 @@ export default function AboutFirm({ firmData }) {
 
       <div className={styles.aboutFirmBox}>
         <div className={styles.aboutFirmBoxHeading}>
-          <h2>Competitors of The Channel Company</h2>
+          <h2>Competitors of {company_info?.organization_name}</h2>
         </div>
 
         <div className={styles.aboutDetailsBoxAlignment}>

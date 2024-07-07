@@ -21,8 +21,8 @@ export default function KeyMetrics(props) {
                                 </div>
 
                                 <div className={styles.keyMetricsRightSide}>
-                                    <p>No. of Companies</p>
-                                    <h4>200+</h4>
+                                    <p>Estimated Revenue Range</p>
+                                    <h4>{firmData && firmData['estimated_revenue_range'] ? `${firmData['estimated_revenue_range']?.toLocaleString('en-US')}` : 0}</h4>
                                 </div>
                             </div>
                         </div>
