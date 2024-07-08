@@ -34,7 +34,6 @@ export default function FirmTop(props) {
                             })}
                         </div>
                         <p>{firmData?.full_description}</p>
-                        <img />
                     </div>
                 </div>
                 {/* <div className={styles.firmTopRight}>

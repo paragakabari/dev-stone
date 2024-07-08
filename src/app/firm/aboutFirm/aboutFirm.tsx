@@ -322,9 +322,9 @@ export default function AboutFirm({ firmData }) {
               </tr>
             </thead>
             <tbody>
-              {tracxn_detail?.acquisitions?.map((founding) => {
+              {tracxn_detail?.acquisitions?.map((founding, index) => {
                 return (
-                  <tr>
+                  <tr key={index}>
                     {acquisitionTitle?.map((tItem, index) => {
                       return (
                         <td key={index}>
@@ -365,9 +365,9 @@ export default function AboutFirm({ firmData }) {
               </tr>
             </thead>
             <tbody>
-              {tracxn_detail?.people?.map((founding) => {
+              {tracxn_detail?.people?.map((founding, i) => {
                 return (
-                  <tr>
+                  <tr key={i}>
                     {pepoleTitle?.map((tItem, index) => {
                       return (
                         <td key={index}>
@@ -436,9 +436,9 @@ export default function AboutFirm({ firmData }) {
               </tr>
             </thead>
             <tbody>
-              {tracxn_detail?.funding_rounds?.map((founding) => {
+              {tracxn_detail?.funding_rounds?.map((founding, index) => {
                 return (
-                  <tr>
+                  <tr key={index}>
                     {foundingTitle?.map((tItem, index) => {
                       return (
                         <td key={index}>
