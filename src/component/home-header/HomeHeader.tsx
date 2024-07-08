@@ -3,6 +3,8 @@ import { useRouter } from "next/navigation";
 import styles from "./HomeHeader.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import { authenticate, setToken } from "@/utils/auth.util";
+import { signOut } from "next-auth/react";
 
 const Logo = "/assets/logo/logo.svg";
 const SearchIcon = "/assets/icons/white-search.svg";
@@ -31,6 +33,11 @@ export default function HomeHeader() {
     };
   }, []);
 
+  const handleClickLogout = () => {
+    setToken("")
+    signOut({ callbackUrl: "/login" })
+  }
+
   return (
     <div className={classNames(styles.headerSection, { [styles.scrolled]: scrolled })}>
       <div className="container">
@@ -49,12 +56,19 @@ export default function HomeHeader() {
               <a>Contact</a>
             </div> */}
             <div className={styles.headerSearchAlignment}>
-              <div className={styles.searchIcon}>
+              {/* <div className={styles.searchIcon}>
                 <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
-              </div>
-              <div className={styles.searchButtonAlignment} onClick={() => router.push("/login")}>
+              </div> */}
+              {authenticate() && (
+                <div className={styles.searchButtonAlignment} >
+                  <button onClick={() => { router.push("/dashboard") }}>
+                    Dashboard
+                  </button>
+                </div>
+              )}
+              <div className={styles.searchButtonAlignment} onClick={() => { !authenticate() ? router.push("/login") : handleClickLogout() }}>
                 <button>
-                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" /> Login
+                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />{!authenticate() ? 'Login' : 'Logout'}
                 </button>
               </div>
             </div>

@@ -5,14 +5,15 @@ import Image from 'next/image';
 import { useRouter } from "next/navigation";
 
 const Logo = "/assets/images/logo2.png";
-const StarIcon = "/assets/icons/star-icon.svg";
-const InvestmentIcon = "/assets/icons/investment-icon.svg";
-const SectoreIcon = "/assets/icons/sectore-icon.svg";
+const FacebookIcon = "/assets/images/fb.png";
+const linkedinIcon = "/assets/images/linkedin.png";
+const twitterIcon = "/assets/images/twitter.png";
 const GeographicalIcon = "/assets/icons/Geographical-icon.svg";
 export default function FirmTop(props) {
     const { firmData } = props;
 
     const router = useRouter();
+    const socialMediaIcon = [{ icon: twitterIcon, url: firmData?.twitter || '' }, { icon: linkedinIcon, url: firmData?.linkedin || ''}, { icon: FacebookIcon, url: firmData?.facebook || '' }]
     return (
         <div className={styles.firmTopSection}>
             <div className={styles.firmTopAlignment}>
@@ -24,9 +25,16 @@ export default function FirmTop(props) {
                     <div className={styles.firmCompanyDetails}>
                         <div className={styles.companyTop}>
                             <h1>{firmData?.organization_name}</h1>
-                            <Image unoptimized height={0} width={0} src={StarIcon} alt="StarIcon" />
+                            {socialMediaIcon?.map((item, index) => {
+                                return (
+                                    item.url && (
+                                        <Image onClick={() => { window.open(item.url) }} unoptimized key={index} height={0} width={0} src={item.icon} alt="twitterIcon" />
+                                    )
+                                )
+                            })}
                         </div>
                         <p>{firmData?.full_description}</p>
+                        <img />
                     </div>
                 </div>
                 {/* <div className={styles.firmTopRight}>
