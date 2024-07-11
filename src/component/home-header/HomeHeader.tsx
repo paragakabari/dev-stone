@@ -3,6 +3,8 @@ import { useRouter } from "next/navigation";
 import styles from "./HomeHeader.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
+import { authenticate, setToken } from "@/utils/auth.util";
+import { signOut } from "next-auth/react";
 
 const Logo = "/assets/logo/logo.svg";
 const SearchIcon = "/assets/icons/white-search.svg";
@@ -14,6 +16,7 @@ export default function HomeHeader() {
   const [mobileViewSidebar, setMobileViewSidebar] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+  const [isLoggin, setIsLogging] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +33,16 @@ export default function HomeHeader() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+      if (typeof window !== 'undefined') {
+        setIsLogging(authenticate())
+      }
+    }, [router])
+
+  const handleClickLogout = () => {
+    setToken("")
+    signOut({ callbackUrl: "/login" })
+  }
 
   return (
     <div className={classNames(styles.headerSection, { [styles.scrolled]: scrolled })}>
@@ -49,12 +62,26 @@ export default function HomeHeader() {
               <a>Contact</a>
             </div> */}
             <div className={styles.headerSearchAlignment}>
-              <div className={styles.searchIcon}>
+              {/* <div className={styles.searchIcon}>
                 <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
-              </div>
-              <div className={styles.searchButtonAlignment} onClick={() => router.push("/login")}>
+              </div> */}
+              {isLoggin && (
+                <div className={styles.searchButtonAlignment} >
+                  <button onClick={() => { router.push("/dashboard") }}>
+                    Dashboard
+                  </button>
+                </div>
+              )}
+              <div className={styles.searchButtonAlignment} onClick={() => { 
+                !isLoggin ? 
+                router.push("/login") 
+                : handleClickLogout()
+               }}
+                >
                 <button>
-                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" /> Login
+                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />{
+                  !isLoggin ? 'Login' :
+                   'Logout'}
                 </button>
               </div>
             </div>

@@ -1,13 +1,12 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Header from "@/component/header/Header";
 import HomeHeader from "@/component/home-header/HomeHeader";
 import Sidebar from "@/component/sidebar/Sidebar";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./LayoutCustom.module.scss";
-import { useEffect, useState } from "react";
 import { authenticate, unProtectedRoute } from "@/utils/auth.util";
-import { MainContent } from "@/utils/context";
 
 export const LayoutCustom = ({ children }) => {
   const path = usePathname();

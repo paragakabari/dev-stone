@@ -101,10 +101,10 @@ const data = [
 ]
 export default function FirmPortfolio({ investments }) {
     const titleData = [
-        {
-            key: '',
-            title: 'Logo'
-        },
+        // {
+        //     key: '',
+        //     title: 'Logo'
+        // },
         {
             key: 'investor_names',
             title: 'Investor Name',
@@ -170,9 +170,9 @@ export default function FirmPortfolio({ investments }) {
                                                             {/* <div className={styles.starIcon}>
                                                                 <Image unoptimized height={0} width={0} src={StarIcon} alt="Star Icon" />
                                                             </div> */}
-                                                            <div className={styles.logo}>
-                                                                <Image unoptimized height={0} width={0} src={'assets/images/rlogo1.png'} alt='Logo' />
-                                                            </div>
+                                                            {/* <div className={styles.logo}>
+                                                                <Image unoptimized height={100} width={100} src={'assets/images/rlogo1.png'} alt='Logo' />
+                                                            </div> */}
                                                         </div>
                                                     )
                                                         :

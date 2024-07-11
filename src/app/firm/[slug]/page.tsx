@@ -27,6 +27,8 @@ export default function Firm({ params }) {
 
             get(`/dashboard/api/company/${params.slug}`).then((res) => {
                 const response = res?.data?.results;
+                console.log('responseresponseresponseresponse',response);
+                
                 setfirmData(response)
                 setIsLoading(false)
             }).catch((error) => {
@@ -46,10 +48,10 @@ export default function Firm({ params }) {
             </div>
             <FirmTop firmData={firmData?.company_info} />
             <KeyMetrics firmData={firmData?.company_info} />
-            <AboutFirm firmData={firmData?.company_info} />
+            <AboutFirm firmData={firmData} />
             <ChannelCompany />
-            {/* <FirmOtherOption /> */}
             <FirmPortfolio investments={firmData?.investments} />
+            {/* <FirmOtherOption /> */}
         </div>
     )
 }
