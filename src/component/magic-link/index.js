@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRouter, useSearchParams } from 'next/navigation'
 import { axiosInstance } from "@/api/base";
 import { toast } from "react-toastify";

@@ -16,6 +16,7 @@ export default function HomeHeader() {
   const [mobileViewSidebar, setMobileViewSidebar] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+  const [isLoggin, setIsLogging] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +33,11 @@ export default function HomeHeader() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+      if (typeof window !== 'undefined') {
+        setIsLogging(authenticate())
+      }
+    }, [router])
 
   const handleClickLogout = () => {
     setToken("")
@@ -59,16 +65,23 @@ export default function HomeHeader() {
               {/* <div className={styles.searchIcon}>
                 <Image unoptimized height={0} width={0} src={SearchIcon} alt="SearchIcon" />
               </div> */}
-              {authenticate() && (
+              {isLoggin && (
                 <div className={styles.searchButtonAlignment} >
                   <button onClick={() => { router.push("/dashboard") }}>
                     Dashboard
                   </button>
                 </div>
               )}
-              <div className={styles.searchButtonAlignment} onClick={() => { !authenticate() ? router.push("/login") : handleClickLogout() }}>
+              <div className={styles.searchButtonAlignment} onClick={() => { 
+                !isLoggin ? 
+                router.push("/login") 
+                : handleClickLogout()
+               }}
+                >
                 <button>
-                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />{!authenticate() ? 'Login' : 'Logout'}
+                  <Image unoptimized height={0} width={0} src={UserIcon} alt="UserIcon" />{
+                  !isLoggin ? 'Login' :
+                   'Logout'}
                 </button>
               </div>
             </div>
